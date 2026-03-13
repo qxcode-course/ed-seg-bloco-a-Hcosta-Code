@@ -1,3 +1,6 @@
 2026-03-10 16:54:03, MOVE, v:1, k:ed@triangulo, mode:DOWN
 2026-03-10 16:54:05, MOVE, v:1, k:ed@triangulo, mode:PICK
 2026-03-10 16:54:40, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-10 17:04:18, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-10 17:04:22, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:5
+2026-03-10 17:04:23, MOVE, v:1, k:ed@triangulo, mode:BACK
