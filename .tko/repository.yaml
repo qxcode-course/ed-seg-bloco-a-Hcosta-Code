@@ -14,9 +14,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
 - ed@recursão
+- ed@revisão
 tasks: {}
 flags:
   painel: 0
@@ -26,4 +26,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@pintando
+selected: ed@fuga
