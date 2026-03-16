@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_16-43-22",
+            "content": "@@ -152,18 +152,17 @@\n ss =\n+=\n  \n-%22\n crianca\n-%22\n %0A%09%09%7D\n@@ -195,16 +195,15 @@\n ss =\n+=\n  \n-%22\n jovem\n-%22\n %0A%09%09%7D\n@@ -236,17 +236,16 @@\n ss =\n+=\n  \n-%22\n adulto\n-%22\n %0A%09%09%7D\n@@ -280,16 +280,15 @@\n ss =\n+=\n  \n-%22\n idoso\n-%22\n %0A%09%09%7D\n@@ -309,16 +309,15 @@\n ss =\n+=\n  \n-%22\n mumia\n-%22\n %0A%09%09%7D\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-16_16-45-44",
+            "content": "@@ -350,10 +350,10 @@\n e, %22\n-e\n h\n+e\n %22, c\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-16_16-46-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar name string\n\tvar age int\n\tfmt.Scan(&name, &age)\n\tvar class string\n\n\tfor range 5 {\n\t\tif age < 12 {\n\t\t\tclass = \"crianca\"\n\t\t} else if age < 18 {\n\t\t\tclass = \"jovem\"\n\t\t} else if age < 65 {\n\t\t\tclass = \"adulto\"\n\t\t} else if age < 1000 {\n\t\t\tclass = \"idoso\"\n\t\t} else {\n\t\t\tclass = \"mumia\"\n\t\t}\n\t}\n\n\tfmt.Println(name, \"eh\", class)\n}\n",
+            "lines": "26"
+        }
+    ]
+}
