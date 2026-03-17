@@ -14,13 +14,14 @@ sources:
   quests: null
   tasks: null
 expanded:
-- sandbox@sandbox:00_rascunhos
 - sandbox@sandbox
 - ed@revisão
 - ed@main-quest
+- sandbox@sandbox:00_rascunhos
 tasks:
   ed@pintando: '{rate:100}'
   ed@mumia: '{rate:100}'
+  ed@fuga: '{rate:100}'
 flags:
   painel: 0
   quests: 0
