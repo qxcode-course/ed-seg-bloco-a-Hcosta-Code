@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_21-50-52",
+            "content": "@@ -98,18 +98,16 @@\n %09%09A \n-  \n int%0A%09%09B \n   in\n@@ -106,20 +106,8 @@\n %09%09B \n-  int%0A%09%09Dif \n int%0A\n@@ -211,52 +211,8 @@\n .B)%0A\n-%09%09pontos%5Bi%5D.Dif = pontos%5Bi%5D.A - pontos%5Bi%5D.B%0A\n %09%7D%0A%0A\n@@ -404,132 +404,10 @@\n n%22)%0A\n+\n %09%7D%0A%0A\n-%09var ind int = 0%0A%0A%09for i := 1; i %3C N; i++ %7B%0A%09%09if pontos%5Bi%5D.Dif %3C pontos%5Bind%5D.Dif %7B%0A%09%09%09ind = i%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(%22ind%5Cn%22)%0A%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-17_22-06-26",
+            "content": "@@ -577,21 +577,16 @@\n rint\n-f\n (%22\n-%25v%5Cn%22, \n ind\n+%5Cn%22\n )%0A%0A%7D\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-17_22-07-00",
+            "content": "@@ -462,16 +462,8 @@\n n%22)%0A\n-%09%09break%0A\n %09%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-17_22-08-14",
+            "content": "@@ -404,24 +404,86 @@\n s++%0A%09%09%7D%0A%09%7D%0A%0A\n+%09if desclass == N %7B%0A%09%09fmt.Print(%22sem ganhador%5Cn%22)%0A%09%09break%0A%09%7D%0A%0A\n %09var ind int\n@@ -601,59 +601,6 @@\n d)%0A%0A\n-%09if desclass == N %7B%0A%09%09fmt.Print(%22sem ganhador%5Cn%22)%0A%09%7D%0A\n %7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-17_22-08-22",
+            "content": "@@ -408,16 +408,143 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09var ind int = 0%0A%0A%09for i := 1; i %3C N; i++ %7B%0A%09%09if pontos%5Bi%5D.Dif %3C pontos%5Bind%5D.Dif %7B%0A%09%09%09ind = i%0A%09%09%7D%0A%09%7D%0A%09fmt.Printf(%22%25v%5Cn%22, ind)%0A%0A\n %09if desc\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_22-08-58",
+            "content": "@@ -412,146 +412,8 @@\n %09%7D%0A%0A\n-%09var indice int = 0%0A%0A%09for i := 1; i %3C N; i++ %7B%0A%09%09if pontos%5Bindice%5D.Dif %3E pontos%5Bi%5D.Dif %7B%0A%09%09%09indice = i%0A%09%09%7D%0A%09%7D%0A%09fmt.Scanf(%22%25v%5Cn%22, indice)%0A%0A\n %09if \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-17_22-13-47",
+            "content": "@@ -412,25 +412,8 @@\n %09%7D%0A%0A\n-%09//Caso ganhador%0A\n %09var\n@@ -523,21 +523,20 @@\n %09%7D%0A%09fmt.\n-Print\n+Scan\n f(%22%25v%5Cn%22\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_22-17-07",
+            "content": "@@ -532,70 +532,8 @@\n = i%0A\n-%09%09%7D else if pontos%5Bindice%5D.Dif == pontos%5Bi%5D.Dif %7B%0A%09%09%09continue%0A\n %09%09%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-17_22-19-22",
+            "content": "@@ -496,18 +496,17 @@\n ce%5D.Dif \n-==\n+%3E\n  pontos%5B\n@@ -521,16 +521,18 @@\n %0A%09%09%09\n-continue\n+indice = i\n %0A%09%09%7D\n@@ -551,33 +551,34 @@\n tos%5Bindice%5D.Dif \n-%3E\n+==\n  pontos%5Bi%5D.Dif %7B\n@@ -577,34 +577,32 @@\n i%5D.Dif %7B%0A%09%09%09\n-indice = i\n+continue\n %0A%09%09%7D%0A%09%7D%0A%09fmt\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-17_22-20-08",
+            "content": "@@ -227,137 +227,49 @@\n )%0A%09%09\n-if pontos%5Bi%5D.A %3E 10 && pontos%5Bi%5D.B %3E 10 %7B%0A%09%09%09pontos%5Bi%5D.Dif = pontos%5Bi%5D.A - pontos%5Bi%5D.B%0A%09%09%7D else %7B%0A%09%09%09pontos%5Bi%5D.Dif = 10000%0A%09%09%7D%0A%09%09\n+pontos%5Bi%5D.Dif = pontos%5Bi%5D.A - pontos%5Bi%5D.B\n %0A%09%7D%0A\n@@ -593,21 +593,52 @@\n  = i%0A%09%09%7D\n- else\n+%0A%09%7D%0A%09fmt.Printf(%22%25v%5Cn%22, indice)%0A%0A%09if\n  desclas\n@@ -646,17 +646,16 @@\n  == N %7B%0A\n-%09\n %09%09fmt.Pr\n@@ -680,50 +680,8 @@\n n%22)%0A\n-%09%09%09break%0A%09%09%7D%0A%09%09fmt.Printf(%22%25v%5Cn%22, indice)%0A\n %09%7D%0A%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-17_22-26-42",
+            "content": "@@ -350,16 +350,18 @@\n 000%0A%09%09%7D%0A\n+%09%09\n %0A%09%7D%0A%0A%09va\n@@ -687,19 +687,16 @@\n %09%7D else \n-if \n desclass\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-17_22-27-19",
+            "content": "@@ -558,17 +558,16 @@\n ; i++ %7B%0A\n-%0A\n %09%09if pon\n@@ -683,43 +683,14 @@\n %0A%09%09%7D\n-%0A%09%09fmt.Printf(%22%25v%5Cn%22, indice)%0A%09%7D%0A%0A%09\n+ else \n if d\n@@ -704,16 +704,17 @@\n  == N %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -736,24 +736,27 @@\n or%5Cn%22)%0A%09\n-%7D else %7B\n+%09%09break%0A%09%09%7D\n %0A%09%09fmt.P\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-17_22-29-58",
+            "content": "@@ -70,46 +70,8 @@\n (&N)\n-%0A%09var desclass = 0%0A%09var indice int = 0\n %0A%0A%09t\n@@ -311,32 +311,143 @@\n s%5Bi%5D.B%0A%09%09%7D else \n+%7B%0A%09%09%09pontos%5Bi%5D.Dif = 10000%0A%09%09%7D%0A%0A%09%7D%0A%0A%09var desclass = 0%0A%0A%09//Caso de desclassifica%C3%A7%C3%A3o%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09\n if pontos%5Bi%5D.A %3C\n@@ -493,47 +493,49 @@\n %0A%09%09%7D\n- else %7B%0A%09%09%09pontos%5Bi%5D.Dif = 10000%0A%09%09%7D%0A%09%7D\n+%0A%09%7D%0A%0A%09//Caso ganhador%0A%09var indice int = 0\n %0A%0A%09f\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-17_22-33-34",
+            "content": "@@ -194,33 +194,33 @@\n , N)%0A%0A%09for i := \n-1\n+0\n ; i %3C N; i++ %7B%0A%09\n@@ -483,16 +483,17 @@\n ; i++ %7B%0A\n+%0A\n %09%09if pon\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-17_22-35-47",
+            "content": "@@ -202,17 +202,17 @@\n or i := \n-0\n+1\n ; i %3C N;\n@@ -601,24 +601,53 @@\n ice = i%0A%09%09%7D%0A\n+%09%09fmt.Printf(%22%25v%5Cn%22, indice)%0A\n %09%7D%0A%0A%09if desc\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-17_22-36-53",
+            "content": "@@ -277,17 +277,16 @@\n s%5Bi%5D.A %3E\n-=\n  10 && p\n@@ -297,17 +297,16 @@\n s%5Bi%5D.B %3E\n-=\n  10 %7B%0A%09%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_22-39-01",
+            "content": "@@ -463,105 +463,8 @@\n %09%7D%0A%0A\n-%09for i := 0; i %3C N; i++ %7B%0A%09%09if pontos%5Bi%5D.Dif %3C 0 %7B%0A%09%09%09pontos%5Bi%5D.Dif = pontos%5Bi%5D.Dif * -1%0A%09%09%7D%0A%09%7D%0A%0A\n %09for\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_22-44-19",
+            "content": "@@ -419,33 +419,8 @@\n s++%0A\n-%09%09%09pontos%5Bi%5D.Dif = 10000%0A\n %09%09%7D \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-17_22-45-48",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar N int\n\tfmt.Scanln(&N)\n\tvar desclass = 0\n\tvar indice int = 0\n\n\ttype Player struct {\n\t\tA   int\n\t\tB   int\n\t\tDif int\n\t}\n\n\tpontos := make([]Player, N)\n\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scanln(&pontos[i].A, &pontos[i].B)\n\t\tif pontos[i].A >= 10 && pontos[i].B >= 10 {\n\t\t\tpontos[i].Dif = pontos[i].A - pontos[i].B\n\t\t} else if pontos[i].A < 10 || pontos[i].B < 10 {\n\t\t\tdesclass++\n\t\t\tpontos[i].Dif = 10000\n\t\t} else {\n\t\t\tpontos[i].Dif = 10000\n\t\t}\n\t}\n\n\tfor i := 0; i < N; i++ {\n\t\tif pontos[i].Dif < 0 {\n\t\t\tpontos[i].Dif = pontos[i].Dif * -1\n\t\t}\n\t}\n\n\tfor i := 1; i < N; i++ {\n\t\tif pontos[indice].Dif == pontos[i].Dif {\n\t\t\tcontinue\n\t\t} else if pontos[indice].Dif > pontos[i].Dif {\n\t\t\tindice = i\n\t\t}\n\t}\n\n\tif desclass == N {\n\t\tfmt.Print(\"sem ganhador\\n\")\n\t} else {\n\t\tfmt.Printf(\"%v\\n\", indice)\n\t}\n}\n",
+            "lines": "52"
+        }
+    ]
+}
