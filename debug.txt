@@ -1,0 +1,3 @@
+build_cmd: go build -o ".build\a.out.exe" "draft.go"
+run_cmd: ".build\a.out.exe"
+parent_folder: C:\Users\henri\OneDrive\Desktop\VS Code\Códigos\ED\ed-seg-bloco-a-Hcosta-Code\ed\casais\go

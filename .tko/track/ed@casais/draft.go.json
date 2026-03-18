@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-18_00-10-24",
+            "content": "@@ -155,28 +155,8 @@\n i%5D)%0A\n-%09%09if fila%5Bi%5D %3C 0 %7B%0A%09\n %09%09fi\n@@ -176,20 +176,16 @@\n i%5D * -1%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09for\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-18_00-12-29",
+            "content": "@@ -339,17 +339,16 @@\n mt.Print\n-f\n (%22casais\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-18_00-12-50",
+            "content": "@@ -346,21 +346,17 @@\n tf(%22\n-%25d%5Cn%22, \n casais\n+%5Cn%22\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-18_00-13-25",
+            "content": "@@ -234,46 +234,8 @@\n + %7B%0A\n-%09%09if fila%5Bi%5D == 100 %7B%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09fo\n@@ -307,26 +307,8 @@\n s++%0A\n-%09%09%09%09fila%5Bi%5D = 100%0A\n %09%09%09%09\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-18_00-15-03",
+            "content": "@@ -291,16 +291,18 @@\n 1; j %3C Q\n+-1\n ; j++ %7B%0A\n@@ -367,31 +367,16 @@\n %09%09%09%09\n-fila%5Bj%5D = 100%0A%09%09%09%09break\n+continue\n %0A%09%09%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-18_00-17-19",
+            "content": "@@ -155,219 +155,8 @@\n i%5D)%0A\n-%09%7D%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09if fila%5Bi%5D == 100 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09for j := i + 1; j %3C Q; j++ %7B%0A%09%09%09if fila%5Bi%5D == fila%5Bj%5D %7B%0A%09%09%09%09fila%5Bi%5D = 100%0A%09%09%09%09fila%5Bj%5D = 100%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A\n %09%09if\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_00-19-45",
+            "content": "@@ -181,16 +181,54 @@\n ; i++ %7B%0A\n+%09%09if fila%5Bi%5D == 100 %7B%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09for j \n@@ -313,16 +313,26 @@\n %5D = 100%0A\n+%09%09%09%09break%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-18_00-21-18",
+            "content": "@@ -257,16 +257,34 @@\n %5D = 100%0A\n+%09%09%09%09fila%5Bj%5D = 100%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-18_00-21-55",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -51,369 +51,279 @@\n nt%0A%09\n-fmt.Scan(&Q)%0A%0A%09// O mapa guarda: %5Btamanho da bota%5D -%3E %5Bquantidade dispon%C3%ADvel no estoque%5D%0A%09estoque := make(map%5Bint%5Dint)%0A%09casais := 0%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09var bota int%0A%09%09fmt.Scan(&bota)%0A%0A%09%09// O par de uma bota %C3%A9 o valor oposto (ex: par de 37 %C3%A9 -37)%0A%09%09parEsperado := -bota%0A%0A%09%09// Verificamos se o par j%C3%A1 existe no estoque%0A%09%09if estoque%5BparEsperado%5D %3E\n+var casais int = 0%0A%09fmt.Scan(&Q)%0A%09fila := make(%5B%5Dint, Q)%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09for j := i + 1; j %3C Q; j++ %7B%0A%09%09%09if fila%5Bi%5D == fila%5Bj%5D %7B%0A%09%09%09%09fila%5Bi%5D = 100%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09if fila%5Bi%5D %3C\n  0 %7B%0A%09%09%09\n // A\n@@ -322,222 +322,224 @@\n %0A%09%09%09\n-// Achei um par!%0A%09%09%09casais++%0A%09%09%09// Removemos uma unidade do par do estoque, pois ele j%C3%A1 %22casou%22%0A%09%09%09estoque%5BparEsperado%5D--%0A%09%09%7D else %7B%0A%09%09%09// Se n%C3%A3o tem par esperando, guardamos esta bota no estoque%0A%09%09%09estoque%5Bbota%5D++\n+fila%5Bi%5D = fila%5Bi%5D * -1%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C Q; i++ %7B%0A%09%09if fila%5Bi%5D == 100 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09for j := i + 1; j %3C Q; j++ %7B%0A%09%09%09if fila%5Bi%5D == fila%5Bj%5D %7B%0A%09%09%09%09casais++%0A%09%09%09%09fila%5Bi%5D = 100%0A%09%09%09%09fila%5Bj%5D = 100%0A%09%09%09%09break%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-18_00-24-26",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar Q int\n\tfmt.Scan(&Q)\n\n\t// O mapa guarda: [tamanho da bota] -> [quantidade dispon\u00edvel no estoque]\n\testoque := make(map[int]int)\n\tcasais := 0\n\n\tfor i := 0; i < Q; i++ {\n\t\tvar bota int\n\t\tfmt.Scan(&bota)\n\n\t\t// O par de uma bota \u00e9 o valor oposto (ex: par de 37 \u00e9 -37)\n\t\tparEsperado := -bota\n\n\t\t// Verificamos se o par j\u00e1 existe no estoque\n\t\tif estoque[parEsperado] > 0 {\n\t\t\t// Achei um par!\n\t\t\tcasais++\n\t\t\t// Removemos uma unidade do par do estoque, pois ele j\u00e1 \"casou\"\n\t\t\testoque[parEsperado]--\n\t\t} else {\n\t\t\t// Se n\u00e3o tem par esperando, guardamos esta bota no estoque\n\t\t\testoque[bota]++\n\t\t}\n\t}\n\n\tfmt.Printf(\"%d\\n\", casais)\n}\n",
+            "lines": "35"
+        }
+    ]
+}
