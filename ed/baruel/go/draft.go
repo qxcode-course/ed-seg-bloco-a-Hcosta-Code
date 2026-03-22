@@ -3,61 +3,59 @@ package main
 import "fmt"
 
 func main() {
-	var total, possui int
-	fmt.Scan(&total, &possui)
+	var album_t, figs_baru int
+	fmt.Scan(&album_t, &figs_baru)
 
-	// Usaremos um slice para as repetidas e um mapa para marcar o que ele TEM
-	album := make(map[int]bool)
-	var repetidas []int
+	album_baru := make(map[int]bool)
+	var reps []int
+	var anterior int = -1
 
-	var anterior int = -1 // Começamos com -1 pois as figurinhas são de 1 em diante
+	//Verificar repetidas e adicionar os valores individuais
+	for i := 0; i < figs_baru; i++ {
+		var temp int
+		fmt.Scan(&temp)
 
-	for i := 0; i < possui; i++ {
-		var atual int
-		fmt.Scan(&atual)
-
-		// Lógica das Repetidas:
-		// Como a entrada é crescente, se o atual for igual ao anterior, é repetida!
-		if atual == anterior {
-			repetidas = append(repetidas, atual)
+		if temp == anterior {
+			reps = append(reps, temp)
 		}
 
-		// Marca no nosso mapa (álbum) que ele tem essa figurinha
-		album[atual] = true
-		anterior = atual
+		album_baru[temp] = true
+		anterior = temp
 	}
 
-	// --- SAÍDA 1: Repetidas ---
-	if len(repetidas) == 0 {
-		fmt.Println("N")
+	//printar as repetidas
+	if len(reps) == 0 {
+		fmt.Print("N\n")
 	} else {
-		for i, v := range repetidas {
-			fmt.Print(v)
-			if i < len(repetidas)-1 {
+		for i, v := range reps {
+			fmt.Printf("%d", v)
+			if i < len(reps)-1 {
 				fmt.Print(" ")
 			}
+
 		}
-		fmt.Println()
+		fmt.Print("\n")
 	}
 
-	// --- SAÍDA 2: Faltando ---
-	var faltando []int
-	// Percorremos de 1 até o Total do álbum
-	for i := 1; i <= total; i++ {
-		if !album[i] { // Se NÃO está no mapa, está faltando
-			faltando = append(faltando, i)
+	//Criando uma lista das que faltam
+	var falt []int
+	for i := 1; i <= album_t; i++ {
+		if !album_baru[i] {
+			falt = append(falt, i)
 		}
 	}
 
-	if len(faltando) == 0 {
-		fmt.Println("N")
+	//printar as que faltam
+	if len(falt) == 0 {
+		fmt.Print("N\n")
 	} else {
-		for i, v := range faltando {
-			fmt.Print(v)
-			if i < len(faltando)-1 {
+		for i, v := range falt {
+			fmt.Printf("%d", v)
+			if i < len(falt)-1 {
 				fmt.Print(" ")
 			}
+
 		}
-		fmt.Println()
+		fmt.Print("\n")
 	}
 }

@@ -7,8 +7,48 @@
         },
         {
             "label": "2026-03-21_20-56-48",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar total, possui int\n\tfmt.Scan(&total, &possui)\n\n\t// Usaremos um slice para as repetidas e um mapa para marcar o que ele TEM\n\talbum := make(map[int]bool)\n\tvar repetidas []int\n\n\tvar anterior int = -1 // Come\u00e7amos com -1 pois as figurinhas s\u00e3o de 1 em diante\n\n\tfor i := 0; i < possui; i++ {\n\t\tvar atual int\n\t\tfmt.Scan(&atual)\n\n\t\t// L\u00f3gica das Repetidas:\n\t\t// Como a entrada \u00e9 crescente, se o atual for igual ao anterior, \u00e9 repetida!\n\t\tif atual == anterior {\n\t\t\trepetidas = append(repetidas, atual)\n\t\t}\n\n\t\t// Marca no nosso mapa (\u00e1lbum) que ele tem essa figurinha\n\t\talbum[atual] = true\n\t\tanterior = atual\n\t}\n\n\t// --- SA\u00cdDA 1: Repetidas ---\n\tif len(repetidas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i, v := range repetidas {\n\t\t\tfmt.Print(v)\n\t\t\tif i < len(repetidas)-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n\n\t// --- SA\u00cdDA 2: Faltando ---\n\tvar faltando []int\n\t// Percorremos de 1 at\u00e9 o Total do \u00e1lbum\n\tfor i := 1; i <= total; i++ {\n\t\tif !album[i] { // Se N\u00c3O est\u00e1 no mapa, est\u00e1 faltando\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\tif len(faltando) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i, v := range faltando {\n\t\t\tfmt.Print(v)\n\t\t\tif i < len(faltando)-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "content": "@@ -44,75 +44,136 @@\n var \n-album_t, figs_baru int%0A%09fmt.Scan(&album_t, &figs_baru)%0A%0A%09album_baru\n+total, possui int%0A%09fmt.Scan(&total, &possui)%0A%0A%09// Usaremos um slice para as repetidas e um mapa para marcar o que ele TEM%0A%09album\n  := \n@@ -203,16 +203,21 @@\n  rep\n+etida\n s %5B%5Dint%0A\n %09var\n@@ -212,16 +212,17 @@\n s %5B%5Dint%0A\n+%0A\n %09var ant\n@@ -239,67 +239,67 @@\n = -1\n-%0A%0A%09//Verificar repetidas e adicionar os valores individuais\n+ // Come%C3%A7amos com -1 pois as figurinhas s%C3%A3o de 1 em diante%0A\n %0A%09fo\n@@ -316,17 +316,14 @@\n i %3C \n-figs_baru\n+possui\n ; i+\n@@ -332,20 +332,21 @@\n %7B%0A%09%09var \n-temp\n+atual\n  int%0A%09%09f\n@@ -358,24 +358,132 @@\n an(&\n-temp)%0A%0A%09%09if temp\n+atual)%0A%0A%09%09// L%C3%B3gica das Repetidas:%0A%09%09// Como a entrada %C3%A9 crescente, se o atual for igual ao anterior, %C3%A9 repetida!%0A%09%09if atual\n  == \n@@ -499,16 +499,21 @@\n %7B%0A%09%09%09rep\n+etida\n s = appe\n@@ -522,39 +522,101 @@\n (rep\n-s, temp)%0A%09%09%7D%0A%0A%09%09album_baru%5Btemp\n+etidas, atual)%0A%09%09%7D%0A%0A%09%09// Marca no nosso mapa (%C3%A1lbum) que ele tem essa figurinha%0A%09%09album%5Batual\n %5D = \n@@ -637,20 +637,21 @@\n r = \n-temp\n+atual\n %0A%09%7D%0A%0A%09//\n prin\n@@ -650,28 +650,31 @@\n %0A%09//\n-printar as r\n+ --- SA%C3%8DDA 1: R\n epetidas\n %0A%09if\n@@ -669,16 +669,20 @@\n epetidas\n+ ---\n %0A%09if len\n@@ -685,16 +685,21 @@\n  len(rep\n+etida\n s) == 0 \n@@ -703,37 +703,37 @@\n  0 %7B%0A%09%09fmt.Print\n+ln\n (%22N\n-%5Cn\n %22)%0A%09%7D else %7B%0A%09%09f\n@@ -752,16 +752,21 @@\n ange rep\n+etida\n s %7B%0A%09%09%09f\n@@ -769,32 +769,25 @@\n %09%09%09fmt.Print\n-f(%22%25d%22, \n+(\n v)%0A%09%09%09if i %3C\n@@ -794,16 +794,21 @@\n  len(rep\n+etida\n s)-1 %7B%0A%09\n@@ -834,52 +834,61 @@\n %09%09%7D%0A\n-%0A\n %09%09%7D%0A%09\n-%7D%0A%0A%09//Criando uma lista das que faltam\n+%09fmt.Println()%0A%09%7D%0A%0A%09// --- SA%C3%8DDA 2: Faltando ---\n %0A%09va\n@@ -893,23 +893,69 @@\n var falt\n+ando\n  %5B%5Dint%0A\n+%09// Percorremos de 1 at%C3%A9 o Total do %C3%A1lbum%0A\n %09for i :\n@@ -960,22 +960,21 @@\n  := \n-0\n+1\n ; i %3C\n- album_t\n+= total\n ; i+\n@@ -992,26 +992,59 @@\n lbum\n-_baru\n %5Bi%5D %7B\n+ // Se N%C3%83O est%C3%A1 no mapa, est%C3%A1 faltando\n %0A%09%09%09falt\n  = a\n@@ -1039,16 +1039,20 @@\n %0A%09%09%09falt\n+ando\n  = appen\n@@ -1057,16 +1057,20 @@\n end(falt\n+ando\n , i)%0A%09%09%7D\n@@ -1078,33 +1078,8 @@\n %09%7D%0A%0A\n-%09//printar as que faltam%0A\n %09if \n@@ -1086,16 +1086,20 @@\n len(falt\n+ando\n ) == 0 %7B\n@@ -1114,13 +1114,13 @@\n rint\n+ln\n (%22N\n-%5Cn\n %22)%0A%09\n@@ -1152,16 +1152,20 @@\n nge falt\n+ando\n  %7B%0A%09%09%09fm\n@@ -1175,16 +1175,9 @@\n rint\n-f(%22%25d%22, \n+(\n v)%0A%09\n@@ -1193,16 +1193,20 @@\n len(falt\n+ando\n )-1 %7B%0A%09%09\n@@ -1227,19 +1227,33 @@\n %22)%0A%09%09%09%7D%0A\n-%0A\n %09%09%7D%0A%09\n+%09fmt.Println()%0A%09\n %7D\n-%0A\n %0A%7D%0A\n",
             "lines": "63"
+        },
+        {
+            "label": "2026-03-21_21-44-26",
+            "content": "@@ -579,34 +579,16 @@\n %09%7D%0A%0A%09%09%7D%0A\n-%09%09fmt.Print(%22%5Cn%22)%0A\n %09%7D%0A%0A%09//C\n@@ -905,26 +905,8 @@\n %09%09%7D%0A\n-%09%09fmt.Print(%22%5Cn%22)%0A\n %09%7D%0A%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-21_21-45-25",
+            "content": "@@ -663,17 +663,17 @@\n or i := \n-1\n+0\n ; i %3C al\n@@ -940,10 +940,11 @@\n %5Cn%22)%0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-21_21-47-43",
+            "content": "@@ -234,25 +234,25 @@\n s%0A%09for i := \n-1\n+0\n ; i %3C figs_b\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-21_21-49-44",
+            "content": "@@ -238,17 +238,17 @@\n or i := \n-0\n+1\n ; i %3C fi\n@@ -885,16 +885,18 @@\n en(falt)\n+-1\n  %7B%0A%09%09%09%09f\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-21_21-50-38",
+            "content": "@@ -669,17 +669,16 @@\n = 1; i %3C\n-=\n  album_t\n@@ -885,18 +885,16 @@\n en(falt)\n--1\n  %7B%0A%09%09%09%09f\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-21_21-51-55",
+            "content": "@@ -663,22 +663,23 @@\n or i := \n-0\n+1\n ; i %3C\n+=\n  album_t\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-21_21-52-55",
+            "content": "@@ -667,15 +667,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  alb\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-21_21-54-57",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar album_t, figs_baru int\n\tfmt.Scan(&album_t, &figs_baru)\n\n\talbum_baru := make(map[int]bool)\n\tvar reps []int\n\tvar anterior int = -1\n\n\t//Verificar repetidas e adicionar os valores individuais\n\tfor i := 0; i < figs_baru; i++ {\n\t\tvar temp int\n\t\tfmt.Scan(&temp)\n\n\t\tif temp == anterior {\n\t\t\treps = append(reps, temp)\n\t\t}\n\n\t\talbum_baru[temp] = true\n\t\tanterior = temp\n\t}\n\n\t//printar as repetidas\n\tif len(reps) == 0 {\n\t\tfmt.Print(\"N\\n\")\n\t} else {\n\t\tfor i, v := range reps {\n\t\t\tfmt.Printf(\"%d\", v)\n\t\t\tif i < len(reps)-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\n\t\t}\n\t\tfmt.Print(\"\\n\")\n\t}\n\n\t//Criando uma lista das que faltam\n\tvar falt []int\n\tfor i := 1; i <= album_t; i++ {\n\t\tif !album_baru[i] {\n\t\t\tfalt = append(falt, i)\n\t\t}\n\t}\n\n\t//printar as que faltam\n\tif len(falt) == 0 {\n\t\tfmt.Print(\"N\\n\")\n\t} else {\n\t\tfor i, v := range falt {\n\t\t\tfmt.Printf(\"%d\", v)\n\t\t\tif i < len(falt)-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\n\t\t}\n\t\tfmt.Print(\"\\n\")\n\t}\n}\n",
+            "lines": "61"
         }
     ]
 }
