@@ -3,33 +3,61 @@ package main
 import "fmt"
 
 func main() {
-	qtd_album := 0
-	qtd_fig := 0
-	fmt.Scan(&qtd_album, &qtd_fig)
-	album := make([]int, qtd_fig)
+	var total, possui int
+	fmt.Scan(&total, &possui)
 
-	unicos := make(map[int]bool)
-	repetidos := make([]int, 0, qtd_fig)
+	// Usaremos um slice para as repetidas e um mapa para marcar o que ele TEM
+	album := make(map[int]bool)
+	var repetidas []int
 
-	for i := range album {
-		fmt.Scan(&album[i])
-	}
+	var anterior int = -1 // Começamos com -1 pois as figurinhas são de 1 em diante
 
-	for _, fig := range album {
-		if unicos[fig] {
-			repetidos = append(repetidos, fig)
-		} else {
-			unicos[fig] = true
+	for i := 0; i < possui; i++ {
+		var atual int
+		fmt.Scan(&atual)
+
+		// Lógica das Repetidas:
+		// Como a entrada é crescente, se o atual for igual ao anterior, é repetida!
+		if atual == anterior {
+			repetidas = append(repetidas, atual)
 		}
 
+		// Marca no nosso mapa (álbum) que ele tem essa figurinha
+		album[atual] = true
+		anterior = atual
 	}
 
-	for i := range repetidos {
-		if i != 0 {
-			fmt.print(" ")
+	// --- SAÍDA 1: Repetidas ---
+	if len(repetidas) == 0 {
+		fmt.Println("N")
+	} else {
+		for i, v := range repetidas {
+			fmt.Print(v)
+			if i < len(repetidas)-1 {
+				fmt.Print(" ")
+			}
 		}
-		fmt.Printf("%v ", valor)
+		fmt.Println()
 	}
-	fmt.Print("\n")
 
+	// --- SAÍDA 2: Faltando ---
+	var faltando []int
+	// Percorremos de 1 até o Total do álbum
+	for i := 1; i <= total; i++ {
+		if !album[i] { // Se NÃO está no mapa, está faltando
+			faltando = append(faltando, i)
+		}
+	}
+
+	if len(faltando) == 0 {
+		fmt.Println("N")
+	} else {
+		for i, v := range faltando {
+			fmt.Print(v)
+			if i < len(faltando)-1 {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
 }

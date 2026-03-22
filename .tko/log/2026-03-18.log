@@ -10,3 +10,8 @@
 2026-03-18 00:21:18, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:44
 2026-03-18 00:21:55, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:43
 2026-03-18 00:24:26, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:35
+2026-03-18 00:25:14, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-18 00:25:16, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
+2026-03-18 00:25:17, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-18 12:16:58, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-18 12:17:00, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100

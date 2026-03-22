@@ -20,6 +20,7 @@ tasks:
   ed@mumia: '{rate:100}'
   ed@fuga: '{rate:100}'
   ed@pedra: '{rate:100}'
+  ed@casais: '{rate:100}'
   ed@gomos: '{rate:100}'
 flags:
   painel: 0
@@ -29,4 +30,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@casais
+selected: ed@baruel
