@@ -13,10 +13,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- '@ed@analise-map_set-map_set-basic_sem_quest'
 - '@ed@revisao-basic-basic_sem_quest'
-- ed@revisao-basic-basic
-- ed@analise-map_set-map_set-basic
+- '@ed@backtracking-backtrack5-backtrack-rec_sem_quest'
+- '@ed@analise-map_set-map_set-basic_sem_quest'
 tasks:
   ed@pintando: '{self:1, rate:100, study:40, concept:1, debug:1}'
   ed@mumia: '{self:1, rate:100, study:16}'
@@ -34,4 +33,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@princesa
+selected: ed@a-consertar-x
