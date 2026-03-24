@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_16-36-00",
+            "content": "@@ -146,22 +146,36 @@\n %7D%0A%0A%09\n-fila%5BE-1%5D = 0%0A\n+mortos := make(map%5Bint%5Dbool)\n %0A%09fo\n@@ -206,20 +206,17 @@\n %09if \n-fila%5Bi%5D == 0\n+mortos%5Bi%5D\n  %7B%0A%09\n@@ -230,16 +230,33 @@\n nue%0A%09%09%7D%0A\n+%09%09fmt.Print(%22%5B %22)\n %0A%09%09fmt.P\n@@ -269,14 +269,31 @@\n ila%5Bi%5D)%0A\n+%09%09fmt.Print(%22 %5D%22)\n %0A%09%7D%0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-23_16-39-48",
+            "content": "@@ -141,16 +141,32 @@\n +1)%0A%09%7D%0A%0A\n+%09fila%5BE-1%5D = 0%0A%0A\n %09for i :\n@@ -235,17 +235,9 @@\n rint\n-f(%22%25v %22, \n+(\n fila\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-23_16-41-14",
+            "content": "@@ -208,94 +208,8 @@\n %09%7D%0A%0A\n-%09%09if fila%5Bi%5D == E %7B%0A%09%09%09fmt.Printf(%22%25v%3E %22, fila%5Bi%5D)%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09fmt.Print(%22%5B %22)%0A\n %09%09fm\n@@ -236,26 +236,8 @@\n %5Bi%5D)\n-%0A%09%09fmt.Print(%22 %5D%22)\n %0A%0A%09%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-23_16-43-04",
+            "content": "@@ -287,24 +287,60 @@\n rint\n-f(%22%25v %22, fila%5Bi%5D\n+(%22%5B %22)%0A%09%09fmt.Printf(%22%25v %22, fila%5Bi%5D)%0A%09%09fmt.Print(%22 %5D%22\n )%0A%0A%09\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-23_16-44-01",
+            "content": "@@ -30,651 +30,285 @@\n unc \n-imprimir_fila(fila %5B%5Dint, espada int) %7B%0A%09fmt.Print(%22%5B %22)%0A%09for i := 0; i %3C len(fila); i++ %7B%0A%09%09if i == espada %7B%0A%09%09%09fmt.Printf(%22%25v%3E %22, fila%5Bi%5D)%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09fmt.Printf(%22%25v %22, fila%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(%22 %5D%5Cn%22)%0A%7D%0A%0Afunc tirar_morto(fila %5B%5Dint, morto int) %5B%5Dint %7B%0A%09return append(fila%5B:morto%5D, fila%5Bmorto+1:%5D...)%0A%7D%0A%0Afunc main() %7B%0A%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%0A%09var fila %5B%5Dint%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09fila = append(fila, i+1)%0A%09%7D%0A%0A%09espada := E - 1%0A%0A%09for len(fila) %3E 1 %7B%0A%09%09imprimir_fila(fila, espada)%0A%0A%09%09morto := (espada + 1) %25 len(fila)%0A%09%09fila = tirar_morto(fila, morto\n+main() %7B%0A%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%0A%09var fila %5B%5Dint%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09fila = append(fila, i+1)%0A%09%7D%0A%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09if fila%5Bi%5D == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09if fila%5Bi%5D == E %7B%0A%09%09%09fmt.Printf(%22%25v%3E %22, fila%5Bi%5D\n )%0A\n-%0A\n %09%09\n-espada = morto %25 len(fila)%0A%09%7D%0A%0A%09imprimir_fila(fila, espada)\n+%09continue%0A%09%09%7D%0A%0A%09%09fmt.Printf(%22%25v %22, fila%5Bi%5D)%0A%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-24_03-31-42",
+            "content": "@@ -117,17 +117,16 @@\n ; i++ %7B%0A\n-%0A\n %09%09if i =\n@@ -154,16 +154,17 @@\n ntf(%22%25v%3E\n+ \n %22, fila%5B\n@@ -207,16 +207,17 @@\n intf(%22%25v\n+ \n %22, fila%5B\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-24_03-39-07",
+            "content": "@@ -121,51 +121,8 @@\n + %7B%0A\n-%09%09if i %3C len(fila)--%7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D\n %0A%09%09i\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-24_03-40-01",
+            "content": "@@ -136,18 +136,17 @@\n n(fila)-\n-1 \n+-\n %7B%0A%09%09%09fmt\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-24_03-40-18",
+            "content": "@@ -117,16 +117,61 @@\n ; i++ %7B%0A\n+%09%09if i %3C len(fila)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A\n %09%09if i =\n@@ -227,56 +227,8 @@\n nue%0A\n-%09%09%7D else if i %3C len(fila)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A\n %09%09%7D \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-24_03-41-04",
+            "content": "@@ -187,16 +187,35 @@\n %09%7D else \n+if i %3C len(fila)-1 \n %7B%0A%09%09%09fmt\n@@ -224,49 +224,22 @@\n rint\n-f\n (%22\n-%25v%22, fila%5Bi%5D)%0A%09%09%7D%0A%09%09if i %3C len(fila)-1\n+ %22)%0A%09%09%7D else\n  %7B%0A%09\n@@ -245,28 +245,39 @@\n %09%09%09fmt.Print\n+f\n (%22\n- %22\n+%25v%22, fila%5Bi%5D\n )%0A%09%09%7D%0A%09%7D%0A%09fm\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-24_03-42-09",
+            "content": "@@ -154,17 +154,16 @@\n ntf(%22%25v%3E\n- \n %22, fila%5B\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-24_03-42-44",
+            "content": "@@ -154,16 +154,17 @@\n ntf(%22%25v%3E\n+ \n %22, fila%5B\n@@ -171,56 +171,8 @@\n i%5D)%0A\n-%09%09%09if i %3C len(fila)-1 %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A\n %09%09%09c\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-24_03-43-16",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir_fila(fila []int, espada int) {\n\tfmt.Print(\"[ \")\n\tfor i := 0; i < len(fila); i++ {\n\t\tif i == espada {\n\t\t\tfmt.Printf(\"%v>\", fila[i])\n\t\t\tif i < len(fila)-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tcontinue\n\t\t} else {\n\t\t\tfmt.Printf(\"%v\", fila[i])\n\t\t}\n\t\tif i < len(fila)-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tfmt.Print(\" ]\\n\")\n}\n\nfunc tirar_morto(fila []int, morto int) []int {\n\treturn append(fila[:morto], fila[morto+1:]...)\n}\n\nfunc main() {\n\tvar N, E int\n\tfmt.Scan(&N, &E)\n\n\tvar fila []int\n\tfor i := 0; i < N; i++ {\n\t\tfila = append(fila, i+1)\n\t}\n\n\tespada := E - 1\n\n\tfor len(fila) > 1 {\n\t\timprimir_fila(fila, espada)\n\n\t\tmorto := (espada + 1) % len(fila)\n\t\tfila = tirar_morto(fila, morto)\n\n\t\tespada = morto % len(fila)\n\t}\n\n\timprimir_fila(fila, espada)\n}\n",
+            "lines": "49"
+        }
+    ]
+}

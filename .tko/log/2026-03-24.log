@@ -1,0 +1,28 @@
+2026-03-24 03:25:03, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-24 03:31:24, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-24 03:31:42, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:43
+2026-03-24 03:31:44, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-24 03:31:45, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-24 03:32:07, MOVE, v:1, k:ed@pintando, mode:PICK
+2026-03-24 03:32:09, EXEC, v:1, k:ed@pintando, mode:FULL, rate:100
+2026-03-24 03:32:10, MOVE, v:1, k:ed@pintando, mode:BACK
+2026-03-24 03:35:41, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-24 03:35:42, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-24 03:36:08, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-24 03:38:10, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-24 03:38:51, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-24 03:38:55, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-24 03:39:07, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:44
+2026-03-24 03:40:01, EXEC, v:1, k:ed@princesa, mode:FULL, size:46, fail:COMP
+2026-03-24 03:40:18, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:46
+2026-03-24 03:41:04, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:45
+2026-03-24 03:42:09, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:46
+2026-03-24 03:42:44, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:46
+2026-03-24 03:43:16, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:49
+2026-03-24 03:43:22, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100
+2026-03-24 03:43:23, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-24 03:43:55, SELF, v:1, k:ed@princesa, self:1, rate:100, study:120, friend:no, code:1
+2026-03-24 03:44:03, SELF, v:1, k:ed@princesa, self:1, rate:100, study:120, friend:no
+2026-03-24 03:44:14, SELF, v:1, k:ed@princesa, self:1, rate:100, study:120, friend:no, code:1
+2026-03-24 03:44:22, SELF, v:1, k:ed@princesa, self:1, rate:100, study:120, friend:noqq, code:1
+2026-03-24 03:44:45, SELF, v:1, k:ed@princesa, self:1, rate:100, study:120, friend:noqq, refactor:1
