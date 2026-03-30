@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_16-33-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tfila := make([]int, N)\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar M int\n\tfmt.Scan(&M)\n\tdeix_fila := make(map[int]bool)\n\tfor i := 0; i < M; i++ {\n\t\tvar temp int\n\t\tfmt.Scan(&temp)\n\t\tdeix_fila[temp] = true\n\t}\n\n\tvar final []int\n\tfor i := 0; i < N; i++ {\n\t\tif deix_fila[fila[i]] {\n\t\t\tcontinue\n\t\t} else {\n\t\t\tfinal = append(final, fila[i])\n\t\t}\n\n\t}\n\n\tfor i := 0; i < len(final); i++ {\n\t\tfmt.Print(final[i], \" \")\n\t\tif i == len(final)-1 {\n\t\t\tfmt.Println()\n\t\t}\n\t}\n}\n",
+            "lines": "40"
+        }
+    ]
+}

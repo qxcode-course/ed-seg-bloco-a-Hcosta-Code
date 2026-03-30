@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_16-33-49",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype cod struct {\n\tstr string\n\tqtd int\n}\n\nfunc main() {\n\tvar entrada, verifica int\n\tfmt.Scan(&entrada)\n\tentrando := make(map[string]int)\n\tfor i := 0; i < entrada; i++ {\n\t\tvar temp string\n\t\tfmt.Scan(&temp)\n\t\tentrando[temp]++\n\t}\n\n\tfmt.Scan(&verifica)\n\tverificando := make([]cod, verifica)\n\tfor i := 0; i < verifica; i++ {\n\t\tfmt.Scan(&verificando[i].str)\n\t\tverificando[i].qtd = 0\n\t}\n\n\tfor i := 0; i < verifica; i++ {\n\t\tcodigoProcurado := verificando[i].str\n\t\tverificando[i].qtd = entrando[codigoProcurado]\n\t}\n\n\tfor i := 0; i < verifica; i++ {\n\t\tif i < verifica-1 {\n\t\t\tfmt.Print(verificando[i].qtd, \" \")\n\t\t} else {\n\t\t\tfmt.Print(verificando[i].qtd)\n\t\t}\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "42"
+        }
+    ]
+}
