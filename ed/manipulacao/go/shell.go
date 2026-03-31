@@ -4,33 +4,66 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+	var homens []int
+
+	for _, valor := range vet {
+		if valor > 0 {
+			homens = append(homens, valor)
+		}
+	}
+
+	return homens
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	var mulheres []int
+
+	for _, valor := range vet {
+		if valor < 0 {
+			tempo := valor * -1
+			if tempo < 10 {
+				mulheres = append(mulheres, valor)
+			}
+		}
+	}
+
+	return mulheres
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	sort.Ints(vet)
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	sort.Slice(vet, func(i, j int) bool {
+		a1 := vet[i]
+		if a1 < 0 {
+			a1 = a1 * -1
+		}
+
+		a2 := vet[j]
+		if a2 < 0 {
+			a2 = a2 * -1
+		}
+
+		return a1 < a2
+	})
+	return vet
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	var opost []int
+	for i := len(vet) - 1; i >= 0; i-- {
+		opost = append(opost, vet[i])
+	}
+	return opost
 }
 
 func unique(vet []int) []int {
@@ -103,4 +136,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-
