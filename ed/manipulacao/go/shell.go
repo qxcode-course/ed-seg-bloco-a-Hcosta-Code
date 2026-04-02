@@ -66,14 +66,34 @@ func reverse(vet []int) []int {
 	return opost
 }
 
-func unique(vet []int) []int {
-	_ = vet
-	return nil
+func repeated(vet []int) []int {
+	unico := make(map[int]bool)
+	var clone []int
+
+	for _, val := range vet {
+
+		if !unico[val] {
+			unico[val] = true
+			continue
+		} else {
+			clone = append(clone, val)
+		}
+	}
+	return clone
 }
 
-func repeated(vet []int) []int {
-	_ = vet
-	return nil
+func unique(vet []int) []int {
+	unico := make(map[int]bool)
+	var clone []int
+
+	for _, val := range vet {
+
+		if !unico[val] {
+			unico[val] = true
+			clone = append(clone, val)
+		}
+	}
+	return clone
 }
 
 func main() {
