@@ -1,0 +1,184 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-05_22-59-59",
+            "content": "@@ -98,270 +98,26 @@\n g %7B%0A\n-%0A%09if len(vet) == 1 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A%0A%09var proces func(temp %5B%5Dint) string%0A%09proces = func(temp %5B%5Dint) string %7B%0A%09%09if len(temp) == 1 %7B%0A%09%09%09return strconv.Itoa(temp%5B0%5D)%0A%09%09%7D%0A%0A%09%09return strconv.Itoa(temp%5B0%5D) + %22, %22 + proces(temp%5B1:%5D)%0A%0A%09%7D%0A%0A%09return %22%5B%22 + proces(vet) + %22%5D\n+%09_ = vet%0A%09return %22\n %22%0A%7D%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-04-05_23-25-47",
+            "content": "@@ -111,17 +111,17 @@\n vet) == \n-0\n+1\n  %7B%0A%09%09ret\n@@ -129,24 +129,16 @@\n rn %22%5B%5D%22%0A\n-%09%09break%0A\n %09%7D%0A%0A%09var\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-05_23-29-35",
+            "content": "@@ -135,16 +135,13 @@\n %22%0A%09%09\n-continue\n+break\n %0A%09%7D%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-04-05_23-30-31",
+            "content": "@@ -95,16 +95,65 @@\n ring %7B%0A%0A\n+%09if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%09continue%0A%09%7D%0A%0A\n %09var pro\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-04-05_23-30-43",
+            "content": "@@ -99,48 +99,8 @@\n  %7B%0A%0A\n-%09if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%5Cn%22%0A%09%7D%0A%0A\n %09var\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-05_23-32-10",
+            "content": "@@ -358,18 +358,16 @@\n et) + %22%5D\n-%5Cn\n %22%0A%7D%0A%0Afun\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-05_23-32-30",
+            "content": "@@ -127,16 +127,18 @@\n turn %22%5B%5D\n+%5Cn\n %22%0A%09%7D%0A%0A%09v\n@@ -358,16 +358,18 @@\n et) + %22%5D\n+%5Cn\n %22%0A%7D%0A%0Afun\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-05_23-33-08",
+            "content": "@@ -400,268 +400,25 @@\n  %7B%0A%09\n-if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A%0A%09var proces func(temp %5B%5Dint) string%0A%09proces = func(temp %5B%5Dint) string %7B%0A%09%09if len(temp) == 1 %7B%0A%09%09%09return strconv.Itoa(temp%5B0%5D)%0A%09%09%7D%0A%0A%09%09return strconv.Itoa(temp%5B0%5D) + %22, %22 + proces(temp%5B1:%5D)%0A%0A%09%7D%0A%0A%09return %22%5B%22 + proces(vet) + %22%5D\n+_ = vet%0A%09return %22\n %22%0A%7D%0A\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-05_23-35-41",
+            "content": "@@ -591,25 +591,17 @@\n oa(temp%5B\n-len(temp)\n+0\n %5D) + %22, \n@@ -620,20 +620,10 @@\n emp%5B\n-:len(temp)-\n 1\n+:\n %5D)%0A%0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-37-22",
+            "content": "@@ -591,17 +591,25 @@\n oa(temp%5B\n-1\n+len(temp)\n %5D) + %22, \n@@ -628,10 +628,20 @@\n emp%5B\n-0\n :\n+len(temp)-1\n %5D)%0A%0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-38-15",
+            "content": "@@ -595,18 +595,8 @@\n emp%5B\n-len(temp)-\n 1%5D) \n@@ -608,33 +608,33 @@\n %22 + proces(temp%5B\n-1\n+0\n :%5D)%0A%0A%09%7D%0A%0A%09return\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-39-10",
+            "content": "@@ -630,20 +630,10 @@\n emp%5B\n+1\n :\n-len(temp)-2\n %5D)%0A%0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-39-48",
+            "content": "@@ -626,17 +626,16 @@\n es(temp%5B\n-1\n :len(tem\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-41-11",
+            "content": "@@ -638,17 +638,17 @@\n n(temp)-\n-1\n+2\n %5D)%0A%0A%09%7D%0A%0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-41-31",
+            "content": "@@ -568,40 +568,8 @@\n %09%7D%0A%0A\n-%09%09ultimoIndice := len(temp) - 1%0A\n %09%09re\n@@ -630,27 +630,29 @@\n emp%5B\n-:ultimoIndice\n+1:len(temp)-1\n %5D)%0A\n+%0A\n %09%7D%0A\n+%0A\n %09ret\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-04-05_23-45-56",
+            "content": "@@ -659,27 +659,28 @@\n s(temp%5B:\n-len(temp)-1\n+ultimoIndice\n %5D)%0A%09%7D%0A%09r\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-04-05_23-46-53",
+            "content": "@@ -556,32 +556,64 @@\n a(temp%5B0%5D)%0A%09%09%7D%0A%0A\n+%09%09ultimoIndice := len(temp) - 1%0A\n %09%09return strconv\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-04-05_23-47-02",
+            "content": "@@ -752,108 +752,14 @@\n  %7B%0A%09\n-var opost %5B%5Dint%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09opost = append(opost, vet%5Bi%5D)%0A%09%7D%0A%09vet = opos\n+_ = ve\n t%0A%7D%0A\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-04-05_23-53-57",
+            "content": "@@ -747,16 +747,118 @@\n %5Dint) %7B%0A\n+%09var opost %5B%5Dint%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09opost = append(opost, vet%5Bi%5D)%0A%09%7D%0A%09vet = opost\n %0A%7D%0A%0A// s\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-05_23-56-18",
+            "content": "@@ -751,110 +751,8 @@\n ) %7B%0A\n-%09var opost %5B%5Dint%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09opost = append(opost, vet%5Bi%5D)%0A%09%7D%0A%09vet = opost\n %0A%7D%0A%0A\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-04-05_23-56-41",
+            "content": "@@ -842,24 +842,19 @@\n %09%7D%0A%09\n-copy(\n vet\n-,\n+ =\n  opost\n-)\n %0A%7D%0A%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-05_23-59-28",
+            "content": "@@ -925,65 +925,15 @@\n  %7B%0A%09\n-var temp int%0A%09for _, val := range vet %7B%0A%09%09temp += val%0A%09%7D%0A\n+_ = vet\n %0A%09re\n@@ -937,20 +937,17 @@\n %09return \n-temp\n+0\n %0A%7D%0A%0A// m\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-06_00-02-21",
+            "content": "@@ -1067,102 +1067,15 @@\n  %7B%0A%09\n-var temp int%0A%09var temp2 int%0A%09for _, val := range vet %7B%0A%09%09temp2 = temp * val%0A%09%09temp = temp2%0A%09%7D%0A\n+_ = vet\n %0A%09re\n@@ -1071,36 +1071,33 @@\n _ = vet%0A%09return \n-temp\n+0\n %0A%7D%0A%0A// min: reto\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-04-06_00-04-34",
+            "content": "@@ -1071,154 +1071,107 @@\n var \n-proces func(temp %5B%5Dint) int%0A%09proces = func(temp %5B%5Dint) int %7B%0A%09%09if len(temp) == 1 %7B%0A%09%09%09return 1%0A%09%09%7D%0A%09%09return temp%5B0%5D * proces(temp%5B1:%5D)\n+temp int%0A%09var temp2 int%0A%09for _, val := range vet %7B%0A%09%09temp2 = temp * val%0A%09%09temp = temp2\n %0A%09%7D%0A\n+%0A\n %09return \n proc\n@@ -1166,27 +1166,20 @@\n %09return \n-proces(vet)\n+temp\n %0A%7D%0A%0A// m\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-04-06_00-11-59",
+            "content": "@@ -1160,23 +1160,17 @@\n %09return \n-temp%5B0%5D\n+1\n %0A%09%09%7D%0A%09%09r\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-04-06_00-13-29",
+            "content": "@@ -1066,110 +1066,8 @@\n t %7B%0A\n-%0A%09if len(vet) == 0 %7B%0A%09%09return 0 // Ou 1, dependendo da regra de neg%C3%B3cio (geralmente 0 para vazio)%0A%09%7D%0A%0A\n %09var\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-04-06_00-13-59",
+            "content": "@@ -1092,17 +1092,17 @@\n %09return \n-1\n+0\n  // Ou 1\n",
+            "lines": "128"
+        },
+        {
+            "label": "2026-04-06_00-14-47",
+            "content": "@@ -1551,213 +1551,26 @@\n t %7B%0A\n-%0A%09if len(vet) == 0 %7B%0A%09%09return -1%0A%09%7D%0A%0A%09var proces func(temp %5B%5Dint) int%0A%09proces = func(temp %5B%5Dint) int %7B%0A%09%09if len(temp) == 1 %7B%0A%09%09%09return temp%5B0%5D%0A%09%09%7D%0A%09%09return temp%5B0%5D * proces(temp%5B1:%5D)%0A%09%7D%0A%09return proces(vet)\n+%09_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "128"
+        },
+        {
+            "label": "2026-04-06_00-17-04",
+            "content": "@@ -1696,18 +1696,22 @@\n %5D%0A%09%09%7D%0A%09%09\n-if\n+return\n  temp%5B0%5D\n@@ -1715,9 +1715,9 @@\n %5B0%5D \n-%3C\n+*\n  pro\n@@ -1733,61 +1733,8 @@\n 1:%5D)\n- %7B%0A%09%09%09return temp%5B1%5D%0A%09%09%7D else %7B%0A%09%09%09return temp%5B0%5D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-04-06_00-21-11",
+            "content": "@@ -1693,22 +1693,19 @@\n p%5B0%5D%0A%09%09%7D\n- else \n+%0A%09%09\n if temp%5B\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-04-06_00-23-29",
+            "content": "@@ -1686,12 +1686,107 @@\n urn \n-0%0A%09%09\n+temp%5B0%5D%0A%09%09%7D else if temp%5B0%5D %3C proces(temp%5B1:%5D) %7B%0A%09%09%09return temp%5B1%5D%0A%09%09%7D else %7B%0A%09%09%09return temp%5B0%5D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-04-06_00-24-35",
+            "content": "@@ -42,18 +42,8 @@\n os%22%0A\n-%09%22slices%22%0A\n %09%22st\n@@ -1686,145 +1686,12 @@\n urn \n-temp%5B0%5D%0A%09%09%7D else if temp%5B0%5D %3C proces(temp%5B1:%5D) %7B%0A%09%09%09return slices.Index(vet, temp%5B0%5D)%0A%09%09%7D else %7B%0A%09%09%09return slices.Index(vet, temp%5B1%5D)%0A%09%09%7D\n+0%0A%09%09\n %0A%09%7D%0A\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-04-06_00-29-24",
+            "content": "@@ -1692,17 +1692,23 @@\n %09return \n-0\n+temp%5B0%5D\n %0A%09%09%7D els\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-04-06_00-29-48",
+            "content": "@@ -38,16 +38,26 @@\n %22%0A%09%22os%22%0A\n+%09%22slices%22%0A\n %09%22strcon\n@@ -1557,16 +1557,17 @@\n ) int %7B%0A\n+%0A\n %09if len(\n@@ -1593,23 +1593,8 @@\n n -1\n- // Lista vazia\n %0A%09%7D%0A\n@@ -1666,180 +1666,61 @@\n %7B%0A%09%09\n-// Caso base: se s%C3%B3 tem um, ele %C3%A9 o menor%0A%09%09if len(temp) == 1 %7B%0A%09%09%09return temp%5B0%5D%0A%09%09%7D%0A%0A%09%09// 1. Resolvemos a recurs%C3%A3o uma %C3%BAnica vez e guardamos o resultado%0A%09%09menorDoResto :=\n+if len(temp) == 1 %7B%0A%09%09%09return 0%0A%09%09%7D else if temp%5B0%5D %3C\n  pro\n@@ -1736,148 +1736,102 @@\n 1:%5D)\n-%0A%0A%09%09// 2. Comparamos o atual com o menor que veio l%C3%A1 da frente%0A%09%09if temp%5B0%5D %3C menorDoResto %7B%0A%09%09%09return\n+ %7B%0A%09%09%09return slices.Index(vet, temp%5B0%5D)%0A%09%09%7D else %7B%0A%09%09%09return slices.Index(vet,\n  temp%5B\n-0%5D\n+1%5D)\n %0A%09%09%7D%0A%09\n-%09return menorDoResto%0A%09%7D%0A\n+%7D\n %0A%09re\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-04-06_00-31-27",
+            "content": "@@ -1551,68 +1551,8 @@\n t %7B%0A\n-%09// Caso para lista vazia (conforme sua imagem, retorna -1)%0A\n %09if \n@@ -1578,16 +1578,31 @@\n eturn -1\n+ // Lista vazia\n %0A%09%7D%0A%0A%09va\n@@ -1611,31 +1611,31 @@\n proces func(\n-inicio \n+temp %5B%5D\n int) int%0A%09pr\n@@ -1646,23 +1646,23 @@\n  = func(\n-inicio \n+temp %5B%5D\n int) int\n@@ -1674,110 +1674,64 @@\n // C\n-ASO BASE: Se chegamos no %C3%BAltimo elemento,%0A%09%09// o %C3%ADndice do menor %C3%A9 ele mesmo.%0A%09%09if inicio == len(vet)-\n+aso base: se s%C3%B3 tem um, ele %C3%A9 o menor%0A%09%09if len(temp) == \n 1 %7B%0A\n@@ -1736,30 +1736,31 @@\n %7B%0A%09%09%09return \n-inicio\n+temp%5B0%5D\n %0A%09%09%7D%0A%0A%09%09// 1\n@@ -1765,71 +1765,71 @@\n  1. \n-Pega o %C3%ADndice do menor elemento que est%C3%A1 l%C3%A1 na frente%0A%09%09indiceM\n+Resolvemos a recurs%C3%A3o uma %C3%BAnica vez e guardamos o resultado%0A%09%09m\n enor\n@@ -1850,18 +1850,16 @@\n ces(\n-inicio + 1\n+temp%5B1:%5D\n )%0A%0A%09\n@@ -1876,71 +1876,45 @@\n para\n- o VALOR do elemento atual com o VALOR do menor encontrad\n+mos o atual com o menor que vei\n o l%C3%A1 \n-n\n+d\n a fr\n@@ -1924,118 +1924,22 @@\n e%0A%09%09\n-// Usamos vet%5Binicio%5D e vet%5BindiceMenorDoResto%5D para comparar os n%C3%BAmeros reais%0A%09%09if vet%5Binicio%5D %3C= vet%5BindiceM\n+if temp%5B0%5D %3C m\n enor\n@@ -1945,17 +1945,16 @@\n rDoResto\n-%5D\n  %7B%0A%09%09%09re\n@@ -1962,14 +1962,15 @@\n urn \n-inicio\n+temp%5B0%5D\n %0A%09%09%7D\n@@ -1983,15 +1983,9 @@\n urn \n-indiceM\n+m\n enor\n@@ -2011,17 +2011,19 @@\n  proces(\n-0\n+vet\n )%0A%7D%0A%0Afun\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-04-06_00-32-48",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc tostr(vet []int) string {\n\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\n\tvar proces func(temp []int) string\n\tproces = func(temp []int) string {\n\t\tif len(temp) == 1 {\n\t\t\treturn strconv.Itoa(temp[0])\n\t\t}\n\n\t\treturn strconv.Itoa(temp[0]) + \", \" + proces(temp[1:])\n\n\t}\n\n\treturn \"[\" + proces(vet) + \"]\"\n}\n\nfunc tostrrev(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\n\tvar proces func(temp []int) string\n\tproces = func(temp []int) string {\n\t\tif len(temp) == 1 {\n\t\t\treturn strconv.Itoa(temp[0])\n\t\t}\n\n\t\treturn strconv.Itoa(temp[len(temp)-1]) + \", \" + proces(temp[:len(temp)-1])\n\t}\n\treturn \"[\" + proces(vet) + \"]\"\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\tvar opost []int\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\topost = append(opost, vet[i])\n\t}\n\tcopy(vet, opost)\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\tvar temp int\n\tfor _, val := range vet {\n\t\ttemp += val\n\t}\n\n\treturn temp\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\n\tif len(vet) == 0 {\n\t\treturn 1 // Ou 1, dependendo da regra de neg\u00f3cio (geralmente 0 para vazio)\n\t}\n\n\tvar proces func(temp []int) int\n\tproces = func(temp []int) int {\n\t\tif len(temp) == 1 {\n\t\t\treturn temp[0]\n\t\t}\n\t\treturn temp[0] * proces(temp[1:])\n\t}\n\treturn proces(vet)\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t// Caso para lista vazia (conforme sua imagem, retorna -1)\n\tif len(vet) == 0 {\n\t\treturn -1\n\t}\n\n\tvar proces func(inicio int) int\n\tproces = func(inicio int) int {\n\t\t// CASO BASE: Se chegamos no \u00faltimo elemento,\n\t\t// o \u00edndice do menor \u00e9 ele mesmo.\n\t\tif inicio == len(vet)-1 {\n\t\t\treturn inicio\n\t\t}\n\n\t\t// 1. Pega o \u00edndice do menor elemento que est\u00e1 l\u00e1 na frente\n\t\tindiceMenorDoResto := proces(inicio + 1)\n\n\t\t// 2. Compara o VALOR do elemento atual com o VALOR do menor encontrado l\u00e1 na frente\n\t\t// Usamos vet[inicio] e vet[indiceMenorDoResto] para comparar os n\u00fameros reais\n\t\tif vet[inicio] <= vet[indiceMenorDoResto] {\n\t\t\treturn inicio\n\t\t}\n\t\treturn indiceMenorDoResto\n\t}\n\n\treturn proces(0)\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "151"
+        }
+    ]
+}

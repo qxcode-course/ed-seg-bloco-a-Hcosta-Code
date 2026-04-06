@@ -1,0 +1,33 @@
+2026-04-06 00:02:21, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:117
+2026-04-06 00:04:34, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:123
+2026-04-06 00:11:59, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:123
+2026-04-06 00:13:30, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:123
+2026-04-06 00:13:59, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:128
+2026-04-06 00:14:47, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:128
+2026-04-06 00:17:04, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:139
+2026-04-06 00:21:11, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:143
+2026-04-06 00:23:29, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:142
+2026-04-06 00:24:35, EXEC, v:1, k:ed@treinando, mode:FULL, size:138, fail:COMP
+2026-04-06 00:29:24, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:143
+2026-04-06 00:29:48, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:143
+2026-04-06 00:31:27, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:148
+2026-04-06 00:31:54, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-06 00:32:46, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-06 00:32:48, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:151
+2026-04-06 00:32:52, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-06 00:33:49, SELF, v:1, k:ed@treinando, self:1, rate:100, study:92, concept:1, problem:1, debug:1
+2026-04-06 00:33:56, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-04-06 00:33:59, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-06 00:34:01, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:5
+2026-04-06 01:15:40, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:18
+2026-04-06 01:27:27, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:30
+2026-04-06 01:27:30, MOVE, v:1, k:ed@resto, mode:BACK
+2026-04-06 01:27:44, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-06 01:27:46, EXEC, v:1, k:ed@resto, mode:FULL, rate:0
+2026-04-06 01:28:01, EXEC, v:1, k:ed@resto, mode:FULL, rate:0
+2026-04-06 01:29:31, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:30
+2026-04-06 01:33:00, MOVE, v:1, k:ed@resto, mode:BACK
+2026-04-06 01:33:33, SELF, v:1, k:ed@resto, self:1, rate:100, study:59
+2026-04-06 01:33:37, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-06 01:33:39, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100
+2026-04-06 01:33:40, MOVE, v:1, k:ed@treinando, mode:BACK
