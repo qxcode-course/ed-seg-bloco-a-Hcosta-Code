@@ -17,8 +17,53 @@
         },
         {
             "label": "2026-03-31_17-05-59",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"sort\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvar homens []int\n\n\tfor _, valor := range vet {\n\t\tif valor > 0 {\n\t\t\thomens = append(homens, valor)\n\t\t}\n\t}\n\n\treturn homens\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvar mulheres []int\n\n\tfor _, valor := range vet {\n\t\tif valor < 0 {\n\t\t\ttempo := valor * -1\n\t\t\tif tempo < 10 {\n\t\t\t\tmulheres = append(mulheres, valor)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn mulheres\n}\n\nfunc sortVet(vet []int) []int {\n\tsort.Ints(vet)\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\tsort.Slice(vet, func(i, j int) bool {\n\t\ta1 := vet[i]\n\t\tif a1 < 0 {\n\t\t\ta1 = a1 * -1\n\t\t}\n\n\t\ta2 := vet[j]\n\t\tif a2 < 0 {\n\t\t\ta2 = a2 * -1\n\t\t}\n\n\t\treturn a1 < a2\n\t})\n\treturn vet\n}\n\nfunc reverse(vet []int) []int {\n\tvar opost []int\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\topost = append(opost, vet[i])\n\t}\n\treturn opost\n}\n\nfunc unique(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "content": "@@ -950,152 +950,27 @@\n  %7B%0A%09\n-unico := make(map%5Bint%5Dbool)%0A%09for _, val := range vet %7B%0A%09%09if unico%5Bval%5D == true %7B%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09unico%5Bval%5D = true%0A%09%09%7D%0A%09%7D%0A%0A%09return vet\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
             "lines": "138"
+        },
+        {
+            "label": "2026-04-02_15-28-21",
+            "content": "@@ -1087,21 +1087,19 @@\n %09return \n-unico\n+vet\n %0A%7D%0A%0Afunc\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-04-02_15-29-34",
+            "content": "@@ -978,26 +978,8 @@\n ol)%0A\n-%09var clone %5B%5Dint%0A%0A\n %09for\n@@ -1006,17 +1006,16 @@\n  %7B%0A%09%09if \n-!\n unico%5Bva\n@@ -1021,60 +1021,61 @@\n al%5D \n-%7B%0A%09%09%09unico%5Bval%5D \n+=\n = true\n+ %7B\n %0A%09%09%09c\n-l\n on\n-e = append(clone, val)\n+tinue%0A%09%09%7D else %7B%0A%09%09%09unico%5Bval%5D = true\n %0A%09%09%7D\n@@ -1091,13 +1091,13 @@\n urn \n-clone\n+unico\n %0A%7D%0A%0A\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-04-02_15-33-34",
+            "content": "@@ -1001,29 +1001,28 @@\n for \n-i:=0; i%3C len\n+_, val := range\n  vet \n-;i++\n %7B%0A%09%09\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-04-02_15-37-13",
+            "content": "@@ -1002,33 +1002,28 @@\n or i\n- \n :=\n- \n 0; i\n- \n %3C len\n-(\n+ \n vet\n-);\n  \n+;\n i++\n- \n %7B%0A%09%09\n@@ -1032,17 +1032,19 @@\n  !unico%5B\n-i\n+val\n %5D %7B%0A%09%09%09u\n@@ -1048,17 +1048,19 @@\n %09%09unico%5B\n-i\n+val\n %5D = true\n@@ -1085,17 +1085,19 @@\n (clone, \n-i\n+val\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-04-02_15-37-21",
+            "content": "@@ -1029,31 +1029,8 @@\n + %7B%0A\n-%09%09valorreal := vet%5Bi%5D%0A%0A\n %09%09if\n@@ -1037,25 +1037,17 @@\n  !unico%5B\n-valorreal\n+i\n %5D %7B%0A%09%09%09u\n@@ -1051,25 +1051,17 @@\n %09%09unico%5B\n-valorreal\n+i\n %5D = true\n@@ -1090,17 +1090,9 @@\n ne, \n-valorreal\n+i\n )%0A%09%09\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-04-02_15-39-19",
+            "content": "@@ -862,24 +862,22 @@\n %7D%0A%0Afunc \n-repeated\n+unique\n (vet %5B%5Di\n@@ -909,38 +909,40 @@\n urn nil%0A%7D%0A%0Afunc \n-unique\n+repeated\n (vet %5B%5Dint) %5B%5Din\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-04-02_15-40-26",
+            "content": "@@ -1001,29 +1001,57 @@\n for \n-_, val := range vet %7B\n+i := 0; i %3C len(vet); i++ %7B%0A%09%09valorreal := vet%5Bi%5D\n %0A%0A%09%09\n@@ -1063,16 +1063,22 @@\n nico%5Bval\n+orreal\n %5D %7B%0A%09%09%09u\n@@ -1085,16 +1085,22 @@\n nico%5Bval\n+orreal\n %5D = true\n@@ -1128,16 +1128,22 @@\n one, val\n+orreal\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-04-02_15-41-56",
+            "content": "@@ -895,195 +895,27 @@\n  %7B%0A%09\n-unico := make(map%5Bint%5Dbool)%0A%09var clone %5B%5Dint%0A%0A%09for _, val := range vet %7B%0A%0A%09%09if !unico%5Bval%5D %7B%0A%09%09%09unico%5Bval%5D = true%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09clone = append(clone, val)%0A%09%09%7D%0A%09%7D%0A%09return clone\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n@@ -1094,19 +1094,20 @@\n al)%0A%09%09%7D%0A\n-\n %09%7D%0A\n+%0A\n %09return \n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-04-02_15-43-04",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"sort\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvar homens []int\n\n\tfor _, valor := range vet {\n\t\tif valor > 0 {\n\t\t\thomens = append(homens, valor)\n\t\t}\n\t}\n\n\treturn homens\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvar mulheres []int\n\n\tfor _, valor := range vet {\n\t\tif valor < 0 {\n\t\t\ttempo := valor * -1\n\t\t\tif tempo < 10 {\n\t\t\t\tmulheres = append(mulheres, valor)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn mulheres\n}\n\nfunc sortVet(vet []int) []int {\n\tsort.Ints(vet)\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\tsort.Slice(vet, func(i, j int) bool {\n\t\ta1 := vet[i]\n\t\tif a1 < 0 {\n\t\t\ta1 = a1 * -1\n\t\t}\n\n\t\ta2 := vet[j]\n\t\tif a2 < 0 {\n\t\t\ta2 = a2 * -1\n\t\t}\n\n\t\treturn a1 < a2\n\t})\n\treturn vet\n}\n\nfunc reverse(vet []int) []int {\n\tvar opost []int\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\topost = append(opost, vet[i])\n\t}\n\treturn opost\n}\n\nfunc repeated(vet []int) []int {\n\tunico := make(map[int]bool)\n\tvar clone []int\n\n\tfor _, val := range vet {\n\n\t\tif !unico[val] {\n\t\t\tunico[val] = true\n\t\t\tcontinue\n\t\t} else {\n\t\t\tclone = append(clone, val)\n\t\t}\n\t}\n\treturn clone\n}\n\nfunc unique(vet []int) []int {\n\tunico := make(map[int]bool)\n\tvar clone []int\n\n\tfor _, val := range vet {\n\n\t\tif !unico[val] {\n\t\t\tunico[val] = true\n\t\t\tclone = append(clone, val)\n\t\t}\n\t}\n\treturn clone\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "lines": "158"
         }
     ]
 }
