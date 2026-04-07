@@ -8,5 +8,5 @@ Sinta-se à vontade para organizar seus rascunhos em subpastas dentro do sandbox
 ## sandbox
 
 <!--autoload_cluster=.-->
-- [ ] `@user_001` [Testando recur](user_001\README.md)
+- [ ]`@user_001 `  [Testando recur](user_001\README.md)
 

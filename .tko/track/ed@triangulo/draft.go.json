@@ -2,8 +2,83 @@
     "patches": [
         {
             "label": "2026-03-10_17-04-22",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"qxcode\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,9 +37,12 @@\n ) %7B%0A\n-%09\n+    \n fmt.\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-04-06_15-43-52",
+            "content": "@@ -18,24 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22io%22%0A)\n %0A%0Afu\n@@ -40,244 +40,28 @@\n  %7B%0A%09\n-var vetor %5B%5Dint%0A%09var n int%0A%0A%09for %7B%0A%09%09_, err := fmt.Scan(&n)%0A%09%09if err == io.EOF %7B // Se a entrada acabou, para o loop%0A%09%09%09break%0A%09%09%7D%0A%09%09vetor = append(vetor, n)%0A%09%7D%0A%0A%09fmt.Println(%22Vetor lido:%22, vetor)%0A%09fmt.Println(%22Tamanho final:%22, len(vetor)\n+fmt.Println(%22qxcode%22\n )%0A%7D\n+%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-04-07_00-02-59",
+            "content": "@@ -36,127 +36,8 @@\n %0A)%0A%0A\n-func processa(vetor %5B%5Dint) %7B%0A%09if len(vetor) == 1 %7B%0A%09%09return%0A%09%7D%0A%09var temp %5B%5Dint%0A%09fmt.Println(vetor)%0A%0A%09processa(temp)%0A%7D%0A%0A\n func\n@@ -127,16 +127,52 @@\n io.EOF %7B\n+ // Se a entrada acabou, para o loop\n %0A%09%09%09brea\n@@ -213,22 +213,82 @@\n %7D%0A%0A%09\n-processa\n+fmt.Println(%22Vetor lido:%22, vetor)%0A%09fmt.Println(%22Tamanho final:%22, len\n (vetor)\n+)\n %0A%7D\n-%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-07_00-11-14",
+            "content": "@@ -65,29 +65,8 @@\n ) %7B%0A\n-%09fmt.Println(vetor)%0A%0A\n %09if \n@@ -99,118 +99,43 @@\n %0A%09%7D%0A\n-%0A%09temp := make(%5B%5Dint, len(vetor)-1)%0A%0A%09for i := 0; i %3C len(vetor)-1; i++ %7B%0A%09%09temp%5Bi%5D = vetor%5Bi%5D + vetor%5Bi+1%5D%0A%09%7D\n+%09var temp %5B%5Dint%0A%09fmt.Println(vetor)\n %0A%0A%09p\n@@ -291,10 +291,27 @@\n  n)%0A%09%7D%0A%0A\n+%09processa(vetor)%0A\n %7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-07_00-15-35",
+            "content": "@@ -391,93 +391,6 @@\n %09%7D%0A%0A\n-%09// S%C3%B3 processa se o vetor n%C3%A3o estiver vazio%0A%09if len(vetor) %3E 0 %7B%0A%09%09processa(vetor)%0A%09%7D%0A\n %7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_00-15-57",
+            "content": "@@ -162,16 +162,23 @@\n for i :=\n+ 0; i %3C\n  len(vet\n@@ -184,25 +184,15 @@\n tor)\n- - \n+-\n 1; i\n- %3E= 0; i--\n+++\n  %7B%0A%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-07_00-16-56",
+            "content": "@@ -166,15 +166,8 @@\n i :=\n- 0; i %3C\n  len\n@@ -177,15 +177,25 @@\n tor)\n--\n+ - \n 1; i\n-++\n+ %3E= 0; i--\n  %7B%0A%09\n@@ -293,17 +293,16 @@\n  n int%0A%0A\n-%0A\n %09for %7B%0A%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-07_00-17-41",
+            "content": "@@ -60,16 +60,36 @@\n %5B%5Dint) %7B\n+%0A%09fmt.Println(vetor)\n %0A%0A%09if le\n@@ -244,36 +244,16 @@\n a(temp)%0A\n-%09fmt.Println(vetor)%0A\n %7D%0A%0Afunc \n@@ -290,16 +290,17 @@\n  n int%0A%0A\n+%0A\n %09for %7B%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-07_00-18-15",
+            "content": "@@ -224,17 +224,16 @@\n a(temp)%0A\n-%0A\n %09fmt.Pri\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-07_00-19-43",
+            "content": "@@ -88,29 +88,8 @@\n 1 %7B%0A\n-%09%09fmt.Println(vetor)%0A\n %09%09re\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-07_00-21-06",
+            "content": "@@ -260,20 +260,11 @@\n rint\n-f(%22%5B %25v %5D%22, \n+ln(\n veto\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-07_00-22-39",
+            "content": "@@ -269,10 +269,8 @@\n %25v %5D\n-%5Cn\n %22, v\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-07_00-22-51",
+            "content": "@@ -252,27 +252,38 @@\n %0A%0A%09fmt.Print\n-ln(\n+f(%22%5B %25v %5D%5Cn%22, \n vetor)%0A%7D%0A%0Afu\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-07_00-23-13",
+            "content": "@@ -33,256 +33,10 @@\n io%22%0A\n-%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Afunc formatar(vetor %5B%5Dint) string %7B%0A%09var s %5B%5Dstring%0A%09for _, v := range vetor %7B%0A%09%09s = append(s, strconv.Itoa(v))%0A%09%7D%0A%09// Junta os n%C3%BAmeros com um espa%C3%A7o e adiciona espa%C3%A7o nas pontas%0A%09return %22%5B %22 + strings.Join(s, %22 %22) + %22 %5D%22%0A%7D\n+)%0A\n %0Afun\n@@ -98,32 +98,22 @@\n Println(\n-formatar(\n vetor)\n-)\n %0A%09%09retur\n@@ -263,24 +263,14 @@\n tln(\n-formatar(\n vetor)\n-)\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-07_00-25-10",
+            "content": "@@ -170,16 +170,78 @@\n v))%0A%09%7D%0A%09\n+// Junta os n%C3%BAmeros com um espa%C3%A7o e adiciona espa%C3%A7o nas pontas\n %0A%09return\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-07_00-26-08",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"io\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc formatar(vetor []int) string {\n\tvar s []string\n\tfor _, v := range vetor {\n\t\ts = append(s, strconv.Itoa(v))\n\t}\n\t\n\treturn \"[ \" + strings.Join(s, \" \") + \" ]\"\n}\nfunc processa(vetor []int) {\n\n\tif len(vetor) == 1 {\n\t\tfmt.Println(formatar(vetor))\n\t\treturn\n\t}\n\n\ttemp := make([]int, len(vetor)-1)\n\n\tfor i := 0; i < len(vetor)-1; i++ {\n\t\ttemp[i] = vetor[i] + vetor[i+1]\n\t}\n\n\tprocessa(temp)\n\n\tfmt.Println(formatar(vetor))\n}\n\nfunc main() {\n\tvar vetor []int\n\tvar n int\n\n\tfor {\n\t\t_, err := fmt.Scan(&n)\n\t\tif err == io.EOF {\n\t\t\tbreak\n\t\t}\n\t\tvetor = append(vetor, n)\n\t}\n\n\t// S\u00f3 processa se o vetor n\u00e3o estiver vazio\n\tif len(vetor) > 0 {\n\t\tprocessa(vetor)\n\t}\n}\n",
+            "lines": "52"
         }
     ]
 }

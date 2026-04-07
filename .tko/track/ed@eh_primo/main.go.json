@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_00-36-32",
+            "content": "@@ -138,99 +138,21 @@\n  %7B%0A%09\n-if div != 2 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if x%25x-1 == 0 %7B%0A%09%09div++%0A%09%09x = x - 1%0A%09%09eh_primo(\n+_, _ = \n x, div\n-)%0A%09%7D\n %0A%09re\n@@ -156,20 +156,22 @@\n %09return \n-true\n+false;\n %0A%7D%0A%0Afunc\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-07_00-43-37",
+            "content": "@@ -176,61 +176,12 @@\n if x\n- == 1 %7B%0A%09%09return false%0A%09%7D%0A%0A%09temp := x%25x - 1%0A%0A%09if temp\n+%25x-1\n  == \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-07_00-47-01",
+            "content": "@@ -26,18 +26,16 @@\n %22%0A%0A// x:\n- o\n  n%C3%BAmero \n@@ -42,41 +42,34 @@\n que \n-queremos saber se %C3%A9 prim\n+est%C3%A1 sendo testad\n o%0A// \n-i: o\n+div:\n  div\n@@ -84,51 +84,23 @@\n  est\n-amos testando no momento (come%C3%A7amos de x-1)\n+%C3%A1 sendo testado\n %0Afun\n@@ -117,17 +117,19 @@\n (x int, \n-i\n+div\n  int) bo\n@@ -138,32 +138,19 @@\n  %7B%0A%09\n-// Casos base%0A%09if x %3C= 1\n+if div != 2\n  %7B%0A%09\n@@ -166,57 +166,18 @@\n alse\n- // 1 e n%C3%BAmeros negativos n%C3%A3o s%C3%A3o primos\n %0A%09%7D%0A\n+%0A\n %09if \n-i\n+x\n  == \n@@ -193,155 +193,44 @@\n urn \n-true // Chegamos ao 1 sem encontrar divisores, ent%C3%A3o %C3%A9 primo%0A%09%7D%0A%0A%09// Se o resto da divis%C3%A3o for 0, encontramos um divisor, ent%C3%A3o N%C3%83O %C3%A9 primo\n+false%0A%09%7D%0A%0A%09temp := x%25x - 1%0A\n %0A%09if \n-x%25i\n+temp\n  == \n@@ -239,69 +239,28 @@\n %7B%0A%09%09\n-return false%0A%09%7D%0A%0A%09// Tenta o pr%C3%B3ximo divisor (i\n+div++%0A%09%09x = x\n  - 1\n-)\n %0A%09\n-return \n+%09\n eh_p\n@@ -271,12 +271,28 @@\n (x, \n-i-1)\n+div)%0A%09%7D%0A%09return true\n %0A%7D%0A%0A\n@@ -333,75 +333,8 @@\n (&x)\n-%0A%0A%09// Come%C3%A7amos testando do n%C3%BAmero logo abaixo de x at%C3%A9 chegar no 1\n %0A%09if\n@@ -350,11 +350,9 @@\n (x, \n-x-1\n+2\n ) %7B%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-07_00-48-00",
+            "content": "package main\n\nimport \"fmt\"\n\n// x: o n\u00famero que queremos saber se \u00e9 primo\n// i: o divisor que estamos testando no momento (come\u00e7amos de x-1)\nfunc eh_primo(x int, i int) bool {\n\t// Casos base\n\tif x <= 1 {\n\t\treturn false // 1 e n\u00fameros negativos n\u00e3o s\u00e3o primos\n\t}\n\tif i == 1 {\n\t\treturn true // Chegamos ao 1 sem encontrar divisores, ent\u00e3o \u00e9 primo\n\t}\n\n\t// Se o resto da divis\u00e3o for 0, encontramos um divisor, ent\u00e3o N\u00c3O \u00e9 primo\n\tif x%i == 0 {\n\t\treturn false\n\t}\n\n\t// Tenta o pr\u00f3ximo divisor (i - 1)\n\treturn eh_primo(x, i-1)\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\n\t// Come\u00e7amos testando do n\u00famero logo abaixo de x at\u00e9 chegar no 1\n\tif eh_primo(x, x-1) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "35"
+        }
+    ]
+}
