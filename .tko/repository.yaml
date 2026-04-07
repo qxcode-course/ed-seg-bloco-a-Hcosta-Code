@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- sandbox@sandbox
 - ed@rec
+- sandbox@sandbox
 flags:
   inbox: all
   panel: logs
@@ -24,4 +24,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@eh_primo
+selected: ed@bfs
