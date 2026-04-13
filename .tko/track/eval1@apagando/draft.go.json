@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_16-11-19",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,359 +37,6 @@\n ) %7B%0A\n-%09var N int%0A%09fmt.Scan(&N)%0A%0A%09fila := make(%5B%5Dint, N)%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09fmt.Scan(&fila)%0A%09%7D%0A%0A%09var M int%0A%09fmt.Scan(&M)%0A%0A%09fila_b := make(map%5Bint%5Dbool)%0A%09for i := 0; i %3C M; i++ %7B%0A%09%09var temp int%0A%09%09fmt.Scan(&temp)%0A%09%09fila_b%5Btemp%5D = true%0A%09%7D%0A%0A%09//L%C3%B3gica%0A%09for i := 0; i %3C M; i++ %7B%0A%09%09if fila_b%5Bi%5D == true %7B%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(fila%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2026-04-13_16-24-00",
+            "content": "@@ -374,17 +374,9 @@\n rint\n-f(%22%25v %22, \n+(\n fila\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_16-26-03",
+            "content": "@@ -127,19 +127,16 @@\n an(&fila\n-%5Bi%5D\n )%0A%09%7D%0A%0A%09v\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_16-26-36",
+            "content": "@@ -296,33 +296,33 @@\n for i := 0; i %3C \n-N\n+M\n ; i++ %7B%0A%09%09if fil\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_16-30-09",
+            "content": "@@ -282,121 +282,90 @@\n %7D%0A%0A%09\n-primeiro := true%0A%09for _, pessoa := range fila\n+//L%C3%B3gica%0A%09for i := 0; i %3C N; i++\n  %7B%0A\n-%0A\n %09%09if \n-!\n fila_b%5B\n-pessoa%5D %7B%0A%09%09%09if !primeiro %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D\n+i%5D == true %7B%0A%09%09%09continue%0A%09%09%7D else %7B\n %0A%09%09%09\n@@ -382,60 +382,27 @@\n (%22%25v\n+ \n %22, \n-pessoa)%0A%09%09%09primeiro = false%0A%09%09%7D%0A%09%7D%0A%09fmt.Println()\n+fila%5Bi%5D)%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_16-31-33",
+            "content": "@@ -331,121 +331,8 @@\n  %7B%0A%0A\n-%09%09if pessoa == len(fila)-1 %7B%0A%09%09%09if !fila_b%5Bpessoa%5D %7B%0A%09%09%09%09fmt.Printf(%22%25v%22, pessoa)%0A%09%09%09%09primeiro = false%0A%09%09%09%7D%0A%09%09%7D%0A%0A\n %09%09if\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_16-32-54",
+            "content": "@@ -327,16 +327,129 @@\n fila %7B%0A%0A\n+%09%09if pessoa == len(fila)-1 %7B%0A%09%09%09if !fila_b%5Bpessoa%5D %7B%0A%09%09%09%09fmt.Printf(%22%25v%22, pessoa)%0A%09%09%09%09primeiro = false%0A%09%09%09%7D%0A%09%09%7D%0A%0A\n %09%09if !fi\n@@ -559,12 +559,27 @@\n e%0A%09%09%7D%0A%09%7D\n+%0A%09fmt.Println()\n %0A%0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-33-34",
+            "content": "@@ -277,16 +277,34 @@\n rue%0A%09%7D%0A%0A\n+%09primeiro := true%0A\n %09for _, \n@@ -350,16 +350,35 @@\n ssoa%5D %7B%0A\n+%09%09%09if !primeiro %7B%0A%09\n %09%09%09fmt.P\n@@ -387,16 +387,21 @@\n nt(%22 %22)%0A\n+%09%09%09%7D%0A\n %09%09%09fmt.P\n@@ -420,16 +420,36 @@\n pessoa)%0A\n+%09%09%09primeiro = false%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-13_16-34-54",
+            "content": "@@ -281,26 +281,8 @@\n %09%7D%0A%0A\n-%09primeiro := true%0A\n %09for\n@@ -336,28 +336,8 @@\n %5D %7B%0A\n-%0A%09%09%09if !primeiro %7B%0A%09\n %09%09%09f\n@@ -354,13 +354,8 @@\n  %22)%0A\n-%09%09%09%7D%0A\n %09%09%09f\n@@ -384,47 +384,12 @@\n )%0A%09%09\n-%09primeiro = false%0A%09%09%7D%0A%09%7D%0A%09fmt.Println()\n+%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-13_16-36-23",
+            "content": "@@ -326,16 +326,17 @@\n  fila %7B%0A\n+%0A\n %09%09if !fi\n@@ -350,16 +350,17 @@\n ssoa%5D %7B%0A\n+%0A\n %09%09%09if !p\n@@ -405,17 +405,24 @@\n mt.Print\n-(\n+f(%22%25v%22, \n pessoa)%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_16-37-23",
+            "content": "@@ -299,16 +299,19 @@\n rue%0A%09for\n+ _,\n  pessoa \n@@ -317,31 +317,18 @@\n  := \n-0; pessoa %3C N; pessoa++\n+range fila\n  %7B%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-13_16-38-22",
+            "content": "@@ -303,11 +303,8 @@\n %09for\n- _,\n  pes\n@@ -314,18 +314,31 @@\n  := \n-range fila\n+0; pessoa %3C N; pessoa++\n  %7B%0A%09\n@@ -448,12 +448,27 @@\n e%0A%09%09%7D%0A%09%7D\n+%0A%09fmt.Println()\n %0A%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-13_16-38-49",
+            "content": "@@ -326,17 +326,16 @@\n  fila %7B%0A\n-%0A\n %09%09if !fi\n@@ -444,22 +444,6 @@\n %09%7D%0A%0A\n-%09fmt.Println()%0A%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_16-39-56",
+            "content": "@@ -326,16 +326,17 @@\n  fila %7B%0A\n+%0A\n %09%09if !fi\n@@ -440,16 +440,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%0A\n %09fmt.Pri\n@@ -456,10 +456,11 @@\n intln()%0A\n+%0A\n %7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_16-40-58",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -60,16 +60,17 @@\n can(&N)%0A\n+%0A\n %09fila :=\n@@ -161,26 +161,24 @@\n can(&M)%0A\n+%0A\n %09\n-deix_\n fila\n+_b\n  := make\n@@ -253,25 +253,22 @@\n temp)%0A%09%09\n-deix_\n fila\n+_b\n %5Btemp%5D =\n@@ -282,231 +282,169 @@\n %7D%0A%0A%09\n-var final %5B%5Dint%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09if deix_fila%5Bfila%5Bi%5D%5D %7B%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09%09%09final = append(final, fila%5Bi%5D)\n+primeiro := true%0A%09for _, pessoa := range fila %7B%0A%09%09if !fila_b%5Bpessoa%5D %7B%0A%09%09%09if !primeiro %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A%09%09%09fmt.Print(pessoa)%0A%09%09%09primeiro = false\n %0A%09%09%7D%0A\n-%0A\n %09%7D%0A\n-%0A%09for i := 0; i %3C len(final); i++ %7B%0A%09%09fmt.Print(final%5Bi%5D, %22 %22)%0A%09%09if i == len(final)-1 %7B%0A%09%09\n %09fmt\n@@ -454,17 +454,10 @@\n intln()%0A\n-%09%09%7D%0A%09%7D%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_16-41-12",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tfila := make([]int, N)\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar M int\n\tfmt.Scan(&M)\n\tdeix_fila := make(map[int]bool)\n\tfor i := 0; i < M; i++ {\n\t\tvar temp int\n\t\tfmt.Scan(&temp)\n\t\tdeix_fila[temp] = true\n\t}\n\n\tvar final []int\n\tfor i := 0; i < N; i++ {\n\t\tif deix_fila[fila[i]] {\n\t\t\tcontinue\n\t\t} else {\n\t\t\tfinal = append(final, fila[i])\n\t\t}\n\n\t}\n\n\tfor i := 0; i < len(final); i++ {\n\t\tfmt.Print(final[i], \" \")\n\t\tif i == len(final)-1 {\n\t\t\tfmt.Println()\n\t\t}\n\t}\n}\n",
+            "lines": "40"
+        }
+    ]
+}

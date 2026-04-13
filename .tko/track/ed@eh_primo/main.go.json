@@ -17,8 +17,13 @@
         },
         {
             "label": "2026-04-07_00-48-00",
-            "content": "package main\n\nimport \"fmt\"\n\n// x: o n\u00famero que queremos saber se \u00e9 primo\n// i: o divisor que estamos testando no momento (come\u00e7amos de x-1)\nfunc eh_primo(x int, i int) bool {\n\t// Casos base\n\tif x <= 1 {\n\t\treturn false // 1 e n\u00fameros negativos n\u00e3o s\u00e3o primos\n\t}\n\tif i == 1 {\n\t\treturn true // Chegamos ao 1 sem encontrar divisores, ent\u00e3o \u00e9 primo\n\t}\n\n\t// Se o resto da divis\u00e3o for 0, encontramos um divisor, ent\u00e3o N\u00c3O \u00e9 primo\n\tif x%i == 0 {\n\t\treturn false\n\t}\n\n\t// Tenta o pr\u00f3ximo divisor (i - 1)\n\treturn eh_primo(x, i-1)\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\n\t// Come\u00e7amos testando do n\u00famero logo abaixo de x at\u00e9 chegar no 1\n\tif eh_primo(x, x-1) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "content": "@@ -21,16 +21,128 @@\n  %22fmt%22%0A%0A\n+// x: o n%C3%BAmero que queremos saber se %C3%A9 primo%0A// i: o divisor que estamos testando no momento (come%C3%A7amos de x-1)%0A\n func eh_\n@@ -168,16 +168,31 @@\n  bool %7B%0A\n+%09// Casos base%0A\n %09if x %3C=\n@@ -206,24 +206,64 @@\n return false\n+ // 1 e n%C3%BAmeros negativos n%C3%A3o s%C3%A3o primos\n %0A%09%7D%0A%09if i ==\n@@ -346,40 +346,151 @@\n %7D%0A%0A%09\n-if x%25i == 0 %7B%0A%09%09return false%0A%09%7D%0A\n+// Se o resto da divis%C3%A3o for 0, encontramos um divisor, ent%C3%A3o N%C3%83O %C3%A9 primo%0A%09if x%25i == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09// Tenta o pr%C3%B3ximo divisor (i - 1)\n %0A%09re\n@@ -554,16 +554,82 @@\n an(&x)%0A%0A\n+%09// Come%C3%A7amos testando do n%C3%BAmero logo abaixo de x at%C3%A9 chegar no 1%0A\n %09if eh_p\n",
             "lines": "35"
+        },
+        {
+            "label": "2026-04-13_15-43-03",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc eh_primo(x int, i int) bool {\n\tif x <= 1 {\n\t\treturn false\n\t}\n\tif i == 1 {\n\t\treturn true // Chegamos ao 1 sem encontrar divisores, ent\u00e3o \u00e9 primo\n\t}\n\n\tif x%i == 0 {\n\t\treturn false\n\t}\n\n\treturn eh_primo(x, i-1)\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\n\tif eh_primo(x, x-1) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "29"
         }
     ]
 }

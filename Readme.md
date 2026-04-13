@@ -1,9 +1,9 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22956225)
+
 ---
 nomeAluno: "HENRIQUE COSTA CAVALCANTE"
 matricula: "583288"
 ---
-
 # Instalando o TKO e configurando o repositório
 
 ## Vou programar no meu setup local
@@ -24,9 +24,7 @@ matricula: "583288"
 # Escolha se quer usar python ou typescript
 # As outras linguagens c, c++, java, etc, já vem automaticamente na máquina virtual
 ./setup.sh
-
 ```
-
 
 ## Configurando o repositório do TKO
 
@@ -34,10 +32,8 @@ matricula: "583288"
 # Se está com uma instalação antiga do tko,
 # por favor atualizar!
 pipx upgrade tko
-
 # Criar o repositório de atividades
 tko init -f tasks -l py -r poo
-
 # Interagir com seu repositório
 tko open tasks
 ```
@@ -74,7 +70,6 @@ tko open tasks
 - **Antes de começar a trabalhar**, atualize o repositório:
   - `git pull --ff-only`
   - (isso evita merges automáticos inesperados)
-
 - **Se o push der erro**, o problema normalmente é que há commits novos no repositório remoto.
   - Vamos puxar as atualizações e ver os arquivos que estão conflitando.
     - `git pull --no-rebase`
@@ -84,3 +79,7 @@ tko open tasks
     - `git add .`
     - `git commit -m mensagem`
     - `git push`
+
+## sandbox
+
+

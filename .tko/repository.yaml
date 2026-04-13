@@ -14,9 +14,16 @@ sources:
   writeable: false
   quests: null
   tasks: null
+- name: eval1
+  target: https://github.com/senapk/eval_26_ed_1
+  index: README.md
+  type: git
+  writeable: false
+  quests: null
+  tasks: null
 expanded:
-- ed@rec
 - sandbox@sandbox
+- eval1@teste-1
 flags:
   inbox: all
   panel: logs
@@ -24,4 +31,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@bfs
+selected: eval1@triangulo

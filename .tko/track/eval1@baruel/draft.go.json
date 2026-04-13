@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_15-46-23",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,386 +37,39 @@\n ) %7B%0A\n-%09var quant_t, quant_b int%0A%09fmt.Scan(&quant_t, &quant_b)%0A%0A%09album_baru := make(map%5Bint%5Dbool)%0A%09var reps %5B%5Dint%0A%09var anterior = -1%0A%0A%09for i := 0; i %3C quant_b; i++ %7B%0A%09%09var temp int%0A%09%09fmt.Scan(&temp)%0A%0A%09%09if temp == anterior %7B%0A%09%09%09reps = append(reps, temp)%0A%09%09%7D%0A%0A%09%09album_baru%5Btemp%5D = true%0A%09%09anterior = temp%0A%0A%09%7D%0A%0A%09if len(reps) == 0 %7B%0A%09%09fmt.Print(%22N%5Cn%22)%0A%09%7D else %7B%0A%09%09fmt.Printf(%22%25v%5Cn%22, reps)%0A%09%7D\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-13_15-57-59",
+            "content": "@@ -392,65 +392,31 @@\n %0A%09%09f\n-or i := 0; i %3C len(reps); i++ %7B%0A%09%09%09fmt.Print(reps%5Bi%5D)%0A%09%09%7D\n+mt.Printf(%22%25v%5Cn%22, reps)\n %0A%09%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-13_15-58-58",
+            "content": "@@ -446,26 +446,8 @@\n i%5D)%0A\n-%09%09%09fmt.Print(%22 %22)%0A\n %09%09%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_15-59-23",
+            "content": "@@ -471,281 +471,6 @@\n %0A%09%7D%0A\n-%0A%09fmt.Print(%22%5Cn%22)%0A%0A%09var falt %5B%5Dint%0A%09for i := 1; i %3C= quant_t; i++ %7B%0A%09%09if !album_baru%5Bi%5D %7B%0A%09%09%09falt = append(falt, i)%0A%09%09%7D%0A%09%7D%0A%0A%09if len(falt) == 0 %7B%0A%09%09fmt.Print(%22N%5Cn%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C len(falt); i++ %7B%0A%09%09%09fmt.Print(falt%5Bi%5D)%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Print(%22%5Cn%22)%0A%0A\n %7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_16-07-18",
+            "content": "@@ -720,61 +720,8 @@\n  %22)%0A\n-%09%09%09if i == len(falt)-1 %7B%0A%09%09%09%09fmt.Print(falt%5Bi%5D)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-13_16-08-53",
+            "content": "@@ -683,34 +683,30 @@\n %0A%09%09%09\n-if i == len(falt)-1 %7B\n+fmt.Print(falt%5Bi%5D)\n %0A%09%09%09\n-%09\n fmt.\n@@ -715,39 +715,35 @@\n int(\n-falt%5Bi%5D)%0A%09%09%09%09continue%0A%09%09%09%7D else\n+%22 %22)%0A%09%09%09if i == len(falt)-1\n  %7B%0A%09\n@@ -768,27 +768,8 @@\n i%5D)%0A\n-%09%09%09%09fmt.Print(%22 %22)%0A\n %09%09%09%7D\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-04-13_16-09-44",
+            "content": "@@ -427,102 +427,27 @@\n %0A%09%09%09\n-if i == len(reps)-1 %7B%0A%09%09%09%09fmt.Print(reps%5Bi%5D)%0A%09%09%09%09continue%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Print(reps%5Bi%5D)%0A%09\n+fmt.Print(reps%5Bi%5D)%0A\n %09%09%09f\n@@ -452,37 +452,32 @@\n %09fmt.Print(%22 %22)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%0A%09fmt.Pri\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-13_16-10-33",
+            "content": "@@ -537,32 +537,35 @@\n (%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09\n+%7D%0A%0A\n %09fmt.Print(%22%5Cn%22)\n@@ -564,19 +564,16 @@\n nt(%22%5Cn%22)\n-%0A%09%7D\n %0A%0A%09var f\n@@ -881,16 +881,19 @@\n %09%7D%0A%09%09%7D%0A%09\n+%7D%0A%0A\n %09fmt.Pri\n@@ -902,14 +902,10 @@\n (%22%5Cn%22)%0A%0A\n-%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-13_16-11-08",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar quant_t, quant_b int\n\tfmt.Scan(&quant_t, &quant_b)\n\n\talbum_baru := make(map[int]bool)\n\tvar reps []int\n\tvar anterior = -1\n\n\tfor i := 0; i < quant_b; i++ {\n\t\tvar temp int\n\t\tfmt.Scan(&temp)\n\n\t\tif temp == anterior {\n\t\t\treps = append(reps, temp)\n\t\t}\n\n\t\talbum_baru[temp] = true\n\t\tanterior = temp\n\n\t}\n\n\tif len(reps) == 0 {\n\t\tfmt.Print(\"N\\n\")\n\t} else {\n\t\tfor i := 0; i < len(reps); i++ {\n\t\t\tif i == len(reps)-1 {\n\t\t\t\tfmt.Print(reps[i])\n\t\t\t\tcontinue\n\t\t\t} else {\n\t\t\t\tfmt.Print(reps[i])\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Print(\"\\n\")\n\t}\n\n\tvar falt []int\n\tfor i := 1; i <= quant_t; i++ {\n\t\tif !album_baru[i] {\n\t\t\tfalt = append(falt, i)\n\t\t}\n\t}\n\n\tif len(falt) == 0 {\n\t\tfmt.Print(\"N\\n\")\n\t} else {\n\t\tfor i := 0; i < len(falt); i++ {\n\t\t\tif i == len(falt)-1 {\n\t\t\t\tfmt.Print(falt[i])\n\t\t\t\tcontinue\n\t\t\t} else {\n\t\t\t\tfmt.Print(falt[i])\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Print(\"\\n\")\n\n\t}\n\n}\n",
+            "lines": "64"
+        }
+    ]
+}
