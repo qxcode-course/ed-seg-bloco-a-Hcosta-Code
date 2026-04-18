@@ -6,12 +6,14 @@ import (
 )
 
 func main() {
-	var a, b, c float64
-	fmt.Scanf("%f\n%f\n%f\n", &a, &b, &c)
-	var result float64
+	var l3, l1, l2 float64
+	fmt.Scan(&l1, &l2, &l3)
 
-	var p = (a + b + c) / 2
-	result = math.Sqrt(p * (p - a) * (p - b) * (p - c))
+	var p float64
+	p = (l1 + l2 + l3) / 2
+
+	var result float64
+	result = math.Sqrt(p * (p - l1) * (p - l2) * (p - l3))
 
 	fmt.Printf("%.2f\n", result)
 }

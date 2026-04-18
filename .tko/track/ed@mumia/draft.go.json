@@ -12,8 +12,23 @@
         },
         {
             "label": "2026-03-16_16-46-56",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar name string\n\tvar age int\n\tfmt.Scan(&name, &age)\n\tvar class string\n\n\tfor range 5 {\n\t\tif age < 12 {\n\t\t\tclass = \"crianca\"\n\t\t} else if age < 18 {\n\t\t\tclass = \"jovem\"\n\t\t} else if age < 65 {\n\t\t\tclass = \"adulto\"\n\t\t} else if age < 1000 {\n\t\t\tclass = \"idoso\"\n\t\t} else {\n\t\t\tclass = \"mumia\"\n\t\t}\n\t}\n\n\tfmt.Println(name, \"eh\", class)\n}\n",
+            "content": "@@ -107,16 +107,32 @@\n string%0A%0A\n+%09for range 5 %7B%0A%09\n %09if age \n@@ -138,16 +138,17 @@\n  %3C 12 %7B%0A\n+%09\n %09%09class \n@@ -159,16 +159,17 @@\n rianca%22%0A\n+%09\n %09%7D else \n@@ -180,24 +180,25 @@\n ge %3C 18 %7B%0A%09%09\n+%09\n class = %22jov\n@@ -201,16 +201,17 @@\n %22jovem%22%0A\n+%09\n %09%7D else \n@@ -224,16 +224,17 @@\n  %3C 65 %7B%0A\n+%09\n %09%09class \n@@ -244,16 +244,17 @@\n adulto%22%0A\n+%09\n %09%7D else \n@@ -269,16 +269,17 @@\n  1000 %7B%0A\n+%09\n %09%09class \n@@ -288,16 +288,17 @@\n %22idoso%22%0A\n+%09\n %09%7D else \n@@ -299,16 +299,17 @@\n  else %7B%0A\n+%09\n %09%09class \n@@ -318,16 +318,20 @@\n %22mumia%22%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09fmt\n@@ -335,35 +335,26 @@\n fmt.\n-p\n+P\n rint\n-f(%22%25v\n+ln(name\n , \n+%22\n eh\n-, %25v%5Cn%22, name\n+%22\n , cl\n@@ -358,11 +358,10 @@\n  class)%0A\n-%0A\n %7D%0A\n",
             "lines": "26"
+        },
+        {
+            "label": "2026-04-18_19-18-17",
+            "content": "@@ -306,9 +306,9 @@\n fmt.\n-P\n+p\n rint\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-18_19-18-32",
+            "content": "@@ -316,11 +316,13 @@\n (%22%25v\n+,\n  eh\n+,\n  %25v%5C\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-18_19-18-52",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar name string\n\tvar age int\n\tfmt.Scan(&name, &age)\n\tvar class string\n\n\tif age < 12 {\n\t\tclass = \"crianca\"\n\t} else if age < 18 {\n\t\tclass = \"jovem\"\n\t} else if age < 65 {\n\t\tclass = \"adulto\"\n\t} else if age < 1000 {\n\t\tclass = \"idoso\"\n\t} else {\n\t\tclass = \"mumia\"\n\t}\n\n\tfmt.Printf(\"%v eh %v\\n\", name, class)\n\n}\n",
+            "lines": "25"
         }
     ]
 }

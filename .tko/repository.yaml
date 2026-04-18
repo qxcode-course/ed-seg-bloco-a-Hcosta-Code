@@ -22,8 +22,7 @@ sources:
   quests: null
   tasks: null
 expanded:
-- sandbox@sandbox
-- eval1@teste-1
+- ed@map_set
 flags:
   inbox: all
   panel: logs
@@ -31,4 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@triangulo
+selected: ed@buscas
+selected_index: 8

@@ -17,8 +17,33 @@
         },
         {
             "label": "2026-03-16_16-20-35",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar a, b, c float64\n\tfmt.Scanf(\"%f\\n%f\\n%f\\n\", &a, &b, &c)\n\tvar result float64\n\n\tvar p = (a + b + c) / 2\n\tresult = math.Sqrt(p * (p - a) * (p - b) * (p - c))\n\n\tfmt.Printf(\"%.2f\\n\", result)\n}\n",
+            "content": "@@ -0,0 +1,247 @@\n+package main%0A%0Aimport (%0A%09%22fmt%22%0A%09%22math%22%0A)%0A%0Afunc main() %7B%0A%09var a, b, c float64%0A%09fmt.Scanf(%22%25f%5Cn%25f%5Cn%25f%5Cn%22, &a, &b, &c)%0A%09var result float64%0A%0A%09var p = (a + b + c) / 2%0A%09result = math.Sqrt(p * (p - a) * (p - b) * (p - c))%0A%0A%09fmt.Printf(%22%25.2f%5Cn%22, result)%0A%7D%0A\n",
             "lines": "17"
+        },
+        {
+            "label": "2026-04-18_19-01-48",
+            "content": "@@ -1,112 +0,0 @@\n-package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var l3, l1, l2 float32%0A%09fmt.Scan(&l1, l2, l3)%0A%09var p float32%0A%09p = %0A%7D%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2026-04-18_19-06-57",
+            "content": "@@ -18,26 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -56,18 +56,18 @@\n l2 float\n-64\n+32\n %0A%09fmt.Sc\n@@ -82,17 +82,16 @@\n l2, l3)%0A\n-%0A\n %09var p f\n@@ -98,141 +98,15 @@\n loat\n-64%0A%09p = (l1 + l2 + l2) / 2%0A%0A%09var result float64%0A%09result = math.Sqrt(p * (p - l1) * (p - l2) * (p - l3))%0A%0A%09fmt.Printf(%22%25.2f%5Cn%22, result)\n+32%0A%09p = \n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-18_19-11-13",
+            "content": "@@ -128,17 +128,17 @@\n + l2 + l\n-3\n+2\n ) / 2%0A%0A%09\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-18_19-11-58",
+            "content": "@@ -91,14 +91,12 @@\n l1, \n-&\n l2, \n-&\n l3)%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-18_19-12-13",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar l3, l1, l2 float64\n\tfmt.Scan(&l1, &l2, &l3)\n\n\tvar p float64\n\tp = (l1 + l2 + l3) / 2\n\n\tvar result float64\n\tresult = math.Sqrt(p * (p - l1) * (p - l2) * (p - l3))\n\n\tfmt.Printf(\"%.2f\\n\", result)\n}\n",
+            "lines": "19"
         }
     ]
 }

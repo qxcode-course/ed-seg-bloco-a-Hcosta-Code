@@ -2,8 +2,68 @@
     "patches": [
         {
             "label": "2026-04-13_15-42-32",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,128 +37,39 @@\n ) %7B%0A\n-%09var t, r int%0A%09fmt.Scan(&t, &r)%0A%0A%09vetor := make(%5B%5Dint, t)%0A%09for i := 0; i %3C t; i++ %7B%0A%09%09vetor%5Bi%5D = i%0A%09%7D%0A%0A%09fmt.Print(vetor)%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-04-18_19-29-10",
+            "content": "@@ -137,12 +137,8 @@\n  = i\n- + 1\n %0A%09%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-18_19-29-59",
+            "content": "@@ -156,119 +156,14 @@\n rint\n-f(%22%5B%22)%0A%09for i := 0; i %3C t; i++ %7B%0A%09%09fmt.Printf(%22 %22)%0A%09%09fmt.Print(vetor%5Bi%5D)%0A%09%09fmt.Printf(%22 %22)%0A%09%7D%0A%09fmt.Printf(%22%5D%5Cn%22\n+(vetor\n )%0A%0A%7D\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-18_19-31-08",
+            "content": "@@ -225,16 +225,34 @@\n tor%5Bi%5D)%0A\n+%09%09fmt.Printf(%22 %22)%0A\n %09%7D%0A%09fmt.\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-18_19-31-28",
+            "content": "@@ -189,82 +189,8 @@\n + %7B%0A\n-%09%09if i == t-1 %7B%0A%09%09%09fmt.Print(vetor%5Bi%5D)%0A%09%09%09fmt.Printf(%22 %22)%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09fm\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-18_19-32-14",
+            "content": "@@ -201,35 +201,16 @@\n = t-1 %7B%0A\n-%09%09%09fmt.Printf(%22 %22)%0A\n %09%09%09fmt.P\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-18_19-32-28",
+            "content": "@@ -146,61 +146,8 @@\n %09%7D%0A%0A\n-%09//logica%0A%09for i := 0; i %3C r; i++ %7B%0A        %0A%0A%0A%0A%0A%09%7D%0A%0A\n %09fmt\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-18_19-39-08",
+            "content": "@@ -182,31 +182,20 @@\n + %7B%0A\n-%09%09vetor%5Bi+r%5D = vetor%5Bi%5D\n+        %0A%0A%0A%0A\n %0A%09%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-18_19-45-48",
+            "content": "@@ -182,44 +182,8 @@\n + %7B%0A\n-%09%09var temp int%0A%09%09temp = vetor%5Bi+r%5D%0A%0A\n %09%09ve\n@@ -206,26 +206,8 @@\n %5Bi%5D%0A\n-%09%09vetor%5Bi%5D = temp%0A\n %09%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-18_19-55-44",
+            "content": "@@ -146,35 +146,8 @@\n %09%7D%0A%0A\n-%09vetor2 := make(%5B%5Dint, t)%0A%0A\n %09//l\n@@ -161,33 +161,33 @@\n for i := 0; i %3C \n-t\n+r\n ; i++ %7B%0A%09%09novaPo\n@@ -184,57 +184,83 @@\n %7B%0A%09%09\n-novaPo := (i + r) %25 t%0A%09%09vetor2%5BnovaPo%5D = vetor%5Bi%5D\n+var temp int%0A%09%09temp = vetor%5Bi+r%5D%0A%0A%09%09vetor%5Bi+r%5D = vetor%5Bi%5D%0A%09%09vetor%5Bi%5D = temp\n %0A%09%7D%0A\n@@ -352,25 +352,24 @@\n .Print(vetor\n-2\n %5Bi%5D)%0A%09%09%09fmt.\n@@ -435,9 +435,8 @@\n etor\n-2\n %5Bi%5D)\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-18_20-12-36",
+            "content": "@@ -173,20 +173,8 @@\n t)%0A%0A\n-%09r = r %25 t%0A%0A\n %09//l\n@@ -224,16 +224,20 @@\n  (i + r)\n+ %25 t\n %0A%09%09vetor\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-18_20-13-09",
+            "content": "@@ -169,16 +169,28 @@\n nt, t)%0A%0A\n+%09r = r %25 t%0A%0A\n %09//logic\n@@ -236,20 +236,16 @@\n  (i + r)\n- %25 t\n %0A%09%09vetor\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-18_20-13-55",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar t, r int\n\tfmt.Scan(&t, &r)\n\n\tvetor := make([]int, t)\n\tfor i := 0; i < t; i++ {\n\t\tvetor[i] = i + 1\n\t}\n\n\tvetor2 := make([]int, t)\n\n\t//logica\n\tfor i := 0; i < t; i++ {\n\t\tnovaPo := (i + r) % t\n\t\tvetor2[novaPo] = vetor[i]\n\t}\n\n\tfmt.Printf(\"[\")\n\tfor i := 0; i < t; i++ {\n\t\tif i == t-1 {\n\t\t\tfmt.Printf(\" \")\n\t\t\tfmt.Print(vetor2[i])\n\t\t\tfmt.Printf(\" \")\n\t\t\tcontinue\n\t\t}\n\t\tfmt.Printf(\" \")\n\t\tfmt.Print(vetor2[i])\n\t}\n\tfmt.Printf(\"]\\n\")\n\n}\n",
+            "lines": "35"
         }
     ]
 }
