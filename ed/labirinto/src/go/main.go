@@ -23,19 +23,33 @@ func match(grid [][]rune, p Pos, value rune) bool {
 }
 
 // Função recursiva que tenta encontrar o caminho do início ao fim
-func search(grid [][]rune, startPos, endPos Pos) bool {
-	if grid[startPos.l-1][startPos.c] == ' ' {
-		grid[startPos.l-1][startPos.c] = '.'
-		search()
-	} else if grid[startPos.l+1][startPos.c] == ' ' {
+func search(grid [][]rune, current Pos, endPos Pos) bool {
+    // Caso base: se a posição atual for o destino
+    if current == endPos {
+        grid[current.l][current.c] = '.'
+        return true
+    }
 
-	} else if grid[startPos.l][startPos.c-1] == ' ' {
+    // Se não for um espaço vazio (ou seja, se for parede '#' ou já visitado '.'), para
+    if !match(grid, current, ' ') {
+        return false
+    }
 
-	} else if grid[startPos.l][startPos.c+1] == ' ' {
+    // Marca a posição atual como parte do caminho
+    grid[current.l][current.c] = '.'
 
-	}
+    // Tenta ir para cada um dos vizinhos
+    for _, vizinho := range getNeig(current) {
+        if search(grid, vizinho, endPos) {
+            return true // Se algum vizinho chegar ao fim, retorna true
+        }
+    }
 
-	return false
+    // Se nenhum vizinho levar ao destino, desmarca o caminho (Backtracking)
+    // Se o problema pedir apenas para marcar onde ele "tentou" ir, remova a linha abaixo
+    grid[current.l][current.c] = ' ' 
+    
+    return false
 }
 
 func main() {
