@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 )
 
@@ -9,46 +10,34 @@ func randInt(min, max int) int {
 	return min + rand.Intn(max-min+1)
 }
 
-func desenhar(pen *Pen, tamanho, grossura float64) {
-	fator := 0.8
-	ang := float64(randInt(14, 40))
-
-	if tamanho < 10 {
-
-		if rand.Intn(50) == 0 {
-			pen.dc.SetRGB(100, 0, 0)
-			pen.FillCircle(14)
-		}
+func desenhar(pen *Pen, x, y, tamanho float64) {
+	if tamanho < 5 {
 		return
 	}
 
-	if grossura > 17 {
-		pen.SetRGB(100, 100, 50)
-	} else {
-		pen.SetRGB(0, 150, 0)
+	pen.SetPosition(x, y)
+
+	for i := 0; i < 6; i++ {
+
+		anguloRad := float64(i) * 60 * (math.Pi / 180)
+		novoX := x + tamanho*math.Cos(anguloRad)
+		novoY := y - tamanho*math.Sin(anguloRad)
+
+		desenhar(pen, novoX, novoY, tamanho/3)
+
+		pen.SetPosition(novoX, novoY)
+		pen.Walk(tamanho / 3)
+		pen.Walk(-tamanho / 3)
+		pen.Right(60)
 	}
-
-	pen.SetLineWidth(grossura)
-	pen.Walk(tamanho)
-
-	pen.Right(ang)
-	desenhar(pen, tamanho*fator, grossura*fator)
-
-	pen.Left(2 * ang)
-	desenhar(pen, tamanho*fator, grossura*fator)
-	pen.Right(ang)
-	pen.Walk(-tamanho)
-
 }
 
 func main() {
-	pen := NewPen(1000, 1000)  // cria um canvas de 500 de largura por 500 de altura
-	pen.SetRGB(100, 100, 50)   // muda a cor do pincel para vermelho
-	pen.SetPosition(500, 1000) // move o pincel para x 250, y 500
-	pen.SetHeading(90)
+	pen := NewPen(1000, 1000)
+	pen.SetRGB(0, 0, 0)
 
-	desenhar(pen, 150, 40)
+	desenhar(pen, 500, 500, 250)
 
-	pen.SavePNG("tree.png")
-	fmt.Println("PNG file created successfully.")
+	pen.SavePNG("gelo.png")
+	fmt.Println("Fractal gerado com sucesso em fractal_square.png")
 }

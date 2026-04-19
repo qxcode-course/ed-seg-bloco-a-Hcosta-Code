@@ -1,0 +1,46 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"math"
+)
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+func desenhar(pen *Pen, x, y, tamanho float64) {
+    if tamanho < 5 { 
+        return
+    }
+
+    // 2. Desenha o círculo central (opcional, dependendo do estilo)
+    pen.SetPosition(x, y)
+    // pen.DrawCircle(tamanho) // A imagem da esquerda parece não ter o círculo central aparente em todos os níveis
+
+    for i := 0; i < 6; i++ {
+        // Calcula a posição do novo círculo na extremidade
+        anguloRad := float64(i) * 60 * (math.Pi / 180)
+        novoX := x + tamanho*math.Cos(anguloRad)
+        novoY := y - tamanho*math.Sin(anguloRad)
+
+        // 3. Chamada recursiva: Cada extremidade gera 6 novas extremidades
+        // O tamanho diminui (geralmente por 3 ou 2.5 para evitar sobreposição total)
+        desenhar(pen, novoX, novoY, tamanho/3)
+        
+        // Desenha a conexão ou o círculo após a recursão se desejar
+        pen.SetPosition(novoX, novoY)
+        pen.DrawCircle(tamanho/3)
+    }
+}
+
+func main() {
+	pen := NewPen(1000, 1000)
+	pen.SetRGB(0, 0, 0)
+
+	desenhar(pen, 500, 500, 250)
+
+	pen.SavePNG("circulos.png")
+	fmt.Println("Fractal gerado com sucesso em fractal_square.png")
+}

@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+func desenhar(pen *Pen, x, y, tamanho float64) {
+	if tamanho < 50 {
+		return
+	}
+
+	metade := tamanho / 2
+	xSupEsq := x - metade
+	ySupEsq := y - metade
+
+	pen.Up()
+	pen.SetPosition(xSupEsq, ySupEsq)
+	pen.SetHeading(0)
+	pen.Down()
+
+	pen.DrawRect(tamanho, tamanho)
+
+	desenhar(pen, x-metade, y-metade, tamanho/2) // Canto Superior Esquerdo
+	desenhar(pen, x+metade, y-metade, tamanho/2) // Canto Superior Direito
+	desenhar(pen, x-metade, y+metade, tamanho/2) // Canto Inferior Esquerdo
+	desenhar(pen, x+metade, y+metade, tamanho/2) // Canto Inferior Direito
+}
+
+func main() {
+	pen := NewPen(1000, 1000)
+	pen.SetRGB(0, 0, 0)
+
+	desenhar(pen, 500, 500, 500)
+
+	pen.SavePNG("fractal_square.png")
+	fmt.Println("Fractal gerado com sucesso em fractal_square.png")
+}
