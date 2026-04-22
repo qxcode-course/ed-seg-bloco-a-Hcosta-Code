@@ -7,8 +7,13 @@
         },
         {
             "label": "2026-04-19_17-34-52",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc desenhar(pen *Pen, x, y, tamanho float64) {\n\tif tamanho < 5 {\n\t\treturn\n\t}\n\n\tpen.SetPosition(x, y)\n\n\tfor i := 0; i < 6; i++ {\n\n\t\tanguloRad := float64(i) * 60 * (math.Pi / 180)\n\t\tnovoX := x + tamanho*math.Cos(anguloRad)\n\t\tnovoY := y - tamanho*math.Sin(anguloRad)\n\n\t\tdesenhar(pen, novoX, novoY, tamanho/3)\n\n\t\tpen.SetPosition(novoX, novoY)\n\t\tpen.Walk(tamanho / 3)\n\t\tpen.Walk(-tamanho / 3)\n\t\tpen.Right(60)\n\t}\n}\n\nfunc main() {\n\tpen := NewPen(1000, 1000)\n\tpen.SetRGB(0, 0, 0)\n\n\tdesenhar(pen, 500, 500, 250)\n\n\tpen.SavePNG(\"gelo.png\")\n\tfmt.Println(\"Fractal gerado com sucesso em fractal_square.png\")\n}\n",
+            "content": "@@ -33,21 +33,21 @@\n math\n-/rand%22%0A%09%22time\n+%22%0A%09%22math/rand\n %22%0A)%0A\n@@ -141,16 +141,22 @@\n en *Pen,\n+ x, y,\n  tamanho\n@@ -203,109 +203,245 @@\n %7D%0A%0A%09\n-var x, y, z float64%0A%09x = rand.NormFloat64()%0A%09y = rand.NormFloat64()%0A%09z = rand.NormFloat64(\n+pen.SetPosition(x, y)%0A%0A%09for i := 0; i %3C 6; i++ %7B%0A%0A%09%09anguloRad := float64(i) * 60 * (math.Pi / 180)%0A%09%09novoX := x + tamanho*math.Cos(anguloRad)%0A%09%09novoY := y - tamanho*math.Sin(anguloRad)%0A%0A%09%09desenhar(pen, novoX, novoY, tamanho/3\n )%0A%0A\n+%09\n %09pen.Set\n RGB(\n@@ -440,21 +440,56 @@\n .Set\n-RGB(x, y, z\n+Position(novoX, novoY)%0A%09%09pen.Walk(tamanho / 3\n )%0A\n+%09\n %09pen\n@@ -498,17 +498,23 @@\n alk(\n+-\n tamanho\n+ / 3\n )%0A\n+%09\n %09pen\n@@ -524,88 +524,31 @@\n ght(\n-9\n+6\n 0)%0A%09\n-desenhar(pen, tamanho-7)%0A%7D%0A%0Afunc main() %7B%0A%09rand.Seed(time.Now().UnixNano())\n+%7D%0A%7D%0A%0Afunc main() %7B\n %0A%09pe\n@@ -595,35 +595,8 @@\n , 0)\n-%0A%09pen.SetPosition(125, 125)\n %0A%0A%09d\n@@ -612,9 +612,19 @@\n en, \n-7\n+500, 500, 2\n 50)%0A\n@@ -642,14 +642,11 @@\n NG(%22\n-rotaca\n+gel\n o.pn\n",
             "lines": "43"
+        },
+        {
+            "label": "2026-04-22_14-49-15",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n\t\"time\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc desenhar(pen *Pen, tamanho float64) {\n\tif tamanho < 5 {\n\t\treturn\n\t}\n\n\tvar x, y, z float64\n\tx = rand.NormFloat64()\n\ty = rand.NormFloat64()\n\tz = rand.NormFloat64()\n\n\tpen.SetRGB(x, y, z)\n\tpen.Walk(tamanho)\n\tpen.Right(90)\n\tdesenhar(pen, tamanho-7)\n}\n\nfunc main() {\n\trand.Seed(time.Now().UnixNano())\n\tpen := NewPen(1000, 1000)\n\tpen.SetRGB(0, 0, 0)\n\tpen.SetPosition(125, 125)\n\n\tdesenhar(pen, 750)\n\n\tpen.SavePNG(\"rotacao.png\")\n\tfmt.Println(\"Fractal gerado com sucesso em fractal_square.png\")\n}\n",
+            "lines": "39"
         }
     ]
 }
