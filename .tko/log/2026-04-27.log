@@ -1,0 +1,11 @@
+2026-04-27 15:53:42, MOVE, v:1, k:ed@lista_d1, mode:DOWN
+2026-04-27 15:53:44, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-27 15:54:04, EXEC, v:1, k:ed@lista_d1, mode:FULL, rate:0, size:57
+2026-04-27 15:54:14, MOVE, v:1, k:ed@lista_d1, mode:BACK
+2026-04-27 15:54:27, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-27 15:54:34, MOVE, v:1, k:ed@lista_d1, mode:BACK
+2026-04-27 15:55:13, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-27 15:55:34, MOVE, v:1, k:ed@lista_d1, mode:PICK
+2026-04-27 15:55:36, EXEC, v:1, k:ed@lista_d1, mode:FULL, rate:0
+2026-04-27 15:55:37, MOVE, v:1, k:ed@lista_d1, mode:BACK
+2026-04-27 15:55:35, MOVE, v:1, k:ed@lista_d1, mode:EDIT

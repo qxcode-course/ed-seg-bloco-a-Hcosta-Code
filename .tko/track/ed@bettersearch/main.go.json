@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-28_15-54-05",
+            "content": "@@ -124,153 +124,44 @@\n  %7B%0A%09\n-flag := false%0A%09index := 0%0A%0A%09for index, valor := range slice %7B%0A%09%09if valor == value %7B%0A%09%09%09flag = true%0A%09%09%09break%0A%09%09%7D%0A%09%09index++%0A%09%7D%0A%0A%09return flag, index\n+_, _ = slice, value%0A%09return false, 0\n %0A%7D%0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-28_16-02-03",
+            "content": "@@ -139,21 +139,18 @@\n se%0A%09\n-var \n index \n-int\n+:= 0\n %0A%0A%09f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-28_16-02-50",
+            "content": "@@ -189,18 +189,8 @@\n e %7B%0A\n-%09%09index++%0A\n %09%09if\n@@ -237,16 +237,23 @@\n k%0A%09%09%7D%0A%09%09\n+index++\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-28_16-03-13",
+            "content": "@@ -148,14 +148,13 @@\n ndex\n-t\n  int%0A\n+\n %0A%09fo\n@@ -196,17 +196,10 @@\n ndex\n-t = index\n+++\n %0A%09%09i\n@@ -249,13 +249,15 @@\n %09%09%7D%0A\n+%09%09\n %0A\n-\n %09%7D%0A%0A\n+\n %09ret\n@@ -271,17 +271,16 @@\n g, index\n-t\n %0A%7D%0A%0Afunc\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-28_16-04-24",
+            "content": "@@ -262,139 +262,8 @@\n %09%7D%0A%0A\n-%09if flag == false %7B%0A%09%09for index, vall := range slice %7B%0A%09%09%09if vall %3C value && vall+1 %3E value %7B%0A%09%09%09%09indext = index + 1%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-28_16-08-23",
+            "content": "@@ -289,34 +289,33 @@\n or i\n- := 0; i %3C len(slice); i++\n+ndex, vall := range slice\n  %7B%0A%09\n@@ -323,16 +323,12 @@\n %09if \n-slice%5Bi%5D\n+vall\n  %3C v\n@@ -339,18 +339,14 @@\n  && \n-slice%5Bi\n+vall\n +1\n-%5D\n  %3E v\n@@ -366,16 +366,20 @@\n dext = i\n+ndex\n  + 1%0A%09%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-28_16-12-44",
+            "content": "@@ -252,22 +252,23 @@\n reak%0A%09%09%7D\n- else \n+%0A%0A%09%7D%0A%0A%09\n if flag \n@@ -278,17 +278,16 @@\n false %7B%0A\n-%09\n %09%09for i \n@@ -314,17 +314,16 @@\n ; i++ %7B%0A\n-%09\n %09%09%09if sl\n@@ -365,17 +365,16 @@\n e %7B%0A%09%09%09%09\n-%09\n indext =\n@@ -387,16 +387,9 @@\n %0A%09%09%09\n-%09%7D%0A%09%09%09%7D%0A\n+%7D\n %0A%09%09%7D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-28_16-14-00",
+            "content": "@@ -253,63 +253,8 @@\n eak%0A\n-%09%09%7D else if value %3C slice%5B0%5D %7B%0A%09%09%09indext = 0%0A%09%09%09break%0A%0A\n %09%09%7D \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-28_16-15-46",
+            "content": "@@ -307,83 +307,8 @@\n eak%0A\n-%09%09%7D else if value %3E slice%5Blen(slice)%5D %7B%0A%09%09%09indext = len(slice) + 1%0A%09%09%09break\n %0A%09%09%7D\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-28_16-16-48",
+            "content": "@@ -339,18 +339,16 @@\n n(slice)\n--1\n %5D %7B%0A%09%09%09i\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-28_16-17-56",
+            "content": "@@ -368,16 +368,19 @@\n (slice) \n++ 1\n %0A%09%09%09brea\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-28_16-18-09",
+            "content": "@@ -367,16 +367,17 @@\n n(slice)\n+ \n %0A%09%09%09brea\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-28_16-19-02",
+            "content": "@@ -119,16 +119,48 @@\n  int) %7B%0A\n+%09flag := false%0A%09var indext int%0A%0A\n %09for ind\n@@ -186,16 +186,33 @@\n slice %7B%0A\n+%09%09indext = index%0A\n %09%09if val\n@@ -232,82 +232,311 @@\n %0A%09%09%09\n-return true, index%0A%09%09%7D%0A%09%09\n+flag = true%0A%09%09%09break%0A%09%09%7D else if value %3C slice%5B0%5D %7B%0A%09%09%09indext = 0%0A%09%09%09break%0A%09%09%7D else \n if val\n-or %3E value %7B%0A%09%09%09return false, index\n+ue %3E slice%5Blen(slice)-1%5D %7B%0A%09%09%09indext = len(slice)%0A%09%09%09break%0A%09%09%7D else if flag == false %7B%0A%09%09%09for i := 0; i %3C len(slice); i++ %7B%0A%09%09%09%09if slice%5Bi%5D %3C value && slice%5Bi+1%5D %3E value %7B%0A%09%09%09%09%09indext = i + 1%0A%09%09%09%09%7D%0A%09%09%09%7D%0A\n %0A%09%09%7D%0A\n+%0A\n %09%7D%0A\n+%0A\n %09ret\n@@ -544,24 +544,19 @@\n rn f\n-alse, len(slice)\n+lag, indext\n %0A%7D%0A%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-28_16-22-54",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tfor index, valor := range slice {\n\t\tif valor == value {\n\t\t\treturn true, index\n\t\t}\n\t\tif valor > value {\n\t\t\treturn false, index\n\t\t}\n\t}\n\treturn false, len(slice)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "40"
+        }
+    ]
+}
