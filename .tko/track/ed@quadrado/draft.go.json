@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_16-33-58",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,187 +23,53 @@\n mt%22%0A\n-%0A\n func \n-recur(n int\n+main(\n ) %7B%0A\n-%09if n == 1 %7B%0A%09%09fmt.Print(%221%5E2 = 1%22) %0A%09%09return  %0A%09%7D%0A%09%0A%09// O resto da sua l%C3%B3gica recursiva viria aqui embaixo%0A%7D%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(&n)%0A%09recur(n\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-10_16-44-51",
+            "content": "@@ -69,10 +69,8 @@\n rint\n-ln\n (%221%5E\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-10_16-45-02",
+            "content": "@@ -98,65 +98,8 @@\n %0A%09%7D%0A\n-%0A    fmt.Println(n,%22%5E2 = %22,n-1,%22%5E2 + 2%22, n-1, %221 = ?%22) %0A%0A\n %09%0A%09/\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-10_16-55-16",
+            "content": "@@ -118,16 +118,17 @@\n (n,%22%5E2 =\n+ \n %22,n-1,%22%5E\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-55-54",
+            "content": "@@ -108,16 +108,18 @@\n mt.Print\n+ln\n (n,%22%5E2 =\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-56-26",
+            "content": "@@ -116,17 +116,16 @@\n (n,%22%5E2 =\n- \n %22,n-1,%22%5E\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-56-41",
+            "content": "@@ -134,9 +134,8 @@\n  + 2\n-*\n %22, n\n@@ -139,18 +139,16 @@\n , n-1, %22\n-+ \n 1 = ?%22) \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-57-12",
+            "content": "@@ -140,17 +140,16 @@\n , n-1, %22\n- \n + 1 = ?%22\n@@ -154,26 +154,8 @@\n ?%22) \n-%0A    fmt.Println()\n %0A%0A%09%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-57-32",
+            "content": "@@ -156,16 +156,29 @@\n %22) %0A    \n+fmt.Println()\n %0A%0A%09%0A%09// \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_16-57-45",
+            "content": "@@ -78,16 +78,17 @@\n %5E2 = 1%22)\n+ \n %0A%09%09retur\n@@ -92,14 +92,19 @@\n turn\n+  \n %0A%09%7D%0A%0A\n-%09\n+    \n fmt.\n@@ -115,17 +115,16 @@\n t(n,\n- \n %22%5E2 = %22,\n  n-1\n@@ -119,22 +119,20 @@\n %22%5E2 = %22,\n- \n n-1,\n- \n %22%5E2 + 2*\n@@ -154,23 +154,17 @@\n  ?%22)\n-%0A%09recur(n - 1)%0A\n+ %0A    %0A%0A%09\n %0A%09//\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_16-59-01",
+            "content": "@@ -152,26 +152,8 @@\n ?%22)%0A\n-    fmt.Println()%0A\n %09rec\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-10_16-59-14",
+            "content": "@@ -185,104 +185,8 @@\n 1)%0A%0A\n-    fmt.Print(n, %22%5E2 = %22, n-1, %22%5E2 + 2*%22, n-1, %22 + 1 = %22)%0A    fmt.Print(n%5E2)%0A    fmt.Println()%0A%0A\n %09// \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_17-00-55",
+            "content": "@@ -258,10 +258,10 @@\n nt(n\n-*n\n+%5E2\n )%0A  \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-10_17-01-30",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc recur(n int) {\n\tif n == 1 {\n\t\tfmt.Println(\"1^2 = 1\")\n\t\treturn\n\t}\n\n\tfmt.Print(n, \"^2 = \", n-1, \"^2 + 2*\", n-1, \" + 1 = ?\")\n    fmt.Println()\n\trecur(n - 1)\n\n    fmt.Print(n, \"^2 = \", n-1, \"^2 + 2*\", n-1, \" + 1 = \")\n    fmt.Print(n*n)\n    fmt.Println()\n\n\t// O resto da sua l\u00f3gica recursiva viria aqui embaixo\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\trecur(n)\n}\n",
+            "lines": "26"
+        }
+    ]
+}

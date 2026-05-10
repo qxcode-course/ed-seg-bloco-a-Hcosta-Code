@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_17-03-42",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,214 +23,53 @@\n mt%22%0A\n-%0A\n func \n-recur(n, k, valor int\n+main(\n ) %7B%0A\n-%0A%09if n == 1 %7B%0A%09%09fmt.Println(valor)%0A%09%09return%0A%09%7D%0A%0A%09valor = k%0A%09valor = valor / 2%0A%09recur(n-1, k, valor)%0A%0A%7D%0A%0Afunc main() %7B%0A%09var n, k, valor int%0A%09fmt.Scan(&n, &k)%0A%09recur(n, k, valor\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-10_17-29-47",
+            "content": "@@ -51,16 +51,17 @@\n  int) %7B%0A\n+%0A\n %09if n ==\n@@ -182,24 +182,19 @@\n n, k\n+,\n  \n-int%0A%09\n valor \n-:= 0\n+int\n %0A%09fm\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_17-31-14",
+            "content": "@@ -33,20 +33,16 @@\n  recur(n\n- int\n , k, val\n@@ -44,23 +44,19 @@\n , valor \n-float64\n+int\n ) %7B%0A%09if \n@@ -110,16 +110,8 @@\n or =\n- valor +\n  k%0A%09\n@@ -178,16 +178,19 @@\n ar n\n+, k\n  int%0A%09va\n r va\n@@ -189,26 +189,16 @@\n %0A%09va\n-r valor, k float64\n+lor := 0\n %0A%09fm\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_17-35-16",
+            "content": "@@ -72,9 +72,9 @@\n  == \n-0\n+1\n  %7B%0A%09\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_17-35-44",
+            "content": "@@ -87,20 +87,11 @@\n rint\n-f(%22%25.2f%5Cn%22, \n+ln(\n valo\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_17-37-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc recur(n int, k, valor float64) {\n\tif n == 0 {\n\t\tfmt.Printf(\"%.2f\\n\", valor)\n\t\treturn\n\t}\n\n\tvalor = valor + k\n\tvalor = valor / 2\n\trecur(n-1, k, valor)\n\n}\n\nfunc main() {\n\tvar n int\n\tvar valor, k float64\n\tfmt.Scan(&n, &k)\n\trecur(n, k, valor)\n}\n",
+            "lines": "22"
+        }
+    ]
+}

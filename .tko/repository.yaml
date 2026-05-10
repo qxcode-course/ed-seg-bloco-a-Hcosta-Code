@@ -23,6 +23,7 @@ sources:
   tasks: null
 expanded:
 - ed@rec
+- sandbox@sandbox
 flags:
   inbox: all
   panel: skills
@@ -30,5 +31,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fib2
-selected_index: 25
+selected: ed@santo
+selected_index: 28
