@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_13-42-32",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,472 +23,53 @@\n mt%22%0A\n-%0A\n func \n-eh_primo(n int, i int) bool %7B%0A%09if n %3C= 2 %7B%0A%09%09return n == 2%0A%09%7D%0A%09if n%25i == 0 %7B%0A%09%09return false%0A%09%7D%0A%09if i*i %3E n %7B%0A%09%09return true%0A%09%7D%0A%09return eh_primo(n, i+1)%0A%7D%0A%0Afunc buscarNPrime(n, atual, encontrados int) int %7B%0A%09if eh_primo(atual, 2) %7B%0A%09%09if encontrados+1 == n %7B%0A%09%09%09return atual%0A%09%09%7D%0A%09%09return buscarNPrime(n, atual+1, encontrados+1)%0A%09%7D%0A%0A%09return buscarNPrime(n, atual+1, encontrados)%0A%7D%0A%0Afunc main() %7B%0A%09var num int%0A%09fmt.Scan(&num)%0A%0A%09fmt.Println(buscarNPrime(num, 2, 0)\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-10_14-13-07",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc eh_primo(n int, i int) bool {\n\tif n <= 2 {\n\t\treturn n == 2\n\t}\n\tif n%i == 0 {\n\t\treturn false\n\t}\n\tif i*i > n {\n\t\treturn true\n\t}\n\treturn eh_primo(n, i+1)\n}\n\nfunc buscarNPrime(n, atual, encontrados int) int {\n\tif eh_primo(atual, 2) {\n\t\tif encontrados+1 == n {\n\t\t\treturn atual\n\t\t}\n\t\treturn buscarNPrime(n, atual+1, encontrados+1)\n\t}\n\n\treturn buscarNPrime(n, atual+1, encontrados)\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\n\tfmt.Println(buscarNPrime(num, 2, 0))\n}\n",
+            "lines": "34"
+        }
+    ]
+}

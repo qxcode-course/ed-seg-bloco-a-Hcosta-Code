@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_14-55-35",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,231 +23,53 @@\n mt%22%0A\n-%0A\n func \n-calculando(n int) int %7B%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%09if n == 2 %7B%0A%09%09return 1%0A%09%7D%0A%09if n == 3 %7B%0A%09%09return 2%0A%09%7D%0A%0A%09return calculando(n-1) + calculando(n-3)%0A%7D%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fmt.Println(calculando(n)\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-10_15-09-01",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc calculando(n int) int {\n\tif n == 1 {\n\t\treturn 1\n\t}\n\tif n == 2 {\n\t\treturn 1\n\t}\n\tif n == 3 {\n\t\treturn 2\n\t}\n\n\treturn calculando(n-1) + calculando(n-3)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfmt.Println(calculando(n))\n}\n",
+            "lines": "24"
+        }
+    ]
+}
