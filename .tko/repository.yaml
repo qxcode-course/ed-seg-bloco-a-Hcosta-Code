@@ -30,5 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@binomiais
-selected_index: 17
+selected: ed@fib2
+selected_index: 25

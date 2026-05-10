@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_15-12-25",
+            "content": "@@ -10,235 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-)%0A%0Afunc calc(n, k, count int) int %7B%0A%09var soma int%0A%09if count == n %7B%0A%09%09return soma%0A%09%7D%0A%0A%09return calc(n, k, count+1) + calc(n, k, count-2)%0A%7D%0A%0Afunc main() %7B%0A%09var n, k int%0A%09fmt.Scan(&n, &k)%0A%09fmt.Println(calc(n, k, 0)\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-10_15-38-37",
+            "content": "@@ -36,24 +36,31 @@\n nc calc(n, k\n+, count\n  int) int %7B%0A\n@@ -64,27 +64,35 @@\n  %7B%0A%09\n-if n == 1 %7C%7C n == 2\n+var soma int%0A%09if count == n\n  %7B%0A%09\n@@ -103,13 +103,17 @@\n urn \n-1\n+soma\n %0A%09%7D%0A\n+%0A\n %09ret\n@@ -126,30 +126,42 @@\n lc(n\n--1\n , k\n+, count+1\n ) + \n-k*\n calc(n\n--2\n , k\n+, count-2\n )%0A%7D%0A\n@@ -207,17 +207,16 @@\n &n, &k)%0A\n-%0A\n %09fmt.Pri\n@@ -229,13 +229,16 @@\n alc(n, k\n+, 0\n ))%0A%7D%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-05-10_15-48-06",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc calc(n, k int) int {\n\tif n == 1 || n == 2 {\n\t\treturn 1\n\t}\n\treturn calc(n-1, k) + k*calc(n-2, k)\n}\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\n\tfmt.Println(calc(n, k))\n}\n",
+            "lines": "19"
+        }
+    ]
+}

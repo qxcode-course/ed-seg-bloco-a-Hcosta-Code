@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_15-48-47",
+            "content": "@@ -37,16 +37,19 @@\n c calc(n\n+, k\n  int) in\n@@ -109,21 +109,24 @@\n (n-1\n+, k\n ) + \n-2\n+k\n *calc(n-\n 1) -\n@@ -125,21 +125,12 @@\n c(n-\n-1) - calc(n-3\n+2, k\n )%0A%7D%0A\n@@ -150,16 +150,19 @@\n %7B%0A%09var n\n+, k\n  int%0A%09fm\n@@ -170,16 +170,20 @@\n .Scan(&n\n+, &k\n )%0A%0A%09fmt.\n@@ -196,13 +196,16 @@\n n(calc(n\n+, k\n ))%0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-10_15-52-35",
+            "content": "@@ -60,16 +60,26 @@\n  n == 1 \n+%7C%7C n == 2 \n %7B%0A%09%09retu\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-10_15-53-39",
+            "content": "@@ -80,69 +80,8 @@\n %0A%09%7D%0A\n-    if n == 2%7B%0A        return  calc(n-1) + 2*calc(n-1)%0A    %7D%0A\n %09ret\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-10_15-54-40",
+            "content": "@@ -68,33 +68,36 @@\n %7B%0A%09%09return 1%0A%09%7D%0A\n-%09\n+    \n if n == 2 %7B%0A%09%09re\n@@ -93,47 +93,26 @@\n == 2\n- \n %7B%0A\n-%09%09return 1%0A%09%7D%0A%09if n == 3 %7B%0A%09%09\n+        \n return \n+ \n calc\n@@ -123,19 +123,24 @@\n ) + \n+2*\n calc(n-\n-2)%0A%09\n+1)%0A    \n %7D%0A%09r\n@@ -161,16 +161,18 @@\n ) + \n+2*\n calc(n-\n-2\n+1\n ) - \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-10_16-29-02",
+            "content": "@@ -169,12 +169,24 @@\n c(n-\n-2\n+1\n ) +\n+ calc(n-2) -\n  cal\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-10_16-32-12",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc calc(n int) int {\n\tif n == 1 {\n\t\treturn 1\n\t}\n\tif n == 2 {\n\t\treturn 1\n\t}\n\tif n == 3 {\n\t\treturn calc(n-1) + calc(n-2)\n\t}\n\treturn calc(n-2) + calc(n-3)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfmt.Println(calc(n))\n}\n",
+            "lines": "25"
+        }
+    ]
+}
