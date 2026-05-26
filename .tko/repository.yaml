@@ -20,6 +20,7 @@ sources:
   quests: null
 expanded:
 - ed@map_set
+- ed@rec
 - ed@list
 flags:
   inbox: all
@@ -28,5 +29,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@analise
-selected_index: 4
+selected: ed@rec
+selected_index: 12
