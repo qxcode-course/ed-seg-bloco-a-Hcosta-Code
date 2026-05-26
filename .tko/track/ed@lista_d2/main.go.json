@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_15-52-22",
+            "content": "@@ -56,292 +56,8 @@\n %0A)%0A%0A\n-type Node struct %7B%0A%09Valor int%0A%09next  *Node%0A%09prev  *Node%0A%09root  *Node%0A%7D%0A%0Atype LList struct %7B%0A%09root *Node%0A%09size int%0A%7D%0A%0Afunc NewLList() *LList %7B%0A%09sentinel := &Node%7B%7D%0A%0A%09sentinel.next = sentinel%0A%09sentinel.prev = sentinel%0A%0A%09lista := &LList%7B%0A%09%09root: sentinel,%0A%09%09size: 0,%0A%09%7D%0A%0A%09return lista%0A%7D%0A\n %0Afun\n@@ -106,17 +106,16 @@\n .Stdin)%0A\n-%09\n // %09ll :\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-05-25_16-27-26",
+            "content": "@@ -341,182 +341,8 @@\n %0A%7D%0A%0A\n-func (n *Node) Next() *Node %7B%0A%09if n.next == n.root %7B%0A%09%09return nil%0A%09%7D%0A%09return n.next%0A%0A%7D%0A%0Afunc (x *Node) Prev() *Node%7B%0A%09if x.prev == x.root %7B%0A%09%09return nil%0A%09%7D%0A%09return x.prev%0A%7D%0A%0A\n func\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-05-25_16-43-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValor int\n\tnext  *Node\n\tprev  *Node\n\troot  *Node\n}\n\ntype LList struct {\n\troot *Node\n\tsize int\n}\n\nfunc NewLList() *LList {\n\tsentinel := &Node{}\n\n\tsentinel.next = sentinel\n\tsentinel.prev = sentinel\n\n\tlista := &LList{\n\t\troot: sentinel,\n\t\tsize: 0,\n\t}\n\n\treturn lista\n}\n\nfunc (n *Node) Next() *Node {\n\tif n.next == n.root {\n\t\treturn nil\n\t}\n\treturn n.next\n\n}\n\nfunc (x *Node) Prev() *Node{\n\tif x.prev == x.root {\n\t\treturn nil\n\t}\n\treturn x.prev\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\t// \tll := NewLList()\n\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(line)\n\t\targs := strings.Fields(line)\n\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tcmd := args[0]\n\n\t\tswitch cmd {\n\t\tcase \"show\":\n\t\t\t// fmt.Println(ll.String())\n\t\tcase \"size\":\n\t\t\t// fmt.Println(ll.Size())\n\t\tcase \"push_back\":\n\t\t\t// for _, v := range args[1:] {\n\t\t\t// \tnum, _ := strconv.Atoi(v)\n\t\t\t// \tll.PushBack(num)\n\t\t\t// }\n\t\tcase \"push_front\":\n\t\t\t// for _, v := range args[1:] {\n\t\t\t// \tnum, _ := strconv.Atoi(v)\n\t\t\t// \tll.PushFront(num)\n\t\t\t// }\n\t\tcase \"pop_back\":\n\t\t\t// ll.PopBack()\n\t\tcase \"pop_front\":\n\t\t\t// ll.PopFront()\n\t\tcase \"clear\":\n\t\t\t// ll.Clear()\n\t\tcase \"walk\":\n\t\t\t// fmt.Print(\"[ \")\n\t\t\t// for node := ll.Front(); node != nil; node = node.Next() {\n\t\t\t// \tfmt.Printf(\"%v \", node.Value)\n\t\t\t// }\n\t\t\t// fmt.Print(\"]\\n[ \")\n\t\t\t// for node := ll.Back(); node != nil; node = node.Prev() {\n\t\t\t// \tfmt.Printf(\"%v \", node.Value)\n\t\t\t// }\n\t\t\t// fmt.Println(\"]\")\n\t\tcase \"replace\":\n\t\t\t// oldvalue, _ := strconv.Atoi(args[1])\n\t\t\t// newvalue, _ := strconv.Atoi(args[2])\n\t\t\t// node := ll.Search(oldvalue)\n\t\t\t// if node != nil {\n\t\t\t// \tnode.Value = newvalue\n\t\t\t// } else {\n\t\t\t// \tfmt.Println(\"fail: not found\")\n\t\t\t// }\n\t\tcase \"insert\":\n\t\t\t// oldvalue, _ := strconv.Atoi(args[1])\n\t\t\t// newvalue, _ := strconv.Atoi(args[2])\n\t\t\t// node := ll.Search(oldvalue)\n\t\t\t// if node != nil {\n\t\t\t// \tll.Insert(node, newvalue)\n\t\t\t// } else {\n\t\t\t// \tfmt.Println(\"fail: not found\")\n\t\t\t// }\n\t\tcase \"remove\":\n\t\t\t// oldvalue, _ := strconv.Atoi(args[1])\n\t\t\t// node := ll.Search(oldvalue)\n\t\t\t// if node != nil {\n\t\t\t// \tll.Remove(node)\n\t\t\t// } else {\n\t\t\t// \tfmt.Println(\"fail: not found\")\n\t\t\t// }\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "133"
+        }
+    ]
+}
