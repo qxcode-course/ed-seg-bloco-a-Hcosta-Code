@@ -1,16 +1,10 @@
 version: '0.2'
 sources:
 - name: sandbox
-  target: sandbox
-  index: README.md
+  target: base
+  index: ../README.md
   type: local
   writeable: true
-  quests: null
-- name: eval1
-  target: https://github.com/senapk/eval_26_ed_1
-  index: README.md
-  type: git
-  writeable: false
   quests: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
@@ -19,17 +13,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@basic
-- eval1@eval1
-- ed@tree
 - ed@vector
-- ed@map_set
-- ed@list
-- ed@linear
-- ed@rec
-- ed@bfs
-- ed@backtrack
-- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -37,5 +21,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@eval1
-selected_index: 1
+selected: ed@vetbuild
+selected_index: 5
