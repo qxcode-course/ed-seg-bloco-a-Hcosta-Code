@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-11_02-25-42",
+            "content": "@@ -23,16 +23,27 @@\n %0A%09%22fmt%22%0A\n+%09%22strings%22%0A\n )%0A%0A// mo\n@@ -252,75 +252,18 @@\n  %7B%0A%09\n-if it.Next() == l.End() %7B%0A%09%09return l.Front()%0A%09%7D%0A%0A%09return it.Next()%0A\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-11_02-59-22",
+            "content": "@@ -134,254 +134,17 @@\n  %7B%0A%09\n-anotaao := %5B%5Dstring%7B%7D%0A%09for it := l.Front(); it != l.End(); it = it.Next() %7B%0A%09%09if it == sword %7B%0A%09%09%09anotaao = append(anotaao, fmt.Sprintf(%22%25d%3E%22, it.Value))%0A%09%09%7D else %7B%0A%09%09%09anotaao = append(anotaao, fmt.Sprintf(%22%25d%22, it.Value))%0A%09%09%7D%0A%09%7D%0A%0A%09return anotaao\n+return %22%22\n %0A%7D%0A%0A\n@@ -285,16 +285,17 @@\n nt()%0A%09%7D%0A\n+%0A\n %09return \n@@ -304,16 +304,17 @@\n .Next()%0A\n+%0A\n %7D%0A%0Afunc \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-11_03-07-42",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22strings%22%0A\n )%0A%0A/\n@@ -373,47 +373,15 @@\n urn \n-%22%5B%22 + strings.Join(anotaao, %22, %22) + %22%5D%22\n+anotaao\n %0A%7D%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-11_03-10-20",
+            "content": "@@ -382,17 +382,16 @@\n eturn %22%5B\n- \n %22 + stri\n@@ -413,16 +413,16 @@\n o, %22\n+,\n  %22) + %22\n- \n %5D%22%0A%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-11_03-11-18",
+            "content": "@@ -647,16 +647,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-11_03-12-59",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tanotaao := []string{}\n\tfor it := l.Front(); it != l.End(); it = it.Next() {\n\t\tif it == sword {\n\t\t\tanotaao = append(anotaao, fmt.Sprintf(\"%d>\", it.Value))\n\t\t} else {\n\t\t\tanotaao = append(anotaao, fmt.Sprintf(\"%d\", it.Value))\n\t\t}\n\t}\n\n\treturn \"[ \" + strings.Join(anotaao, \" \") + \" ]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tif it.Next() == l.End() {\n\t\treturn l.Front()\n\t}\n\treturn it.Next()\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "47"
+        }
+    ]
+}
