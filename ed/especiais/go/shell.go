@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -14,8 +15,30 @@ type Pair struct {
 }
 
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	counts := make(map[int]int)
+
+	for _, x := range vet {
+		absX := x
+		if absX < 0 {
+			absX = -absX
+		}
+
+		counts[absX]++
+	}
+
+	keys := make([]int, 0, len(counts))
+	for key := range counts {
+		keys = append(keys, key)
+	}
+
+	sort.Ints(keys)
+
+	var res []Pair
+	for _, key := range keys {
+		res = append(res, Pair{One: key, Two: counts[key]})
+	}
+
+	return res
 }
 
 func teams(vet []int) []Pair {

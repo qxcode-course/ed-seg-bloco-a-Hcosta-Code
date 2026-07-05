@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-14_20-25-47",
+            "content": "@@ -10,46 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22container/list%22%0A%09\n %22fmt%22%0A\n-)%0A%0A\n func\n@@ -37,870 +37,39 @@\n ) %7B%0A\n-%09var entrada string%0A%09fmt.Scan(&entrada)%0A%0A%09l := list.New()%0A%09l.PushFront('#') %0A%09cursor := l.Front()%0A%0A%09for _, char := range entrada %7B%0A%09%09if char == 'R' %7B%0A%09%09%09l.InsertAfter('%5Cn', cursor)%0A%09%09%09cursor = cursor.Next()%0A%09%09%09%0A%09%09%7D else if char == 'B' %7B%0A%09%09%09if cursor != l.Front() %7B %0A%09%09%09%09prev := cursor.Prev()%0A%09%09%09%09l.Remove(cursor)%0A%09%09%09%09cursor = prev%0A%09%09%09%7D%0A%09%09%09%0A%09%09%7D else if char == 'D' %7B%0A%09%09%09if cursor.Next() != nil %7B%0A%09%09%09%09l.Remove(cursor.Next())%0A%09%09%09%7D%0A%09%09%09%0A%09%09%7D else if char == '%3C' %7B%0A%09%09%09if cursor != l.Front() %7B %0A%09%09%09%09cursor = cursor.Prev()%0A%09%09%09%7D%0A%09%09%09%0A%09%09%7D else if char == '%3E' %7B%0A%0A%09%09%09if cursor.Next() != nil %7B%0A%09%09%09%09cursor = cursor.Next()%0A%09%09%09%7D%0A%09%09%09%0A%09%09%7D else %7B%0A%09%09%09l.InsertAfter(char, cursor)%0A%09%09%09cursor = cursor.Next()%0A%09%09%7D%0A%09%7D%0A%0A%09texto := %22%22%0A%0A%09for it := l.Front().Next(); it != nil; it = it.Next() %7B%0A%09%09texto += string(it.Value.(rune))%0A%09%09%0A%09%09if it == cursor %7B%0A%09%09%09texto += %22%7C%22%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(texto\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-14_20-27-29",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar entrada string\n\tfmt.Scan(&entrada)\n\n\tl := list.New()\n\tl.PushFront('#') \n\tcursor := l.Front()\n\n\tfor _, char := range entrada {\n\t\tif char == 'R' {\n\t\t\tl.InsertAfter('\\n', cursor)\n\t\t\tcursor = cursor.Next()\n\t\t\t\n\t\t} else if char == 'B' {\n\t\t\tif cursor != l.Front() { \n\t\t\t\tprev := cursor.Prev()\n\t\t\t\tl.Remove(cursor)\n\t\t\t\tcursor = prev\n\t\t\t}\n\t\t\t\n\t\t} else if char == 'D' {\n\t\t\tif cursor.Next() != nil {\n\t\t\t\tl.Remove(cursor.Next())\n\t\t\t}\n\t\t\t\n\t\t} else if char == '<' {\n\t\t\tif cursor != l.Front() { \n\t\t\t\tcursor = cursor.Prev()\n\t\t\t}\n\t\t\t\n\t\t} else if char == '>' {\n\n\t\t\tif cursor.Next() != nil {\n\t\t\t\tcursor = cursor.Next()\n\t\t\t}\n\t\t\t\n\t\t} else {\n\t\t\tl.InsertAfter(char, cursor)\n\t\t\tcursor = cursor.Next()\n\t\t}\n\t}\n\n\ttexto := \"\"\n\n\tfor it := l.Front().Next(); it != nil; it = it.Next() {\n\t\ttexto += string(it.Value.(rune))\n\t\t\n\t\tif it == cursor {\n\t\t\ttexto += \"|\"\n\t\t}\n\t}\n\n\tfmt.Println(texto)\n}\n",
+            "lines": "61"
+        }
+    ]
+}
