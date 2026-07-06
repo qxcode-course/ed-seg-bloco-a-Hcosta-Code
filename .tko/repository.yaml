@@ -12,8 +12,7 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@list
+expanded: []
 flags:
   inbox: all
   panel: skills
@@ -23,5 +22,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@editorint
-selected_index: 8
+selected: ed@linear
+selected_index: 5

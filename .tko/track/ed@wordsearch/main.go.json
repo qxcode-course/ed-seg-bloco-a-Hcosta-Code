@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_15-28-37",
+            "content": "@@ -168,269 +168,25 @@\n  %7B%0A%09\n-for r := 0; r %3C len(grid); r++ %7B%0A%09%09for c := 0; c %3C len(grid%5B0%5D); c++ %7B%0A%09%09%09if dfs(grid, r, c, word, 0) %7B%0A%09%09%09%09return false%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return false%0A%7D%0A%0Afunc dfs(grid %5B%5D%5B%5Dbyte, r int, c int, word string, index int) bool %7B%0A%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A\n+_, _ = grid, word\n %0A%09re\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-05_15-36-53",
+            "content": "@@ -428,154 +428,8 @@\n e%0A%09%7D\n-%0A%09if r %3C 0 %7C%7C r %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5Bo%5D) %7C%7C grid%5Br%5D%5Bc%5D != word%5Bindex%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09temp := grid%5Br%5D%5Bc%5D%0A%09gird%5Br%5D%5Bc%5D = '#'\n %0A%0A%09r\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-05_15-42-27",
+            "content": "@@ -479,17 +479,17 @@\n en(grid%5B\n-0\n+o\n %5D) %7C%7C gr\n@@ -533,16 +533,55 @@\n lse%0A%09%7D%0A%0A\n+%09temp := grid%5Br%5D%5Bc%5D%0A%09gird%5Br%5D%5Bc%5D = '#'%0A%0A\n %09return \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-07-05_15-42-41",
+            "content": "@@ -537,66 +537,8 @@\n %09%7D%0A%0A\n-%09temp := grid%5Br%5D%5Bc%5D%0A%09grid%5Br%5D%5Bc%5D = '#'%0A%0A%09grid%5Br%5D%5Bc%5D = temp%0A\n %09ret\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-05_15-43-14",
+            "content": "@@ -576,170 +576,8 @@\n #'%0A%0A\n-%09encontrou := dfs(grid, r+1, c, word, index+1) %7C%7C%0A%09%09dfs(grid, r-1, c, word, index+1) %7C%7C%0A%09%09dfs(grid, r, c+1, word, index+1) %7C%7C%0A%09%09dfs(grid, r, c-1, word, index+1)%0A%0A\n %09gri\n@@ -591,25 +591,24 @@\n  = temp%0A\n-%0A\n %09return \n encontro\n@@ -603,17 +603,13 @@\n urn \n-encontrou\n+false\n %0A%7D%0A%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-05_15-45-47",
+            "content": "@@ -279,19 +279,20 @@\n %09return \n-tru\n+fals\n e%0A%09%09%09%7D%0A%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-07-05_15-47-02",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tfor r := 0; r < len(grid); r++ {\n\t\tfor c := 0; c < len(grid[0]); c++ {\n\t\t\tif dfs(grid, r, c, word, 0) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc dfs(grid [][]byte, r int, c int, word string, index int) bool {\n\tif index == len(word) {\n\t\treturn true\n\t}\n\tif r < 0 || r >= len(grid) || c < 0 || c >= len(grid[0]) || grid[r][c] != word[index] {\n\t\treturn false\n\t}\n\n\ttemp := grid[r][c]\n\tgrid[r][c] = '#'\n\n\tencontrou := dfs(grid, r+1, c, word, index+1) ||\n\t\tdfs(grid, r-1, c, word, index+1) ||\n\t\tdfs(grid, r, c+1, word, index+1) ||\n\t\tdfs(grid, r, c-1, word, index+1)\n\n\tgrid[r][c] = temp\n\n\treturn encontrou\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "56"
+        }
+    ]
+}

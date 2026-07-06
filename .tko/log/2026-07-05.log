@@ -23,3 +23,94 @@
 2026-07-05 00:38:47, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0
 2026-07-05 00:38:47, MOVE, v:1, k:ed@editorint, mode:BACK
 2026-07-05 00:39:28, SELF, v:1, k:ed@editorint, self:1, rate:100, study:54, concept:1, problem:1, refactor:1
+2026-07-05 00:42:13, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-07-05 00:42:14, EXEC, v:1, k:ed@distancia, mode:FULL, fail:COMP
+2026-07-05 00:49:59, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-07-05 00:54:22, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-07-05 00:56:19, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:26
+2026-07-05 00:56:24, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0
+2026-07-05 01:07:12, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-07-05 01:07:14, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:56
+2026-07-05 01:07:17, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0
+2026-07-05 01:07:17, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-07-05 01:08:51, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-07-05 01:08:53, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:66
+2026-07-05 01:08:56, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0
+2026-07-05 01:12:05, EXEC, v:1, k:ed@distancia, mode:FULL, rate:0, size:66
+2026-07-05 01:12:05, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-07-05 01:12:02, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-07-05 01:12:16, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-07-05 01:12:18, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-07-05 01:14:40, EXEC, v:1, k:ed@distancia, mode:FULL, rate:100, size:66
+2026-07-05 01:14:42, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-07-05 01:14:57, SELF, v:1, k:ed@distancia, self:1, rate:100, study:45, concept:1, problem:1
+2026-07-05 01:15:32, MOVE, v:1, k:ed@permutacoes, mode:DOWN
+2026-07-05 01:15:34, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-05 01:15:36, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:5
+2026-07-05 01:15:32, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 01:15:32, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 01:15:36, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 02:14:52, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0
+2026-07-05 02:14:40, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-07-05 02:14:51, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 02:16:04, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0
+2026-07-05 02:18:06, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0
+2026-07-05 02:18:07, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-05 15:28:31, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-07-05 15:28:32, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-07-05 15:28:37, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:62
+2026-07-05 15:31:09, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-07-05 15:32:01, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-07-05 15:32:04, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25
+2026-07-05 15:32:04, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:36:45, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:36:53, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:76
+2026-07-05 15:37:02, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25
+2026-07-05 15:37:01, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:41:52, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:42:27, EXEC, v:1, k:ed@wordsearch, mode:FULL, size:82, fail:COMP
+2026-07-05 15:42:41, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:79
+2026-07-05 15:43:14, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:83
+2026-07-05 15:45:47, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:89
+2026-07-05 15:46:21, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25
+2026-07-05 15:45:42, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:46:20, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 15:47:02, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:89
+2026-07-05 15:47:04, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-07-05 15:47:22, SELF, v:1, k:ed@wordsearch, self:1, rate:100, study:38, problem:1, refactor:1
+2026-07-05 15:49:14, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-07-05 15:49:16, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100
+2026-07-05 15:49:17, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-07-05 15:49:30, MOVE, v:1, k:ed@sudoku, mode:DOWN
+2026-07-05 15:49:33, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 15:49:35, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:5
+2026-07-05 15:49:38, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-07-05 15:54:21, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 15:54:22, EXEC, v:1, k:ed@sudoku, mode:FULL, size:7, fail:COMP
+2026-07-05 15:54:59, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-07-05 15:55:09, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 15:55:10, EXEC, v:1, k:ed@sudoku, mode:FULL, size:7, fail:COMP
+2026-07-05 15:55:22, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:10
+2026-07-05 15:57:51, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:8
+2026-07-05 15:57:51, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-07-05 15:58:01, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 15:58:03, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0
+2026-07-05 15:58:03, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:02:53, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:04:19, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:27
+2026-07-05 16:06:04, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:04:18, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:10:41, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:17:23, EXEC, v:1, k:ed@sudoku, mode:FULL, size:35, fail:COMP
+2026-07-05 16:17:25, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-07-05 16:17:42, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 16:17:43, EXEC, v:1, k:ed@sudoku, mode:FULL, fail:COMP
+2026-07-05 16:22:32, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:24:02, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:63
+2026-07-05 16:24:03, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-07-05 16:24:12, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-07-05 16:24:14, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0
+2026-07-05 16:24:13, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:24:54, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-07-05 16:32:01, EXEC, v:1, k:ed@sudoku, mode:FULL, size:67, fail:COMP
+2026-07-05 16:32:02, MOVE, v:1, k:ed@sudoku, mode:BACK

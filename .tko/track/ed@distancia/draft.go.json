@@ -22,8 +22,33 @@
         },
         {
             "label": "2026-06-15_11-39-17",
-            "content": "",
+            "content": "@@ -1,261 +0,0 @@\n-package main%0A%0Aimport (%0A%09%22fmt%22%0A)%0A%0Afunc solve(s %5B%5Dbyte, L int, index int) bool %7B%0A%09return true%0A%0A%7D%0A%0Afunc main() %7B%0A%09var seq string%0A%09var L int%0A%0A%09if _, err := fmt.Scan(&seq, &L); err != nil %7B%0A%09%09return%0A%09%7D%0A%0A%09s := %5B%5Dbyte(seq)%0A%0A%09solve(s, L, 0)%0A%0A%09fmt.Println(string(s))%0A%0A%7D%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2026-07-05_00-56-19",
+            "content": "@@ -77,435 +77,18 @@\n  %7B%0A%09\n-if index == len(s) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if s%5Bindex%5D != '.' %7B%0A%09%09return solve(s, L, index+1)%0A%09%7D%0A%0A%09for d := 0; d %3C= L; d++ %7B%0A%09%09charD := byte('0' + d)%0A%09%09valid := true%0A%0A%09%09for i := 1; i %3C= L; i++ %7B%0A%09%09%09if index-1 %3E= 0 && s%5Bindex-1%5D == charD %7B%0A%09%09%09%09valid = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if valid %7B%0A%09%09%09for i := 1; i %3C= L; i++ %7B%0A%09%09%09%09if index+1 %3C len(s) && s%5Bindex+1%5D == charD %7B%0A%09%09%09%09%09valid = false%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%0A%09return fals\n+return tru\n e%0A%0A%7D\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-07-05_01-07-14",
+            "content": "@@ -488,116 +488,8 @@\n %09%7D%0A%0A\n-%09%09if valid %7B%0A%09%09%09s%5Bindex%5D = charD%0A%0A%09%09%09if solve(s, L, index+1) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%0A%09%09%09s%5Bindex%5D = '.'%0A%09%09%7D%0A%0A\n %09%7D%0A%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-07-05_01-08-53",
+            "content": "@@ -295,17 +295,17 @@\n s%5Bindex-\n-i\n+1\n %5D == cha\n@@ -424,17 +424,17 @@\n s%5Bindex+\n-i\n+1\n %5D == cha\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-05_01-12-05",
+            "content": "@@ -277,17 +277,17 @@\n f index-\n-i\n+1\n  %3E= 0 &&\n@@ -402,17 +402,17 @@\n f index+\n-i\n+1\n  %3C len(s\n@@ -544,16 +544,17 @@\n index+1)\n+ \n %7B%0A%09%09%09%09re\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-05_01-14-40",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc solve(s []byte, L int, index int) bool {\n\tif index == len(s) {\n\t\treturn true\n\t}\n\n\tif s[index] != '.' {\n\t\treturn solve(s, L, index+1)\n\t}\n\n\tfor d := 0; d <= L; d++ {\n\t\tcharD := byte('0' + d)\n\t\tvalid := true\n\n\t\tfor i := 1; i <= L; i++ {\n\t\t\tif index-i >= 0 && s[index-i] == charD {\n\t\t\t\tvalid = false\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif valid {\n\t\t\tfor i := 1; i <= L; i++ {\n\t\t\t\tif index+i < len(s) && s[index+i] == charD {\n\t\t\t\t\tvalid = false\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif valid {\n\t\t\ts[index] = charD\n\n\t\t\tif solve(s, L, index+1){\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\ts[index] = '.'\n\t\t}\n\n\t}\n\n\treturn false\n\n}\n\nfunc main() {\n\tvar seq string\n\tvar L int\n\n\tif _, err := fmt.Scan(&seq, &L); err != nil {\n\t\treturn\n\t}\n\n\ts := []byte(seq)\n\n\tsolve(s, L, 0)\n\n\tfmt.Println(string(s))\n\n}\n",
+            "lines": "66"
         }
     ]
 }
