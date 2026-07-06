@@ -2,10 +2,86 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
+
+func (b *Deque) resize() {
+	newCapacity := b.capacity * 2
+	if newCapacity == 0 {
+		newCapacity = 4
+	}
+	newData := make([]int, newCapacity)
+
+	for i := 0; i < b.size; i++ {
+		newData[i] = b.data[(b.front+i)%b.capacity]
+	}
+	b.data = newData
+	b.front = 0
+	b.capacity = newCapacity
+}
+
+func (b *Deque) Len() int {
+	return b.size
+}
+
+func (b *Deque) PushBack(val int) {
+	if b.size == b.capacity {
+		b.resize()
+	}
+	index := (b.front + b.size) % b.capacity
+	b.data[index] = val
+	b.size++
+}
+
+func (b *Deque) PushFront(val int) {
+	if b.size == b.capacity {
+		b.resize()
+	}
+	b.front = (b.front - 1 + b.capacity) % b.capacity
+	b.data[b.front] = val
+	b.size++
+}
+
+func (b *Deque) PopBack() error {
+	if b.size == 0 {
+		return errors.New("fail: buffer vazio")
+	}
+	b.size--
+	return nil
+}
+
+func (b *Deque) PopFront() error {
+	if b.size == 0 {
+		return errors.New("fail: buffer vazio")
+	}
+	b.front = (b.front + 1) % b.capacity
+	b.size--
+	return nil
+}
+
+func (b *Deque) Front() (int, error) {
+	if b.size == 0 {
+		return 0, errors.New("fail. buffer vazio")
+	}
+	return b.data[b.front], nil
+}
+
+func (b *Deque) Back() (int, error) {
+	if b.size == 0 {
+		return 0, errors.New("fail. buffer vazio")
+	}
+	index := (b.front + b.size - 1) % b.capacity
+	return b.data[index], nil
+}
+
+func (b *Deque) Clear() {
+	b.front = 0
+	b.size = 0
+}
 
 type Deque struct {
 	data     []int
@@ -68,39 +144,39 @@ func main() {
 		case "debug":
 			fmt.Println(buf.Debug())
 		case "size":
-			// fmt.Println(buf.Len())
+			fmt.Println(buf.Len())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				buf.PushBack(num)
+			}
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushFront(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				buf.PushFront(num)
+			}
 		case "pop_back":
-			// if err := buf.PopBack(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopBack(); err != nil {
+				fmt.Println(err)
+			}
 		case "pop_front":
-			// if err := buf.PopFront(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopFront(); err != nil {
+				fmt.Println(err)
+			}
 		case "front":
-			// if val, err := buf.Front(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Front(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "back":
-			// if val, err := buf.Back(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Back(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "clear":
-			// buf.Clear()
+			buf.Clear()
 		case "end":
 			return
 		default:
