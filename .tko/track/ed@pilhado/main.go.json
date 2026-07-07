@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_15-44-43",
+            "content": "@@ -44,7 +44,5 @@\n %22%0A)%0A\n-dd\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-07-06_15-45-19",
+            "content": "@@ -46,30 +46,5 @@\n )%0Add\n-kohhhhggggggggfdDDDFFFD%0AD\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-07-06_16-46-34",
+            "content": "@@ -67,10 +67,9 @@\n DDFFFD%0AD\n-f\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-07-07_02-45-42",
+            "content": "@@ -68,10 +68,9 @@\n DFFFD%0ADf\n-c\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-07-07_03-39-52",
+            "content": "@@ -40,10 +40,38 @@\n %09%22os%22%0A)%0A\n-%0A\n+ddkohhhhggggggggfdDDDFFFD%0ADfc\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-07-07_03-56-39",
+            "content": "@@ -42,534 +42,8 @@\n os%22%0A\n-%09%22strings%22%0A)%0A%0Atype Node%5BT any%5D struct %7B%0A%09Value T%0A%09next  *Node%5BT%5D%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09head *Node%5BT%5D%0A%09tail *Node%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%7D%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09queue := NewQueue%5Bint%5D()%0A%0A%09for %7B%0A%09%09if !scanner.Scan() %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09line := scanner.Text()%0A%09%09fmt.Println(%22$%22 + line)%0A%09%09args := strings.Fields(line)%0A%09%09if len(args) == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09switch args%5B0%5D %7B%0A%09%09case %22end%22:%0A%09%09%09return%0A%09%09case %22show%22:%0A%09%09%09fmt.Println(queue)%0A%09%09%7D%0A%0A%09%7D%0A%0A%7D\n+)%0A%0A\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-07-07_04-20-12",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0Atype \n@@ -238,217 +238,8 @@\n %0A%7D%0A%0A\n-func (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09newNode := &Node%5BT%5D%7BValue: value, next: nil%7D%0A%09if q.size == 0 %7B%0A%09%09q.head = newNode%0A%09%09q.tail = newNode%0A%09%7D else %7B%0A%09%09q.tail.next = newNode%0A%09%09q.tail = newNode%0A%09%7D%0A%09q.size++%0A%7D%0A%0A\n func\n@@ -535,16 +535,16 @@\n %22show%22:%0A\n+\n %09%09%09fmt.P\n@@ -561,121 +561,8 @@\n ue)%0A\n-%09%09case %22push%22:%0A%09%09%09for _, arg := range args%5B1:%5D %7B%0A%09%09%09%09value, _ := strconv.Atoi(arg)%0A%09%09%09%09queue.Enqueue(value)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-07-07_04-25-05",
+            "content": "@@ -458,223 +458,8 @@\n %0A%7D%0A%0A\n-func (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09var zero T%0A%0A%09if q.size == 0 %7B%0A%09%09return zero, false%0A%09%7D%0A%0A%09value := q.head.Value%0A%09q.head = q.head.next%0A%0A%09if q.head == nil %7B%0A%09%09q.tail = nil%0A%09%7D%0A%0A%09q.size--%0A%09return value, true%0A%7D%0A%0A\n func\n@@ -894,157 +894,8 @@\n %09%09%7D%0A\n-%09%09case %22pop%22:%0A%09%09%09if _, ok := queue.Dequeue(); !ok %7B%0A%09%09%09%09fmt.Println(%22falha:fila vazia%22)%0A%09%09%09%7D%0A%0A%09%09default:%0A%09%09%09fmt.Println(%22Unknown command:%22, args%5B0%5D)%0A\n %09%09%7D%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-07_04-31-25",
+            "content": "@@ -1199,16 +1199,71 @@\n )%0A%09%09%09%7D%0A%0A\n+%09%09default:%0A%09%09%09fmt.Println(%22Unknown command:%22, args%5B0%5D)%0A\n %09%09%7D%0A%0A%09%7D%0A\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-07-07_04-31-42",
+            "content": "@@ -673,130 +673,8 @@\n %0A%7D%0A%0A\n-func (q *Queue%5BT%5D) Peek() (T, bool) %7B%0A%09var zero T%0A%09if q.size == 0 %7B%0A%09%09return zero, false%0A%09%7D%0A%09return q.head.Value, true%0A%7D%0A%0A\n func\n@@ -1202,192 +1202,8 @@\n %09%09%7D%0A\n-%09%09case %22peek%22:%0A%09%09%09if value, ok := queue.Peek(); ok %7B%0A%09%09%09%09fmt.Println(value)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22falha: fila vazia%22)%0A%09%09%09%7D%0A%09%09default:%0A%09%09%09fmt.Println(%22Unknown command:%22, args%5B0%5D)\n %0A%09%09%7D\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-07-07_04-35-06",
+            "content": "@@ -795,208 +795,8 @@\n %0A%7D%0A%0A\n-func (q *Queue%5BT%5D) String() string %7B%0A%09result := %22%5B%22%0A%09for n := q.head; n != nil; n = n.next %7B%0A%09%09if n != q.head %7B%0A%09%09%09result += %22, %22%0A%09%09%7D%0A%09%09result += fmt.Sprintf(%22&v%22, n.Value)%0A%09%7D%0A%09return result + %22%5D%22%0A%7D%0A%0A\n func\n@@ -1294,33 +1294,32 @@\n .Println(%22falha:\n- \n fila vazia%22)%0A%09%09%09\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-07-07_04-41-50",
+            "content": "@@ -954,9 +954,9 @@\n tf(%22\n-%25\n+&\n v%22, \n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-07-07_04-43-18",
+            "content": "@@ -1651,16 +1651,70 @@\n %22)%0A%09%09%09%7D%0A\n+%09%09default:%0A%09%09%09fmt.Println(%22Unknown command:%22, args%5B0%5D)\n %0A%09%09%7D%0A%0A%09%7D\n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-07-07_04-47-11",
+            "content": "@@ -42,760 +42,1068 @@\n os%22%0A\n-)%0A%0Atype Pos struct %7B%0A%09r, c int%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09buf := make(%5B%5Dbyte, 0, 64*1024)%0A%09scanner.Buffer(buf, 1024*1024)%0A%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%0A%09var R, C int%0A%09fmt.Sscan(scanner.Text(), %22%25d %25d%22, &R, &C)%0A%0A%09maze := make(%5B%5D%5B%5Dbyte, R)%0A%09var start Pos%0A%0A%09for i := 0; i %3C R; i++ %7B%0A%09%09scanner.Scan()%0A%09%09maze%5Bi%5D = %5B%5Dbyte(scanner.Text())%0A%0A%09%09for J := 0; J %3C len(maze%5Bi%5D); J++ %7B%0A%09%09%09if maze%5Bi%5D%5BJ%5D\n+%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Atype Node%5BT any%5D struct %7B%0A%09Value T%0A%09next  *Node%5BT%5D%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09head *Node%5BT%5D%0A%09tail *Node%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%7D%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09newNode := &Node%5BT%5D%7BValue: value, next: nil%7D%0A%09if q.size == 0 %7B%0A%09%09q.head = newNode%0A%09%09q.tail = newNode%0A%09%7D else %7B%0A%09%09q.tail.next = newNode%0A%09%09q.tail = newNode%0A%09%7D%0A%09q.size++%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09var zero T%0A%0A%09if q.size == 0 %7B%0A%09%09return zero, false%0A%09%7D%0A%0A%09value := q.head.Value%0A%09q.head = q.head.next%0A%0A%09if q.head == nil %7B%0A%09%09q.tail = nil%0A%09%7D%0A%0A%09q.size--%0A%09return value, true%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Peek() (T, bool) %7B%0A%09var zero T%0A%09if q.size\n  == \n-'I'\n+0\n  %7B%0A%09%09\n-%09%09start = Pos%7Bi, J%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09visited := make(%5B%5D%5B%5Dbool, R)\n+return zero, false%0A%09%7D%0A%09return q.head.Value, true%0A%7D%0A%0Afunc (q *Queue%5BT%5D) String() string %7B%0A%09result := %22%5B%22\n %0A%09for \n-i\n+n\n  := \n-range visited %7B%0A%09%09visited%5Bi%5D = make(%5B%5Dbool, C)%0A%09%7D%0A%0A%09path := %5B%5DPos%7Bstart%7D%0A%09visited%5Bstart.r%5D%5Bstart.c%5D = true%0A%0A%09dr := %5B%5Dint%7B-1, 1, 0, 0%7D%0A%09dc := %5B%5Dint%7B0, 0, -1, 1%7D%0A%0A%09for len(path) %3E 0 %7B%0A%09%09curr := path%5Blen(path)-1%5D%0A%0A%09%09if maze%5Bcurr.r%5D%5Bcurr.c%5D == 'F'\n+q.head; n != nil; n = n.next %7B%0A%09%09if n != q.head %7B%0A%09%09%09result += %22, %22%0A%09%09%7D%0A%09%09result += fmt.Sprintf(%22%25v%22, n.Value)%0A%09%7D%0A%09return result + %22%5D%22%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09queue := NewQueue%5Bint%5D()%0A%0A%09for %7B%0A%09%09if !scanner.Scan()\n  %7B%0A%09\n@@ -1118,521 +1118,504 @@\n %09%09%7D%0A\n-%0A\n %09%09\n-foundValidNeighbor := false%0A%09%09for i := 0; i %3C 4; i++ %7B%0A%09%09%09nr, nc := curr.r+dr%5Bi%5D, curr.c+dc%5Bi%5D%0A%0A%09%09%09if nr %3E= 0 && nr %3C R && nc %3E= 0 && nc %3C len(maze%5Bnr%5D) %7B%0A%09%09%09%09if !visited%5Bnr%5D%5Bnc%5D && maze%5Bnr%5D%5Bnc%5D != '#' %7B%0A%09%09%09%09%09visited%5Bnr%5D%5Bnc%5D = tr\n+line := scanner.Text()%0A%09%09fmt.Println(%22$%22 + line)%0A%09%09args := strings.Fields(line)%0A%09%09if len(args) == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09switch args%5B0%5D %7B%0A%09%09case %22end%22:%0A%09%09%09return%0A%09%09case %22show%22:%0A%09%09%09fmt.Println(que\n ue\n+)\n %0A%09%09\n-%09%09%09path = append(path, Pos%7Bnr, nc%7D)%0A%09%09%09%09%09foundValidNeighbor \n+case %22push%22:%0A%09%09%09for _, arg := range args%5B1:%5D %7B%0A%09%09%09%09value, _ :\n = \n+s\n tr\n-ue%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if !foundValidNeighbor %7B%0A%09%09%09%09path = path%5B:len(path)-1%5D%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09for _, p := range path %7B%0A%09%09%09if maze%5Bp.r%5D%5Bp.c%5D == ' ' %7B%0A%09%09%09%09maze%5Bp.r%5D%5Bp.c%5D = '.'%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09for i := 0; i %3C R; i++\n+conv.Atoi(arg)%0A%09%09%09%09queue.Enqueue(value)%0A%09%09%09%7D%0A%09%09case %22pop%22:%0A%09%09%09if _, ok := queue.Dequeue(); !ok %7B%0A%09%09%09%09fmt.Println(%22falha: fila vazia%22)%0A%09%09%09%7D%0A%09%09case %22peek%22:%0A%09%09%09if value, ok := queue.Peek(); ok %7B%0A%09%09%09%09fmt.Println(value)%0A%09%09%09%7D else\n  %7B%0A\n+%09\n %09%09%09f\n@@ -1629,30 +1629,42 @@\n tln(\n-string(maze%5Bi%5D)\n+%22falha: fila vazia%22\n )%0A\n+%09\n %09%09%7D%0A\n-%09%7D\n+%0A%09%09%7D%0A%0A%09%7D%0A\n %0A%7D%0A\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-07_05-04-21",
+            "content": "@@ -251,17 +251,16 @@\n mt.Sscan\n-f\n (scanner\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-07_05-06-08",
+            "content": "@@ -1133,22 +1133,17 @@\n %09%7D%0A%09%09%09%7D%0A\n-%0A%09%09%7D%0A%0A\n+%09\n %09%09if !fo\n@@ -1164,16 +1164,17 @@\n or %7B%0A%09%09%09\n+%09\n path = p\n@@ -1193,20 +1193,23 @@\n h)-1%5D%0A%09%09\n+%09\n %7D%0A%09%09\n+%7D%0A\n %0A%09%09for _\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-07_05-07-28",
+            "content": "@@ -1135,16 +1135,20 @@\n %0A%09%09%09%7D%0A%0A%09\n+%09%7D%0A%0A\n %09%09if !fo\n@@ -1166,17 +1166,16 @@\n ghbor %7B%0A\n-%09\n %09%09%09path \n@@ -1197,24 +1197,20 @@\n h)-1%5D%0A%09%09\n-%09%7D%0A\n+%7D\n %0A%09%09\n-%7D%0A\n %0A%09%09for _\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-07-07_05-08-22",
+            "content": "@@ -1135,20 +1135,16 @@\n %0A%09%09%09%7D%0A%0A%09\n-%09%7D%0A%0A\n %09%09if !fo\n@@ -1162,16 +1162,17 @@\n ghbor %7B%0A\n+%09\n %09%09%09path \n@@ -1198,15 +1198,18 @@\n %5D%0A%09%09\n+%09\n %7D%0A%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09for\n@@ -1230,16 +1230,17 @@\n  path %7B%0A\n+%09\n %09%09if maz\n@@ -1263,16 +1263,17 @@\n  ' %7B%0A%09%09%09\n+%09\n maze%5Bp.r\n@@ -1287,22 +1287,25 @@\n = '.'%0A%09%09\n+%09\n %7D%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09for i :\n@@ -1322,16 +1322,17 @@\n ; i++ %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -1354,13 +1354,17 @@\n ze%5Bi%5D))%0A\n+%09%09%7D%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-07-07_05-08-52",
+            "content": "@@ -1230,16 +1230,46 @@\n  path %7B%0A\n+%09%09if maze%5Bp.r%5D%5Bp.c%5D == ' ' %7B%0A%09\n %09%09maze%5Bp\n@@ -1283,16 +1283,19 @@\n %5D = '.'%0A\n+%09%09%7D\n %0A%09%7D%0A%0A%09fo\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_05-11-06",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tr, c int\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tbuf := make([]byte, 0, 64*1024)\n\tscanner.Buffer(buf, 1024*1024)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\n\tvar R, C int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &R, &C)\n\n\tmaze := make([][]byte, R)\n\tvar start Pos\n\n\tfor i := 0; i < R; i++ {\n\t\tscanner.Scan()\n\t\tmaze[i] = []byte(scanner.Text())\n\n\t\tfor J := 0; J < len(maze[i]); J++ {\n\t\t\tif maze[i][J] == 'I' {\n\t\t\t\tstart = Pos{i, J}\n\t\t\t}\n\t\t}\n\t}\n\n\tvisited := make([][]bool, R)\n\tfor i := range visited {\n\t\tvisited[i] = make([]bool, C)\n\t}\n\n\tpath := []Pos{start}\n\tvisited[start.r][start.c] = true\n\n\tdr := []int{-1, 1, 0, 0}\n\tdc := []int{0, 0, -1, 1}\n\n\tfor len(path) > 0 {\n\t\tcurr := path[len(path)-1]\n\n\t\tif maze[curr.r][curr.c] == 'F' {\n\t\t\tbreak\n\t\t}\n\n\t\tfoundValidNeighbor := false\n\t\tfor i := 0; i < 4; i++ {\n\t\t\tnr, nc := curr.r+dr[i], curr.c+dc[i]\n\n\t\t\tif nr >= 0 && nr < R && nc >= 0 && nc < len(maze[nr]) {\n\t\t\t\tif !visited[nr][nc] && maze[nr][nc] != '#' {\n\t\t\t\t\tvisited[nr][nc] = true\n\t\t\t\t\tpath = append(path, Pos{nr, nc})\n\t\t\t\t\tfoundValidNeighbor = true\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\n\t\t}\n\n\t\tif !foundValidNeighbor {\n\t\t\tpath = path[:len(path)-1]\n\t\t}\n\n\t}\n\n\tfor _, p := range path {\n\t\tmaze[p.r][p.c] = '.'\n\n\t}\n\n\tfor i := 0; i < R; i++ {\n\t\tfmt.Println(string(maze[i]))\n\t}\n}\n",
+            "lines": "87"
+        }
+    ]
+}

@@ -15,13 +15,13 @@ sources:
 expanded:
 - ed@linear
 flags:
-  inbox: all
-  panel: graph
+  inbox: inbox
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@fila_enc
-selected_index: 7
+selected: ed@pilha
+selected_index: 2

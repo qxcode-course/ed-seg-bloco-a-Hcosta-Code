@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-07_05-12-13",
+            "content": "@@ -802,17 +802,8 @@\n %09%7D%0A%0A\n-%09if njj%0A%0A\n %09for\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-07_05-28-23",
+            "content": "@@ -806,16 +806,11 @@\n %09if \n-int b, c\n+njj\n %0A%0A%09f\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-07_06-10-10",
+            "content": "@@ -798,16 +798,29 @@\n l%22)%0A%09%7D%0A%0A\n+%09if int b, c%0A\n %0A%09for i \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-07_06-33-15",
+            "content": "@@ -801,12 +801,8 @@\n %0A%09%7D%0A\n-ffff\n %0A%0A%09f\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-07_07-44-03",
+            "content": "@@ -796,16 +796,21 @@\n +%22l%22)%0A%09%7D\n+%0Affff\n %0A%0A%09for i\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-07_07-46-31",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0A// No\n@@ -159,321 +159,79 @@\n %0A%7D%0A%0A\n-func\n+//\n  create\n-Tree(tokens *%5B%5Dstring) *Node %7B%0A%09if len(*tokens) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*tokens)%5B0%5D%0A%09*tokens = (*tokens)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = createTree(tokens)%0A%09node.Right = createTree(tokens)%0A%0A%09return node%0A%0A%7D%0A\n+ constr%C3%B3i uma %C3%A1rvore bin%C3%A1ria a partir de uma lista de strings.\n %0A// \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-07_18-12-26",
+            "content": "@@ -484,342 +484,8 @@\n %0A%7D%0A%0A\n-func show(node *Node, prefix string, dir int) %7B%0A%09if node == nil%7B%0A%09%09return%0A%09%7D%0A%0A%09hasLeft := node.Left != nil%0A%09hasRight := node.Right != nil%0A%0A%09if hasLeft %7C%7C hasRight%7B%0A%09%09leftPrefix := prefix%0A%09%09if dir == 1%7B%0A%09%09%09leftPrefix += %22  %22%0A%09%09%7D else if dir == -1%7B%09%0A%09%09%09leftPrefix += %22%7C  %22%0A%09%09%7D%0A%0A%0A%09%09if !hasLeft%7B%0A%09%09%09fmt.Println(leftPrefix + %22%22)%0A%09%09%7D%0A%09%7D%0A%7D%0A%0A\n // C\n@@ -1556,15 +1556,13 @@\n t()%0A\n-%0A%09token\n+%09part\n s :=\n@@ -1574,21 +1574,24 @@\n ngs.\n-Fields(line)%0A\n+Split(line, %22 %22)\n %0A%09ro\n@@ -1606,19 +1606,14 @@\n eate\n-Tree(&token\n+(&part\n s)%0A%09\n@@ -1624,16 +1624,14 @@\n w(root, \n-line\n+%22%22\n )%0A%7D%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_18-24-21",
+            "content": "@@ -38,16 +38,27 @@\n %22%0A%09%22os%22%0A\n+%09%22strconv%22%0A\n %09%22string\n@@ -60,16 +60,16 @@\n trings%22%0A\n-\n )%0A%0A// No\n@@ -170,79 +170,655 @@\n %0A%7D%0A%0A\n-//\n+func\n  create\n- constr%C3%B3i uma %C3%A1rvore bin%C3%A1ria a partir de uma lista de strings.\n+Tree(tokens *%5B%5Dstring) *Node %7B%0A%09if len(*tokens) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*tokens)%5B0%5D%0A%09*tokens = (*tokens)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = createTree(tokens)%0A%09node.Right = createTree(tokens)%0A%0A%09return node%0A%0A%7D%0A%0Afunc show(node *Node, prefix string, dir int) %7B%0A%09if node == nil%7B%0A%09%09return%0A%09%7D%0A%0A%09hasLeft := node.Left != nil%0A%09hasRight := node.Right != nil%0A%0A%09if hasLeft %7C%7C hasRight%7B%0A%09%09leftPrefix := prefix%0A%09%09if dir == 1%7B%0A%09%09%09leftPrefix += %22  %22%0A%09%09%7D else if dir == -1%7B%09%0A%09%09%09leftPrefix += %22%7C  %22%0A%09%09%7D%0A%0A%0A%09%09if !hasLeft%7B%0A%09%09%09fmt.Println(leftPrefix + %22%22)%0A%09%09%7D%0A%09%7D%0A%7D%0A\n %0A// \n@@ -1890,13 +1890,15 @@\n t()%0A\n-%09part\n+%0A%09token\n s :=\n@@ -1910,24 +1910,21 @@\n ngs.\n-Split(line, %22 %22)\n+Fields(line)%0A\n %0A%09ro\n@@ -1939,14 +1939,19 @@\n eate\n-(&part\n+Tree(&token\n s)%0A%09\n@@ -1962,14 +1962,16 @@\n w(root, \n-%22%22\n+line\n )%0A%7D%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-07-07_18-35-56",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0A// No\n@@ -512,260 +512,29 @@\n  %7B%0A%09\n-if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*parts)%5B0%5D%0A%09*parts = (*parts)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = create(parts)%0A%09node.Right = create(parts)%0A%0A%09return node\n+_ = parts%0A%09return nil\n %0A%7D%0A%0A\n@@ -1259,21 +1259,17 @@\n .Stdin)%0A\n-%0A%09if \n+%09\n scanner.\n@@ -1274,20 +1274,17 @@\n r.Scan()\n- %7B%0A%09\n+%0A\n %09line :=\n@@ -1299,18 +1299,16 @@\n .Text()%0A\n-%0A\n-%09\n %09parts :\n@@ -1321,22 +1321,25 @@\n ngs.\n-Fields(line\n+Split(line, %22 %22\n )%0A\n-%09\n %09roo\n@@ -1358,18 +1358,16 @@\n &parts)%0A\n-%0A%09\n %09BShow(r\n@@ -1375,14 +1375,10 @@\n ot, %22%22)%0A\n-%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-07_18-40-56",
+            "content": "@@ -1,5 +1,4 @@\n-%EF%BB%BF\n pack\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_18-48-41",
+            "content": "@@ -1,8 +1,9 @@\n+%EF%BB%BF\n package \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_18-48-53",
+            "content": "@@ -1197,30 +1197,8 @@\n %22 %7B%0A\n-%09%09if history != %22%22 %7B%0A%09\n %09%09if\n@@ -1230,25 +1230,24 @@\n == 'l' %7B%0A%09%09%09\n-%09\n fmt.Print(%22%E2%94%8C\n@@ -1249,17 +1249,15 @@\n nt(%22\n-%E2%94%8C\n+%E2%95%AD\n %E2%94%80%E2%94%80%E2%94%80%22)\n- %0A%09\n+%0A\n %09%09%7D \n@@ -1266,17 +1266,16 @@\n se %7B%0A%09%09%09\n-%09\n fmt.Prin\n@@ -1281,20 +1281,14 @@\n nt(%22\n-%E2%94%94\n+%E2%95%B0\n %E2%94%80%E2%94%80%E2%94%80%22)\n- %0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_18-50-54",
+            "content": "@@ -1193,16 +1193,38 @@\n != %22%22 %7B%0A\n+%09%09if history != %22%22 %7B%0A%09\n %09%09if his\n@@ -1252,24 +1252,25 @@\n == 'l' %7B%0A%09%09%09\n+%09\n fmt.Print(%22%E2%95%AD\n@@ -1272,15 +1272,17 @@\n nt(%22\n-%E2%95%AD\n+%E2%94%8C\n %E2%94%80%E2%94%80%E2%94%80%22)\n-%0A\n+ %0A%09\n %09%09%7D \n@@ -1283,32 +1283,33 @@\n %0A%09%09%09%7D else %7B%0A%09%09%09\n+%09\n fmt.Print(%22%E2%95%B0%E2%94%80%E2%94%80%E2%94%80%22\n@@ -1307,14 +1307,20 @@\n nt(%22\n-%E2%95%B0\n+%E2%94%94\n %E2%94%80%E2%94%80%E2%94%80%22)\n+ %0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-07_18-51-27",
+            "content": "@@ -38,16 +38,27 @@\n %22%0A%09%22os%22%0A\n+%09%22strconv%22%0A\n %09%22string\n@@ -60,16 +60,16 @@\n trings%22%0A\n-\n )%0A%0A// No\n@@ -523,29 +523,260 @@\n  %7B%0A%09\n-_\n+if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*parts)%5B0%5D%0A%09*parts\n  = \n+(*\n parts\n-%0A%09return nil\n+)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = create(parts)%0A%09node.Right = create(parts)%0A%0A%09return node\n %0A%7D%0A%0A\n@@ -1501,17 +1501,21 @@\n .Stdin)%0A\n-%09\n+%0A%09if \n scanner.\n@@ -1520,17 +1520,20 @@\n r.Scan()\n-%0A\n+ %7B%0A%09\n %09line :=\n@@ -1548,16 +1548,18 @@\n .Text()%0A\n+%0A\n+%09\n %09parts :\n@@ -1572,25 +1572,22 @@\n ngs.\n-Split(line, %22 %22\n+Fields(line\n )%0A\n+%09\n %09roo\n@@ -1606,16 +1606,18 @@\n &parts)%0A\n+%0A%09\n %09BShow(r\n@@ -1625,10 +1625,14 @@\n ot, %22%22)%0A\n+%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-07_18-53-40",
+            "content": "@@ -47,27 +47,60 @@\n %22str\n-conv%22%0A%09%22strings%22%0A)%0A\n+ings%22%0A)%0A%0A// Node representa um n%C3%B3 na %C3%A1rvore bin%C3%A1ria.\n %0Atyp\n@@ -159,284 +159,370 @@\n %0A%7D%0A%0A\n-func\n+//\n  create\n-(parts *%5B%5Dstring) *Node %7B%0A%09if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*parts)%5B0%5D%0A%09*parts = (*parts)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = create(parts)%0A%09node.Right = create(\n+ constr%C3%B3i uma %C3%A1rvore bin%C3%A1ria a partir de uma lista de strings.%0A// Consuma os elementos da lista sempre do in%C3%ADcio.%0A// Voc%C3%AA pode obter o primeiro elemento com 'elem := (*parts)%5B0%5D'%0A// Voc%C3%AA pode fazer um %22push_front%22 no array usando '*parts = (*parts)%5B1:%5D%0A// Se o elemento for %22#%22, significa que o n%C3%B3 %C3%A9 nulo.%0Afunc create(parts *%5B%5Dstring) *Node %7B%0A%09_ = \n parts\n-)%0A\n %0A%09re\n@@ -527,22 +527,148 @@\n return n\n-ode%0A%7D%0A\n+il%0A%7D%0A%0A// BShow %C3%A9 uma fun%C3%A7%C3%A3o auxiliar para imprimir a %C3%A1rvore bin%C3%A1ria.%0A// Primeira invoca%C3%A7%C3%A3o de ser com history como uma string vazia.\n %0Afunc BS\n@@ -1007,9 +1007,9 @@\n nt(%22\n-%E2%94%8C\n+%E2%95%AD\n %E2%94%80%E2%94%80%E2%94%80%22\n@@ -1039,9 +1039,9 @@\n nt(%22\n-%E2%94%94\n+%E2%95%B0\n %E2%94%80%E2%94%80%E2%94%80%22\n@@ -1205,16 +1205,17 @@\n %22)%0A%09%7D%0A%7D%0A\n+%0A\n func mai\n@@ -1264,155 +1264,8 @@\n n)%0A%09\n-var parts %5B%5Dstring%0A%0A%09// L%C3%AA absolutamente todas as linhas e junta as palavras.%0A%09// Isso blinda o c%C3%B3digo contra espa%C3%A7os duplos e linhas vazias!%0A%09for \n scan\n@@ -1274,20 +1274,17 @@\n r.Scan()\n- %7B%0A%09\n+%0A\n %09line :=\n@@ -1304,14 +1304,12 @@\n ()%0A%09\n-%09token\n+part\n s :=\n@@ -1321,205 +1321,25 @@\n ngs.\n-Fields(line)%0A%09%09parts = append(parts, tokens...)%0A%09%7D%0A%0A%09// Processa TODAS as %C3%A1rvores dispon%C3%ADveis na entrada,%0A%09// impedindo que o programa morra ap%C3%B3s ler uma %C3%A1rvore vazia (%22#\n+Split(line, %22 \n %22)\n-.\n %0A\n-%09for len(parts) %3E 0 %7B%0A%09\n %09roo\n@@ -1358,17 +1358,16 @@\n &parts)%0A\n-%09\n %09BShow(r\n@@ -1375,14 +1375,10 @@\n ot, %22%22)%0A\n-%09\n %7D%0A\n-%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-07_19-06-53",
+            "content": "@@ -0,0 +1,1475 @@\n+package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09Value int%0A%09Left  *Node%0A%09Right *Node%0A%7D%0A%0Afunc create(parts *%5B%5Dstring) *Node %7B%0A%09if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*parts)%5B0%5D%0A%09*parts = (*parts)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = create(parts)%0A%09node.Right = create(parts)%0A%0A%09return node%0A%7D%0A%0Afunc BShow(node *Node, history string) %7B%0A%09if node != nil && (node.Left != nil %7C%7C node.Right != nil) %7B%0A%09%09BShow(node.Left, history+%22l%22)%0A%09%7D%0A%0A%09for i := 0; i %3C len(history)-1; i++ %7B%0A%09%09if history%5Bi%5D != history%5Bi+1%5D %7B%0A%09%09%09fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22    %22)%0A%09%09%7D%0A%09%7D%0A%09if history != %22%22 %7B%0A%09%09if history%5Blen(history)-1%5D == 'l' %7B%0A%09%09%09fmt.Print(%22%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%22)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22%E2%94%94%E2%94%80%E2%94%80%E2%94%80%22)%0A%09%09%7D%0A%09%7D%0A%09if node == nil %7B%0A%09%09fmt.Println(%22#%22)%0A%09%09return%0A%09%7D%0A%09fmt.Println(node.Value)%0A%09if node.Left != nil %7C%7C node.Right != nil %7B%0A%09%09BShow(node.Right, history+%22r%22)%0A%09%7D%0A%7D%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09var parts %5B%5Dstring%0A%0A%09// L%C3%AA absolutamente todas as linhas e junta as palavras.%0A%09// Isso blinda o c%C3%B3digo contra espa%C3%A7os duplos e linhas vazias!%0A%09for scanner.Scan() %7B%0A%09%09line := scanner.Text()%0A%09%09tokens := strings.Fields(line)%0A%09%09parts = append(parts, tokens...)%0A%09%7D%0A%0A%09// Processa TODAS as %C3%A1rvores dispon%C3%ADveis na entrada,%0A%09// impedindo que o programa morra ap%C3%B3s ler uma %C3%A1rvore vazia (%22#%22).%0A%09for len(parts) %3E 0 %7B%0A%09%09root := create(&parts)%0A%09%09BShow(root, %22%22)%0A%09%7D%0A%7D%0A%0A\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-07_19-07-29",
+            "content": "@@ -1,1231 +0,0 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09Value int%0A%09Left  *Node%0A%09Right *Node%0A%7D%0A%0Afunc create(parts *%5B%5Dstring) *Node %7B%0A%09if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09valStr := (*parts)%5B0%5D%0A%09*parts = (*parts)%5B1:%5D%0A%0A%09if valStr == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09val, _ := strconv.Atoi(valStr)%0A%09node := &Node%7BValue: val%7D%0A%0A%09node.Left = create(parts)%0A%09node.Right = create(parts)%0A%0A%09return node%0A%7D%0A%0Afunc BShow(node *Node, history string) %7B%0A%09if node != nil && (node.Left != nil %7C%7C node.Right != nil) %7B%0A%09%09BShow(node.Left, history+%22l%22)%0A%09%7D%0A%0A%09for i := 0; i %3C len(history)-1; i++ %7B%0A%09%09if history%5Bi%5D != history%5Bi+1%5D %7B%0A%09%09%09fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22    %22)%0A%09%09%7D%0A%09%7D%0A%09if history != %22%22 %7B%0A%09%09if history%5Blen(history)-1%5D == 'l' %7B%0A%09%09%09fmt.Print(%22%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%22)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22%E2%94%94%E2%94%80%E2%94%80%E2%94%80%22)%0A%09%09%7D%0A%09%7D%0A%09if node == nil %7B%0A%09%09fmt.Println(%22#%22)%0A%09%09return%0A%09%7D%0A%09fmt.Println(node.Value)%0A%09if node.Left != nil %7C%7C node.Right != nil %7B%0A%09%09BShow(node.Right, history+%22r%22)%0A%09%7D%0A%7D%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09var parts %5B%5Dstring%0A%0A%09for scanner.Scan() %7B%0A%09%09line := scanner.Text()%0A%09%09tokens := strings.Fields(line)%0A%09%09parts = append(parts, tokens...)%0A%09%7D%0A%0A%0A%09for len(parts) %3E 0 %7B%0A%09%09root := create(&parts)%0A%09%09BShow(root, %22%22)%0A%09%7D%0A%7D%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2026-07-07_19-08-37",
+            "content": "@@ -633,138 +633,36 @@\n %0A%09%09%09\n-// Substitu%C3%ADdo por 1 barra e 3 espa%C3%A7os normais puros%0A%09%09%09fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B%0A%09%09%09// Substitu%C3%ADdo por 4 espa%C3%A7os normais puros\n+fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B\n %0A%09%09%09\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-07-07_19-16-42",
+            "content": "@@ -633,44 +633,138 @@\n %0A%09%09%09\n-%0A%09%09%09fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B%0A%09%09%09\n+// Substitu%C3%ADdo por 1 barra e 3 espa%C3%A7os normais puros%0A%09%09%09fmt.Print(%22%E2%94%82   %22)%0A%09%09%7D else %7B%0A%09%09%09// Substitu%C3%ADdo por 4 espa%C3%A7os normais puros\n %0A%09%09%09\n@@ -864,9 +864,9 @@\n nt(%22\n-%E2%95%AD\n+%E2%94%8C\n %E2%94%80%E2%94%80%E2%94%80%22\n@@ -896,9 +896,9 @@\n nt(%22\n-%E2%95%B0\n+%E2%94%94\n %E2%94%80%E2%94%80%E2%94%80%22\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-07_19-19-16",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc create(parts *[]string) *Node {\n\tif len(*parts) == 0 {\n\t\treturn nil\n\t}\n\n\tvalStr := (*parts)[0]\n\t*parts = (*parts)[1:]\n\n\tif valStr == \"#\" {\n\t\treturn nil\n\t}\n\n\tval, _ := strconv.Atoi(valStr)\n\tnode := &Node{Value: val}\n\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\n\treturn node\n}\n\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\t\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\t\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tvar parts []string\n\n\tfor scanner.Scan() {\n\t\tline := scanner.Text()\n\t\ttokens := strings.Fields(line)\n\t\tparts = append(parts, tokens...)\n\t}\n\n\n\tfor len(parts) > 0 {\n\t\troot := create(&parts)\n\t\tBShow(root, \"\")\n\t}\n}\n",
+            "lines": "83"
+        }
+    ]
+}
