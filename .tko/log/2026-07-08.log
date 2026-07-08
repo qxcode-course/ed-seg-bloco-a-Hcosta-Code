@@ -196,3 +196,32 @@
 2026-07-08 18:35:10, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:86
 2026-07-08 18:35:11, MOVE, v:1, k:ed@detonate, mode:BACK
 2026-07-08 18:35:22, SELF, v:1, k:ed@detonate, self:1, rate:100, study:40
+2026-07-08 18:36:14, MOVE, v:1, k:ed@rotten, mode:DOWN
+2026-07-08 18:36:14, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-07-08 18:36:16, EXEC, v:1, k:ed@rotten, mode:FULL, rate:0, size:5
+2026-07-08 18:36:30, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-07-08 18:37:33, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-07-08 18:37:35, EXEC, v:1, k:ed@rotten, mode:FULL, rate:0, size:8
+2026-07-08 18:42:13, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-08 18:37:34, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-08 18:42:53, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-08 18:51:14, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-08 18:57:17, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-08 19:01:39, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:98
+2026-07-08 19:01:44, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-07-08 19:01:56, SELF, v:1, k:ed@rotten, self:1, rate:100, study:25
+2026-07-08 19:02:18, MOVE, v:1, k:ed@dfs_read, mode:DOWN
+2026-07-08 19:02:19, MOVE, v:1, k:ed@dfs_read, mode:PICK
+2026-07-08 19:02:21, EXEC, v:1, k:ed@dfs_read, mode:LOCK, rate:0, size:5
+2026-07-08 19:03:08, EXEC, v:1, k:ed@dfs_read, mode:LOCK, rate:0
+2026-07-08 19:03:12, MOVE, v:1, k:ed@dfs_read, mode:BACK
+2026-07-08 19:03:14, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-07-08 19:03:14, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-08 19:03:15, EXEC, v:1, k:ed@ilhas, mode:FULL, size:31, fail:COMP
+2026-07-08 19:03:45, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-08 19:04:26, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-08 19:04:27, EXEC, v:1, k:ed@ilhas, mode:FULL, fail:COMP
+2026-07-08 19:09:20, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-08 19:11:18, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:59
+2026-07-08 19:11:25, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-08 19:11:42, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:8

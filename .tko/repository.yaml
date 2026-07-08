@@ -13,7 +13,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
+- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -23,5 +23,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@detonate
-selected_index: 12
+selected: ed@ilhas
+selected_index: 10
