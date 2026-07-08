@@ -13,9 +13,9 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@tree
+- ed@bfs
 flags:
-  inbox: inbox
+  inbox: all
   panel: skills
   task_graph_mode: executions
   show_time: 'true'
@@ -23,5 +23,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@soma
-selected_index: 1
+selected: ed@detonate
+selected_index: 12

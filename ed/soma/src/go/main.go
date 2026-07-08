@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 
 	"strconv"
@@ -16,13 +17,31 @@ type Node struct {
 }
 
 func rec_sum(node *Node) int {
-	_ = node
-	return 0
+	if node == nil {
+		return 0
+	}
+
+	return node.Value + rec_sum(node.Left) + rec_sum(node.Right)
 }
 
 func rec_min(node *Node) int {
-	_ = node
-	return 0
+	if node == nil {
+		return math.MaxInt32
+	}
+
+	minVal := node.Value
+
+	leftMin := rec_min(node.Left)
+	ringMin := rec_min(node.Right)
+
+	if leftMin < minVal {
+		minVal = leftMin
+	}
+	if ringMin < minVal {
+		minVal = ringMin
+	}
+
+	return minVal
 }
 
 // MyShow imprime a árvore binária de forma formatada.
