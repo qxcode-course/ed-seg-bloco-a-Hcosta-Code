@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-07_22-43-52",
+            "content": "@@ -71,10 +71,5 @@\n %22)%0A%7D\n-sssss\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-07_23-06-33",
+            "content": "@@ -76,7 +76,5 @@\n ssss\n-cc\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-07_23-25-15",
+            "content": "@@ -10,823 +10,73 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0Afunc ehPar(abertura, fechamento rune) bool %7B%0A%09if abertura == '(' && fechamento == ')' %7B%0A%09%09return true%0A%09%7D%0A%09if abertura == '%5B' && fechamento == '%5D' %7B%0A%09%09return true%0A%09%7D%0A%09return false%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09texto := scanner.Text()%0A%0A%09var pilha %5B%5Drune%0A%0A%09for _, char := range texto %7B%0A%09%09if char == '(' %7C%7C char == '%5B' %7B%0A%09%09%09pilha = append(pilha, char)%0A%09%09%7D else if char == ')' %7C%7C char == '%5D' %7B%0A%09%09%09if len(pilha) == 0 %7B%0A%09%09%09%09fmt.Println(%22nao balanceado%22)%0A%09%09%09%09return%0A%09%09%09%7D%0A%0A%09%09%09topo := pilha%5Blen(pilha)-1%5D%0A%0A%09%09%09if ehPar(topo, char) %7B%0A%09%09%09%09pilha = pilha%5B:len(pilha)-1%5D%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22nao balanceado%22)%0A%09%09%09%09return%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09if len(pilha) == 0 %7B%0A%09%09fmt.Println(%22balanceado%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22nao balanceado%22)%0A%09%7D%0A%7D\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)%0A%7Dssssscc\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-08_00-49-36",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc ehPar(abertura, fechamento rune) bool {\n\tif abertura == '(' && fechamento == ')' {\n\t\treturn true\n\t}\n\tif abertura == '[' && fechamento == ']' {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\ttexto := scanner.Text()\n\n\tvar pilha []rune\n\n\tfor _, char := range texto {\n\t\tif char == '(' || char == '[' {\n\t\t\tpilha = append(pilha, char)\n\t\t} else if char == ')' || char == ']' {\n\t\t\tif len(pilha) == 0 {\n\t\t\t\tfmt.Println(\"nao balanceado\")\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\ttopo := pilha[len(pilha)-1]\n\n\t\t\tif ehPar(topo, char) {\n\t\t\t\tpilha = pilha[:len(pilha)-1]\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"nao balanceado\")\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n\n\tif len(pilha) == 0 {\n\t\tfmt.Println(\"balanceado\")\n\t} else {\n\t\tfmt.Println(\"nao balanceado\")\n\t}\n}\n",
+            "lines": "54"
+        }
+    ]
+}

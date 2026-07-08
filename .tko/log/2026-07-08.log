@@ -1,0 +1,11 @@
+2026-07-08 00:11:26, EXEC, v:1, k:ed@balanceada, mode:FULL, fail:COMP
+2026-07-08 00:27:26, EXEC, v:1, k:ed@balanceada, mode:FULL, fail:COMP
+2026-07-08 00:37:59, EXEC, v:1, k:ed@balanceada, mode:FULL, fail:COMP
+2026-07-08 00:37:58, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-07-08 00:37:59, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-07-08 00:42:37, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-07-08 00:43:18, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-07-08 00:48:18, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-07-08 00:49:36, EXEC, v:1, k:ed@balanceada, mode:FULL, rate:100, size:54
+2026-07-08 00:49:42, MOVE, v:1, k:ed@balanceada, mode:BACK
+2026-07-08 00:49:58, SELF, v:1, k:ed@balanceada, self:1, rate:100, study:120
